@@ -1,0 +1,51 @@
+{
+    "name": "mini-genius",
+    "version": "1.0.0",
+    "description": "Mini Genius: your favorite site for consulting lyrics.",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "keywords": [
+        "wanikani",
+        "flashcards",
+        "clean",
+        "hexagonal",
+        "typescript"
+    ],
+    "scripts": {
+        "test": "jest --verbose ./src/tests",
+        "build": "tsc",
+        "watch": "tsc -w",
+        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+        "lint": "eslint -c .eslintrc.js --ext .ts src"
+    },
+    "author": "ALAN WENDORFF",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^16.3.1"
+    },
+    "devDependencies": {
+        "@types/jest": "^26.0.20",
+        "@types/node": "^20.4.5",
+        "@typescript-eslint/eslint-plugin": "^4.15.0",
+        "@typescript-eslint/parser": "^4.15.0",
+        "babel-plugin-module-resolver": "^4.1.0",
+        "babel-plugin-root-import": "^6.6.0",
+        "eslint": "^7.20.0",
+        "eslint-config-prettier": "^7.2.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jest": "^24.1.3",
+        "eslint-plugin-json": "^2.1.2",
+        "eslint-plugin-prettier": "^3.3.1",
+        "prettier": "^2.2.1",
+        "prettier-eslint": "^12.0.0",
+        "process": "^0.11.10",
+        "ts-jest": "^26.5.1",
+        "ts-node": "^9.1.1",
+        "tslint": "^6.1.3",
+        "typescript": "^5.1.6"
+    },
+    "files": [
+        "lib/**/*",
+        "package.json"
+    ]
+}

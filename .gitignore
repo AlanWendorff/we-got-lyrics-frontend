@@ -1,0 +1,8 @@
+.env
+*.map
+*.js.map
+*.lock
+/node_modules
+/lib
+node_modules
+src/views/react-client/node_modules/.vite
