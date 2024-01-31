@@ -1,0 +1,72 @@
+// Standard resolutions
+//https://es.wikipedia.org/wiki/Resoluci%C3%B3n_de_pantalla#:~:text=Existen%20distintas%20escalas%20de%20resoluci%C3%B3n,8K%20(7680%20%C3%97%204320p).
+
+@mixin LOW-VGA {
+  // LOW-VGA = 256x144
+  @media only screen and (max-width: 256px) {
+    @content;
+  }
+}
+
+@mixin QVGA {
+  // QVGA = 426x240
+  @media only screen and (max-width: 426px) {
+    @content;
+  }
+}
+
+@mixin VGA {
+  // VGA = 640x480
+  @media only screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin SVGA {
+  // SVGA = 800x600
+  @media only screen and (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin XGA {
+  // XGA = 1024 × 768
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin HD {
+  // HD = 1280 × 720
+  @media only screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin HD-P {
+  // HD-P = 1600 × 900 (HD plus)
+  @media only screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin UHD {
+  // UHD = 1920 × 1080
+  @media only screen and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin QHD {
+  // QHD = 2560 × 1440
+  @media only screen and (max-width: 2560px) {
+    @content;
+  }
+}
+
+@mixin UHDV-UP {
+  // UHDV-UP = 3840 x 2160 and upper
+  @media (min-width: 3840px) {
+    @content;
+  }
+}

@@ -7,14 +7,14 @@ const BASE_URL = '';
 //process.env.GENIUS_API_URL;
 
 const artistInfoRepository = (): IArtistInfoRepository => ({
-    getArtistInfo: async (name) => {
-        try {
-            const response = await httpMock.get<IArtistInfoDTO>(`${BASE_URL}/artistInfo/${name}`); //using mock
-            return artistInfoMapper(response);
-        } catch (error) {
-            throw new Error(`Error getting user: ${error}`);
-        }
+  getArtistInfo: async (name) => {
+    try {
+      const response = await httpMock.get<IArtistInfoDTO>(`${BASE_URL}/artistInfo/${name}`); //using mock
+      return artistInfoMapper(response);
+    } catch (error) {
+      throw new Error(`Error getting user: ${error}`);
     }
+  }
 });
 
 export default artistInfoRepository;

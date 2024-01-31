@@ -1,4 +1,4 @@
 export type TUser = {
-    username: string;
-    level: number;
+  username: string;
+  level: number;
 };

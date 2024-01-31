@@ -1,11 +1,11 @@
 import Root from '@/components/pages/Root';
 
 const Layout = () => {
-    if (window.location.pathname === '/') {
-        return <Root />;
-    }
-
-    return <>404</>;
+  return (
+    <div>
+      <Root />
+    </div>
+  );
 };
 
 export default Layout;
