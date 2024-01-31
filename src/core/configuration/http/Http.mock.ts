@@ -17,7 +17,7 @@ const httpMock = {
         return new Promise((resolve) =>
             setTimeout(() => {
                 switch (url) {
-                    case '/artistInfo':
+                    case "/artistInfo/Guns n' roses":
                         resolve(mock);
                         break;
 

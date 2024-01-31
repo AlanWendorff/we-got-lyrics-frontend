@@ -1,13 +1,10 @@
-import TArtistInfo from '../models/ArtistInfo.model';
 import IArtistInfoRepository from '../repositories/ArtistInfo.repository';
 
-interface IArtistInfoService {
-    getArtistInfo: () => Promise<TArtistInfo>;
-}
+interface IArtistInfoService extends IArtistInfoRepository {}
 
 const artistInfoService = (repository: IArtistInfoRepository): IArtistInfoService => ({
-    getArtistInfo: () => {
-        return repository.getArtistInfo();
+    getArtistInfo: (name) => {
+        return repository.getArtistInfo(name);
     }
 });
 

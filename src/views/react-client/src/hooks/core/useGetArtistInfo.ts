@@ -16,7 +16,7 @@ const useGetArtistInfo = (): IUseGetArtistInfo => {
 
     useEffect(() => {
         artistInfoController(artistInfoRepository())
-            .getArtistInfo()
+            .getArtistInfo("Guns n' roses")
             .then((response) => {
                 setArtistInfo(response);
             })
