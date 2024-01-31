@@ -3,7 +3,7 @@ import useGetArtistInfo from '@/hooks/core/useGetArtistInfo';
 const Root = () => {
     const { data, error, isLoading } = useGetArtistInfo();
 
-    if (isLoading) {
+    if (isLoading || !data) {
         return <div>...loading</div>;
     }
 

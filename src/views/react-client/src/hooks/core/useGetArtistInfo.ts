@@ -4,7 +4,7 @@ import artistInfoController from '@core/artistInfo/application/ArtistInfo.contro
 import artistInfoRepository from '@core/artistInfo/infrastructure/repositories/ArtistInfo.repository'; // Repositorio de ...
 
 interface IUseGetArtistInfo {
-    data: TArtistInfo;
+    data: TArtistInfo | null;
     isLoading: boolean;
     error: string;
 }

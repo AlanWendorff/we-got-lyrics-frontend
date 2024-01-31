@@ -1,6 +1,8 @@
+import Root from '@/components/pages/Root';
+
 const Layout = () => {
     if (window.location.pathname === '/') {
-        return <div>HOME</div>;
+        return <Root />;
     }
 
     return <>404</>;

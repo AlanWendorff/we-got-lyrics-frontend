@@ -1,4 +1,4 @@
-import httpMock from '@/core/configuration/http/Http.mock';
+import httpMock from '../../../configuration/http/Http.mock';
 import IArtistInfoRepository from '../../domain/repositories/ArtistInfo.repository';
 import IArtistInfoDTO from '../../../configuration/http/dto/ArtistInfo.dto';
 import artistInfoMapper from '../mapper/ArtistInfo.mapper';
