@@ -1,21 +1,27 @@
 import { useEffect, useState } from 'react';
-import { TSubject } from '@core/wanikani/domain/models/Subject'; // Modelo de retorno de datos
-import { wanikaniController } from '@core/wanikani/application/WanikaniController'; // Controlador de ...
-import { wanikaniRepository } from '@core/wanikani/infrastructure/repositories/WanikaniRepository'; // Repositorio de ...
+import TArtistInfo from '@core/artistInfo/domain/models/ArtistInfo.model'; // Modelo de retorno de datos
+import artistInfoController from '@core/artistInfo/application/ArtistInfo.controller'; // Controlador de ...
+import artistInfoRepository from '@core/artistInfo/infrastructure/repositories/ArtistInfo.repository'; // Repositorio de ...
 
-const useGetArtistInfo = () => {
+interface IUseGetArtistInfo {
+    data: TArtistInfo;
+    isLoading: boolean;
+    error: string;
+}
+
+const useGetArtistInfo = (): IUseGetArtistInfo => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
-    const [artistInfo, setArtistInfo] = useState<TSubject[]>([]);
+    const [artistInfo, setArtistInfo] = useState<TArtistInfo | null>(null);
 
     useEffect(() => {
-        wanikaniController(wanikaniRepository())
-            .getSubjectsByUser()
-            .then((subjects) => {
-                setArtistInfo(subjects);
+        artistInfoController(artistInfoRepository())
+            .getArtistInfo()
+            .then((response) => {
+                setArtistInfo(response);
             })
             .catch((error) => {
-                setError(`Error getting subjects ${error}`); // Manejar errores
+                setError(`Error getting artist information ${error}`); // Manejar errores
             })
             .finally(() => {
                 setIsLoading(false);

@@ -1,9 +1,9 @@
 const headers = {
-    'Content-Type': 'application/json',
-    Authorization: 'Bearer ' + process.env.WANIKANI_API_KEY
+    'Content-Type': 'application/json'
+    //Authorization: 'Bearer ' + process.env.WANIKANI_API_KEY
 };
 
-export const http = {
+const http = {
     get: async <T>(url: string) => {
         const response = await fetch(url, {
             method: 'GET',
@@ -35,3 +35,5 @@ export const http = {
         return (await response.json()) as T;
     }
 };
+
+export default http;
