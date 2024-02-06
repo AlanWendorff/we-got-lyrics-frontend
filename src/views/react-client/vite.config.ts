@@ -21,6 +21,8 @@ export default defineConfig(({ mode }) => {
         '@hocs': `${path.resolve(__dirname, './src/hocs/')}`,
         '@context': `${path.resolve(__dirname, './src/context/')}`,
         '@types': `${path.resolve(__dirname, './src/types/')}`,
+        '@images': `${path.resolve(__dirname, './src/assets/images/')}`,
+        '@services': `${path.resolve(__dirname, './src/services/')}`,
 
         // core
         '@core': `${path.resolve(__dirname, '../../core/')}`

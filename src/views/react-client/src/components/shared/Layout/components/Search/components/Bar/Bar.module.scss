@@ -1,0 +1,34 @@
+.container {
+  position: relative;
+}
+
+.input__search {
+  width: 100%;
+  height: 35px;
+  padding: 0px 0.125rem 0px 0.5rem;
+  font-size: 1.15rem;
+  box-shadow: 0 0 3px var(--color-epsilon) inset;
+
+  &:focus {
+    &::placeholder {
+      //Firefox & chrome
+      color: var(--color-iota);
+    }
+
+    &::-ms-input-placeholder {
+      //Edge
+      color: var(--color-iota);
+    }
+  }
+}
+
+.btn__submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+
+  &_icon {
+    height: 100%;
+  }
+}

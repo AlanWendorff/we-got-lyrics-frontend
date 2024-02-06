@@ -30,6 +30,8 @@
       "@hocs/*": ["./src/hocs/*"],
       "@context/*": ["./src/context/*"],
       "@types/*": ["./src/types/*"],
+      "@images/*": ["./src/assets/images/*"],
+      "@services/*": ["./src/services/*"],
 
       //core
       "@core/*": ["../../core/*"]

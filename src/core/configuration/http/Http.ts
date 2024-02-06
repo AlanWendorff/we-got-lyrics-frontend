@@ -1,6 +1,7 @@
 const headers = {
-  'Content-Type': 'application/json'
-  //Authorization: 'Bearer ' + process.env.WANIKANI_API_KEY
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': '*',
+  Authorization: 'Bearer ' + process.env.API_KEY
 };
 
 const http = {

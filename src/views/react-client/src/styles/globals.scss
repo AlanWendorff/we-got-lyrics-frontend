@@ -63,6 +63,17 @@ input {
   }
 }
 
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
 .notFound {
   text-align: center;
   color: var(--color-eta);

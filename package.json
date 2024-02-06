@@ -4,6 +4,7 @@
   "description": "Mini Genius: your favorite site for consulting lyrics.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "node": "--env-file='.env'",
   "keywords": [
     "clean",
     "hexagonal",
@@ -19,7 +20,7 @@
   "author": "ALAN WENDORFF",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.4.1"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",

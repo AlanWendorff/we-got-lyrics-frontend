@@ -1,4 +1,4 @@
-import Layout from '@shared/Layout';
+import Layout from '@/components/shared/Layout';
 
 function App() {
   return <Layout />;
