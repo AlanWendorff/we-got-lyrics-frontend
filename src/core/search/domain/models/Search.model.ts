@@ -14,6 +14,7 @@ export type TSong = {
   id: number;
   api_path: string;
   name: string;
+  artist_name: string;
   image_thumbnail: string;
 };
 

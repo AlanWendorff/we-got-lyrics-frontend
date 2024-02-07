@@ -1,0 +1,26 @@
+@mixin xs {
+  font-family: Programme, Arial, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  user-select: none;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+@mixin s {
+  font-family: Programme, Arial, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  user-select: none;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+@mixin m {
+  font-family: Programme, Arial, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  user-select: none;
+  word-wrap: break-word;
+  word-break: break-word;
+}

@@ -23,6 +23,7 @@ export default defineConfig(({ mode }) => {
         '@types': `${path.resolve(__dirname, './src/types/')}`,
         '@images': `${path.resolve(__dirname, './src/assets/images/')}`,
         '@services': `${path.resolve(__dirname, './src/services/')}`,
+        '@styles': `${path.resolve(__dirname, './src/styles/')}`,
 
         // core
         '@core': `${path.resolve(__dirname, '../../core/')}`

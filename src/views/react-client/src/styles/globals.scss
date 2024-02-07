@@ -11,6 +11,8 @@
   --color-eta: #ffff64;
   --color-theta: #8b8b8b1f;
   --color-iota: #ccc;
+  --color-kappa: #222;
+  --color-lambda: #9a9a9a;
   --color-scrollbar-thumb: #c5c5c5;
   --color-scrollbar-thumb-hover: #b6b6b6;
 
@@ -72,6 +74,10 @@ button {
 
 ul {
   list-style: none;
+}
+
+p {
+  margin: 0;
 }
 
 .notFound {
