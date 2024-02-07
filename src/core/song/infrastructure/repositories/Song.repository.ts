@@ -9,6 +9,8 @@ const songRepository = (): ISongRepository => ({
   getSong: async (id: string) => {
     try {
       const response = await http.get<ISongDTO>(`${BASE_URL}/songs/${id}`);
+      console.log(response);
+
       return songMapper(response);
     } catch (error) {
       throw new Error(`Error getting user: ${error}`);

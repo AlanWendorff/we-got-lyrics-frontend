@@ -11,11 +11,11 @@ type TSong = {
   embed_content: string;
   release_date_with_abbreviated_month_for_display: string;
   song_art_image_thumbnail_url: string;
-  pageviews: number;
-  album: TAlbum;
+  pageviews: number | undefined;
+  album: TAlbum | null;
   artist: TArtist;
-  featured_artists: string[];
-  producer: string[];
+  featured_artists: string[] | undefined;
+  producer: string[] | undefined;
   lyrics: string;
 };
 
@@ -27,6 +27,7 @@ type TAlbum = {
 type TArtist = {
   id: number;
   name: string;
+  image_url: string;
 };
 
 export default TSongData;

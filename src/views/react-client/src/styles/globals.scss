@@ -21,7 +21,7 @@
 
 html {
   scroll-behavior: smooth !important;
-  overflow-x: hidden;
+  overflow: hidden;
 
   @include responsives.VGA {
     font-size: 14px;
@@ -43,6 +43,23 @@ body {
   overflow-x: hidden;
   padding: 0;
   margin: 0;
+
+  &::-webkit-scrollbar {
+    width: 0.4375rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar-thumb);
+    border-radius: 0.625rem;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scrollbar-thumb-hover);
+  }
 }
 
 h1 {

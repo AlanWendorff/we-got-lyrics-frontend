@@ -1,13 +1,13 @@
-import { useParams } from 'react-router-dom';
-import styles from './Song.module.scss';
 import { useEffect, useState } from 'react';
-import songController from '@core/song/application/SongController';
+import { useParams } from 'react-router-dom';
+import Top from './components/Top';
 import songRepository from '@core/song/infrastructure/repositories/Song.repository';
+import songController from '@core/song/application/SongController';
 import TSong from '@core/song/domain/models/Song.model';
+import styles from './Song.module.scss';
 
 const Song = () => {
   const { id } = useParams();
-  console.log('Song ID:', id);
   const [song, setSong] = useState<TSong | null>(null);
 
   useEffect(() => {
@@ -18,28 +18,21 @@ const Song = () => {
       });
   }, [id]);
 
-  console.log(song?.song.lyrics);
+  if (!song) {
+    return <div>...loading</div>;
+  }
 
   return (
     <div className={styles.container}>
-      <div className={styles.top}>
-        <img src={song?.song.song_art_image_thumbnail_url} alt={`${song?.song.title} thumbnail`} />
+      <Top>
+        <Top.SongThumbnail img={song.song.song_art_image_thumbnail_url} title={song.song.title} />
+        <Top.InfoContainer>
+          <Top.SongMainInfo title={song.song.title} artistName={song.song.artist.name} albumName={song.song.album?.name} />
 
-        <div className={styles.general__info}>
-          <div className={styles.info}>
-            <p className={styles.info__title}>{song?.song.title}</p>
-            <p className={styles.info__subtitle}>
-              <span>{song?.song.artist.name}</span> • Track on <span>{song?.song.album.name}</span>
-            </p>
-            <div className={styles.info__producer}>
-              <p>Produced by</p>
-              <span>{song?.song.producer}</span>
-            </div>
-          </div>
-
-          {/* <p>{song?.song.pageviews}</p> */}
-        </div>
-      </div>
+          <Top.SongContributor contributorType='Featuring' contributors={song.song.featured_artists} />
+          <Top.SongContributor contributorType='Produced by' contributors={song.song.producer} />
+        </Top.InfoContainer>
+      </Top>
 
       <div className={styles.lyrics}>
         <p className={styles.lyrics__entry}>{song?.song.title} lyrics</p>

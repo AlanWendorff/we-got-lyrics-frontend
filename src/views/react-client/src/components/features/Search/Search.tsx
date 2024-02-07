@@ -30,7 +30,7 @@ const Search = () => {
     console.log('useEffect loop =>', location);
   }, [location]);
 
-  const debounceSearching = useCallback(debounce(search, 1000), []);
+  const debounceSearching = useCallback(debounce(search, 500), []);
 
   return (
     <div className={styles.container}>
