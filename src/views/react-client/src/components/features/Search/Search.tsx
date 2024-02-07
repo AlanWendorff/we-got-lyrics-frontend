@@ -39,6 +39,9 @@ const Search = () => {
           e.preventDefault();
           debounceSearching(e.currentTarget.artist.value);
         }}
+        onSubmit={(e: FormEvent<HTMLFormElement>) => {
+          e.preventDefault();
+        }}
       />
 
       {searchedData && <List songs={searchedData.searched_data.songs} artists={searchedData.searched_data.artists} />}

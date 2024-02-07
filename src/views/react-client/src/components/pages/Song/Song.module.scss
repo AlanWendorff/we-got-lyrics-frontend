@@ -1,0 +1,77 @@
+@use '@styles/_typography.scss' as typography;
+@use '@styles/_mixins' as mixins;
+
+.container {
+  padding-top: 1rem;
+  width: var(--max-width-web);
+  height: 100vh;
+}
+
+.top {
+  @include mixins.flex_container(row, flex-start, flex-start);
+
+  img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 2.5rem;
+  }
+}
+
+.general__info {
+  padding: 1rem;
+  color: white;
+}
+
+.info {
+  display: grid;
+  gap: 0.5rem;
+
+  &__title {
+    @include typography.xl;
+  }
+
+  &__subtitle {
+    @include typography.l-light;
+    margin-bottom: 0.5rem;
+
+    span {
+      font-size: 1.125rem;
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+  }
+
+  &__producer {
+    p {
+      @include typography.s-light;
+    }
+
+    span {
+      font-size: 1.125rem;
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+  }
+}
+
+.lyrics {
+  background-color: var(--color-beta);
+  color: black;
+  padding: 1rem;
+
+  &__entry {
+    @include typography.s-light;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    line-height: 1.33;
+    letter-spacing: 0.025rem;
+    font-weight: 100;
+  }
+
+  &__content {
+    @include typography.m-light;
+    white-space: pre-wrap;
+  }
+}

@@ -3,7 +3,7 @@ interface ISearchDTO {
   response: IResponse;
 }
 
-interface IMeta {
+export interface IMeta {
   status: number;
 }
 
