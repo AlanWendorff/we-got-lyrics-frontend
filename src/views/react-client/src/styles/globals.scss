@@ -80,6 +80,12 @@ p {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  width: auto;
+  height: auto;
+}
+
 .notFound {
   text-align: center;
   color: var(--color-eta);

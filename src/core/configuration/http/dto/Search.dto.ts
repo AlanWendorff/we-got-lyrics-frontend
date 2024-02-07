@@ -3,22 +3,22 @@ interface ISearchDTO {
   response: IResponse;
 }
 
-export interface IMeta {
+interface IMeta {
   status: number;
 }
 
-export interface IResponse {
+interface IResponse {
   hits: IHit[];
 }
 
-export interface IHit {
+interface IHit {
   highlights: any[];
   index: string;
   type: string;
   result: IResult;
 }
 
-export interface IResult {
+interface IResult {
   annotation_count: number;
   api_path: string;
   artist_names: string;
@@ -44,20 +44,20 @@ export interface IResult {
   primary_artist: IPrimaryArtist;
 }
 
-export interface IReleaseDateComponents {
+interface IReleaseDateComponents {
   year: number;
   month: number;
   day: number;
 }
 
-export interface IStats {
+interface IStats {
   unreviewed_annotations: number;
   concurrents?: number;
   hot: boolean;
   pageviews: number;
 }
 
-export interface IFeaturedArtist {
+interface IFeaturedArtist {
   api_path: string;
   header_image_url: string;
   id: number;
@@ -69,7 +69,7 @@ export interface IFeaturedArtist {
   iq?: number;
 }
 
-export interface IPrimaryArtist {
+interface IPrimaryArtist {
   api_path: string;
   header_image_url: string;
   id: number;

@@ -6,9 +6,9 @@ import artistInfoMapper from '../mapper/ArtistInfo.mapper';
 const BASE_URL = process.env.API_URL;
 
 const artistInfoRepository = (): IArtistInfoRepository => ({
-  getArtistInfo: async (name) => {
+  getArtistInfo: async (id) => {
     try {
-      const response = await http.get<IArtistInfoDTO>(`${BASE_URL}/search?q=${name}`);
+      const response = await http.get<IArtistInfoDTO>(`${BASE_URL}/artists/${id}`);
       return artistInfoMapper(response);
     } catch (error) {
       throw new Error(`Error getting user: ${error}`);

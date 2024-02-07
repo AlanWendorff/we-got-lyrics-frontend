@@ -1,4 +1,6 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useCallback, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { debounce } from 'lodash';
 import List from './components/List';
 import Bar from './components/Bar';
 import searchRepository from '@core/search/infrastructure/repositories/Search.repository';
@@ -7,9 +9,15 @@ import TSearch from '@core/search/domain/models/Search.model';
 import styles from './Search.module.scss';
 
 const Search = () => {
+  const location = useLocation();
   const [searchedData, setSearchedData] = useState<TSearch | null>(null);
 
   const search = (name: string) => {
+    if (name === '') {
+      setSearchedData(null);
+      return;
+    }
+
     searchController(searchRepository())
       .getSearch(name)
       .then((response) => {
@@ -17,12 +25,19 @@ const Search = () => {
       });
   };
 
+  useEffect(() => {
+    setSearchedData(null);
+    console.log('useEffect loop =>', location);
+  }, [location]);
+
+  const debounceSearching = useCallback(debounce(search, 1000), []);
+
   return (
     <div className={styles.container}>
       <Bar
-        onSubmit={(e: FormEvent<HTMLFormElement>) => {
+        onChange={(e: FormEvent<HTMLFormElement>) => {
           e.preventDefault();
-          search(e.currentTarget.artist.value);
+          debounceSearching(e.currentTarget.artist.value);
         }}
       />
 
