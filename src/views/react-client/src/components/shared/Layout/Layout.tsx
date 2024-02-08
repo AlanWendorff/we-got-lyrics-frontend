@@ -1,12 +1,14 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Search from '@/components/features/Search';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import Search from './components/Search';
 import Song from '@/components/pages/Song';
 import Root from '@/components/pages/Root';
 import ArtistInfo from '@/components/pages/ArtistInfo';
 import { ROOT, ARTIST, SONG } from '@/constants/routes';
+import 'react-loading-skeleton/dist/skeleton.css';
 
-const Layout = () => {
-  return (
+const Layout = () => (
+  <SkeletonTheme baseColor='#313131' highlightColor='#525252'>
     <BrowserRouter>
       <Search />
       <Routes>
@@ -16,7 +18,7 @@ const Layout = () => {
         <Route path='*' element={<p>There's nothing here: 404!</p>} />
       </Routes>
     </BrowserRouter>
-  );
-};
+  </SkeletonTheme>
+);
 
 export default Layout;

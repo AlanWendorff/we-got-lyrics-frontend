@@ -1,16 +1,17 @@
 import { FC } from 'react';
+import Skeleton from 'react-loading-skeleton';
 import styles from './Top.module.scss';
 import IChildren from '@/interfaces/children.interface';
 
 interface ISongThumbnailProps {
-  img: string;
-  title: string;
+  img: string | undefined;
+  title: string | undefined;
 }
 
 interface ISongMainInfoProps {
-  artistName: string;
+  artistName: string | undefined;
   albumName: string | undefined;
-  title: string;
+  title: string | undefined;
 }
 
 interface ISongContributorProps {
@@ -20,18 +21,22 @@ interface ISongContributorProps {
 
 const Top = ({ children }: IChildren) => <div className={styles.top}>{children}</div>;
 
-const SongThumbnail: FC<ISongThumbnailProps> = ({ img, title }) => (
-  <img className={styles.thumbnail} src={img} alt={`${title} thumbnail`} />
-);
+const SongThumbnail: FC<ISongThumbnailProps> = ({ img, title }) =>
+  img ? <img className={styles.thumbnail} src={img} alt={`${title} thumbnail`} /> : <Skeleton width={260} height={260} />;
 
 const InfoContainer: FC<IChildren> = ({ children }) => <div className={styles.info__container}>{children}</div>;
 
 const SongMainInfo: FC<ISongMainInfoProps> = ({ title, artistName, albumName }) => (
   <>
-    <p className={styles.title}>{title}</p>
-    <p className={styles.subtitle}>
-      <span>{artistName}</span> • Track on <span>{albumName}</span>
-    </p>
+    <p className={styles.title}>{title || <Skeleton />}</p>
+
+    {artistName ? (
+      <p className={styles.subtitle}>
+        <span>{artistName}</span>&nbsp;{albumName && `•  ${albumName}`}
+      </p>
+    ) : (
+      <Skeleton width={100} />
+    )}
   </>
 );
 

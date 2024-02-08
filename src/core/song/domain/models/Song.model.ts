@@ -16,7 +16,7 @@ type TSong = {
   artist: TArtist;
   featured_artists: string[] | undefined;
   producer: string[] | undefined;
-  lyrics: string;
+  url: string;
 };
 
 type TAlbum = {

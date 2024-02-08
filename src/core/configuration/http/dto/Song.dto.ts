@@ -57,7 +57,6 @@ interface ISong {
   verified_contributors: any[];
   verified_lyrics_by: any[];
   writer_artists: IWriterArtist[];
-  lyrics: string;
 }
 
 interface IDescription {

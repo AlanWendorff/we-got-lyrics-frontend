@@ -13,6 +13,7 @@
 
 .info__container {
   display: grid;
+  width: 100%;
   padding: 1rem;
   color: white;
   gap: 0.5rem;
@@ -23,6 +24,7 @@
 }
 
 .subtitle {
+  display: flex;
   @include typography.l-light;
   margin-bottom: 0.5rem;
 

@@ -1,0 +1,42 @@
+@use '@styles/_typography.scss' as typography;
+@use '@styles/_mixins' as mixins;
+
+.container {
+  background-color: var(--color-beta);
+  color: black;
+  padding: 1.5rem;
+}
+
+.song__title {
+  @include typography.s-light;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1.33;
+  letter-spacing: 0.025rem;
+  font-weight: 100;
+}
+
+.song__lyrics {
+  @include typography.m-light;
+  white-space: pre-wrap;
+  max-height: 550px;
+  overflow-y: scroll;
+  padding-right: 1rem;
+
+  &::-webkit-scrollbar {
+    width: 0.4375rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar-thumb);
+    border-radius: 0.625rem;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scrollbar-thumb-hover);
+  }
+}

@@ -26,7 +26,7 @@ const songMapper = (DTO: ISongDTO): TSongData => {
       },
       featured_artists: song.featured_artists.length === 0 ? undefined : song.featured_artists.map(({ name }) => name),
       producer: song.producer_artists.length === 0 ? undefined : song.producer_artists.map(({ name }) => name),
-      lyrics: song.lyrics
+      url: song.url
     }
   };
 };
