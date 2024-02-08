@@ -1,0 +1,40 @@
+@use '@styles/_typography.scss' as typography;
+@use '@styles/_mixins' as mixins;
+
+.link {
+  background-color: white;
+  cursor: pointer;
+  height: 75px;
+
+  &:hover {
+    background-color: var(--color-epsilon);
+  }
+}
+
+.thumbnail_song {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+}
+
+.thumbnail_artist {
+  border-radius: 100px;
+  object-fit: cover;
+  width: 48px;
+  height: 48px;
+}
+
+.info_song {
+  @include mixins.flex_container(column, flex-start, flex-start);
+  padding: 0.375rem 0.375rem 0.25rem;
+
+  &Name {
+    @include typography.m;
+    color: var(--color-kappa);
+  }
+
+  &Owner {
+    @include typography.xs;
+    color: var(--color-kappa);
+  }
+}

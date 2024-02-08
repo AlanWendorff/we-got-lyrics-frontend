@@ -31,57 +31,16 @@
     margin: 1.313rem 1rem 0.5rem;
   }
 
-  &__item_song,
-  &__item_artist {
-    a {
-      background-color: white;
-      cursor: pointer;
-      height: 75px;
-
-      &:hover {
-        background-color: var(--color-epsilon);
-      }
-    }
-  }
-
-  &__item_song {
+  &__itemSong {
     a {
       @include mixins.flex_container(row, flex-start, flex-start);
-
-      .thumbnail_song {
-        width: 75px;
-        height: 75px;
-        object-fit: cover;
-      }
-
-      div {
-        @include mixins.flex_container(column, flex-start, flex-start);
-        padding: 0.375rem 0.375rem 0.25rem;
-
-        .name_song {
-          @include typography.m;
-          color: var(--color-kappa);
-        }
-
-        .owner_song {
-          @include typography.xs;
-          color: var(--color-kappa);
-        }
-      }
     }
   }
 
-  &__item_artist {
+  &__itemArtist {
     a {
       @include mixins.flex_container(row, flex-start, center);
       padding: 0 1.688rem;
-
-      .thumbnail_artist {
-        border-radius: 100px;
-        object-fit: cover;
-        width: 48px;
-        height: 48px;
-      }
 
       p {
         @include typography.m;
