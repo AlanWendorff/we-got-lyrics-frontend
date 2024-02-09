@@ -4,8 +4,8 @@ import artistInfoService from '../domain/services/ArtistInfo.service';
 interface IArtistInfoController extends IArtistInfoRepository {}
 
 const artistInfoController = (repository: IArtistInfoRepository): IArtistInfoController => ({
-  getArtistInfo: (name) => {
-    return artistInfoService(repository).getArtistInfo(name);
+  getArtistInfo: (id: string) => {
+    return artistInfoService(repository).getArtistInfo(id);
   }
 });
 

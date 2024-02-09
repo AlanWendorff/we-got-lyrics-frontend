@@ -31,6 +31,7 @@ interface IArtist {
   iq: number;
   description_annotation: IDescriptionAnnotation;
   user: IUser2;
+  formatted_description: string;
 }
 
 interface IDescription {
