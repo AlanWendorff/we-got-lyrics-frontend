@@ -2,10 +2,11 @@
 @use '@styles/_mixins' as mixins;
 
 .container {
+  --banner-height: 290px;
+
   width: 100%;
   position: relative;
-
-  --banner-height: 290px;
+  height: fit-content;
 
   .banner {
     width: 100%;

@@ -24,8 +24,8 @@
 }
 
 .subtitle {
-  display: flex;
   @include typography.l-light;
+  display: flex;
   margin-bottom: 0.5rem;
 
   span {

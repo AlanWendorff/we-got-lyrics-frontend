@@ -2,55 +2,46 @@
 @use '@styles/_mixins' as mixins;
 
 .container {
-  width: var(--max-width-web);
-  height: 100vh;
-  position: relative;
-}
-
-.body {
-  @include mixins.flex_container(row, space-between, flex-end);
-  width: 100%;
-  position: absolute;
-  top: 0;
-}
-
-.highlights__songs {
   @include mixins.flex_container(column, flex-start, flex-end);
   width: 535px;
   gap: 0.55rem;
 }
 
-.section__title {
+.title {
   @include typography.s-light;
   color: white;
   text-transform: uppercase;
   width: 300px;
 }
 
-.song__item {
+.song {
   @include mixins.flex_container(row, flex-start, flex-start);
   width: 300px;
   height: 76px;
   background-color: white;
   color: black;
+  border-radius: 0.25rem;
+  overflow: hidden;
 
-  img {
+  &__thumbnail {
     height: 100%;
     object-fit: cover;
+    vertical-align: middle;
+    border-radius: 0 !important;
   }
 
-  .song__info {
+  &__info {
     @include mixins.flex_container(column, flex-start, flex-start);
     padding: 0.38rem;
+    gap: 0.125rem;
 
-    .title {
+    &_title {
       @include typography.font-feature-settings;
       @include typography.l;
     }
 
-    .artist {
+    &_artist {
       @include typography.xs-light;
-      margin-top: 0.125rem;
     }
   }
 }

@@ -1,3 +1,7 @@
+@mixin font-feature-settings {
+  font-feature-settings: 'ss07', 'ss08', 'ss11', 'ss12', 'ss14', 'ss15', 'ss16', 'ss18', 'ss19', 'ss20', 'ss21';
+}
+
 @mixin xs {
   font-family: Programme, Arial, sans-serif;
   font-size: 0.8rem;
