@@ -2,19 +2,21 @@
 @use '@styles/_mixins' as mixins;
 
 .link {
-  background-color: white;
   cursor: pointer;
   height: 75px;
+  border-radius: 5px;
+  padding: 0.5rem;
 
   &:hover {
-    background-color: var(--color-epsilon);
+    background-color: var(--color-gamma);
   }
 }
 
 .thumbnail_song {
-  width: 75px;
-  height: 75px;
+  height: 59px;
+  width: 59px;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .thumbnail_artist {
@@ -26,15 +28,15 @@
 
 .info_song {
   @include mixins.flex_container(column, flex-start, flex-start);
-  padding: 0.375rem 0.375rem 0.25rem;
+  padding: 0 0.9rem;
+  color: white;
 
   &Name {
     @include typography.m;
-    color: var(--color-kappa);
   }
 
   &Owner {
     @include typography.xs;
-    color: var(--color-kappa);
+    color: var(--color-delta);
   }
 }

@@ -2,6 +2,8 @@ import { FC } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import styles from './Top.module.scss';
 import IChildren from '@/interfaces/children.interface';
+import { ARTIST } from '@/constants/routes';
+import { Link, generatePath } from 'react-router-dom';
 
 interface ISongThumbnailProps {
   img: string | undefined;
@@ -9,6 +11,7 @@ interface ISongThumbnailProps {
 }
 
 interface ISongMainInfoProps {
+  artistId: number | undefined;
   artistName: string | undefined;
   albumName: string | undefined;
   title: string | undefined;
@@ -26,13 +29,13 @@ const SongThumbnail: FC<ISongThumbnailProps> = ({ img, title }) =>
 
 const InfoContainer: FC<IChildren> = ({ children }) => <div className={styles.info__container}>{children}</div>;
 
-const SongMainInfo: FC<ISongMainInfoProps> = ({ title, artistName, albumName }) => (
+const SongMainInfo: FC<ISongMainInfoProps> = ({ artistId, title, artistName, albumName }) => (
   <>
     <p className={styles.title}>{title || <Skeleton />}</p>
 
     {artistName ? (
       <p className={styles.subtitle}>
-        <span>{artistName}</span>&nbsp;{albumName && `•  ${albumName}`}
+        <Link to={generatePath(ARTIST, { id: `${artistId}`, name: artistName })}>{artistName}</Link>&nbsp;{albumName && `•  ${albumName}`}
       </p>
     ) : (
       <Skeleton width={100} />

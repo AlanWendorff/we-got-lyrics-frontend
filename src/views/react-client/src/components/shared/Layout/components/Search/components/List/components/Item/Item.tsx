@@ -23,12 +23,12 @@ const Item = ({ _id, name, to, children, ...rest }: IItemProps) => (
   </li>
 );
 
-const ThumbnailSong: FC<IThumbnail> = ({ name, image_thumbnail, ...rest }) => (
-  <img className={styles.thumbnail_song} src={image_thumbnail} alt={`${name} thumbnail`} {...rest} />
+const ThumbnailSong: FC<IThumbnail> = ({ name, image, ...rest }) => (
+  <img className={styles.thumbnail_song} src={image} alt={`${name} thumbnail`} {...rest} />
 );
 
-const ThumbnailArtist: FC<IThumbnail> = ({ name, image_thumbnail, ...rest }) => (
-  <img className={styles.thumbnail_artist} src={image_thumbnail} alt={`${name} thumbnail`} {...rest} />
+const ThumbnailArtist: FC<IThumbnail> = ({ name, image, ...rest }) => (
+  <img className={styles.thumbnail_artist} src={image} alt={`${name} thumbnail`} {...rest} />
 );
 
 const InfoSong: FC<IInfoSongProps> = ({ name, artist_name }) => (

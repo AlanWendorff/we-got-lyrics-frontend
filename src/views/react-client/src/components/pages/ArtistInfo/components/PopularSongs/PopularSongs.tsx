@@ -19,8 +19,9 @@ const PopularSongs: FC<IPopularSongs> = ({ songs, artistName }) => {
     <div className={styles.container}>
       <p className={styles.title}>POPULAR {artistName} SONGS</p>
 
-      {songs.map(({ id, thumbnail_url, title, artist }) => (
+      {songs.map(({ id, thumbnail_url, title, artist }, key) => (
         <Link key={id} className={styles.song} to={generatePath(SONG, { id: `${id}`, name: title })}>
+          <p className={styles.song__number}>{key + 1}</p>
           <img className={styles.song__thumbnail} src={thumbnail_url} alt='album thumbnail' />
           <div className={styles.song__info}>
             <p className={styles.song__info_title}>{title}</p>
@@ -28,6 +29,7 @@ const PopularSongs: FC<IPopularSongs> = ({ songs, artistName }) => {
           </div>
         </Link>
       ))}
+      <p className={styles.more}>See more</p>
     </div>
   );
 };

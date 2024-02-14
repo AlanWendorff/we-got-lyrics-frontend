@@ -2,7 +2,7 @@
 @use './_responsives.scss';
 
 :root {
-  --color-alpha: #0c0c0c;
+  /* --color-alpha: #0c0c0c;
   --color-beta: #f7f7f7;
   --color-gamma: #ffffff17;
   --color-delta: #ffffff25;
@@ -12,16 +12,28 @@
   --color-theta: #8b8b8b1f;
   --color-iota: #ccc;
   --color-kappa: #222;
-  --color-lambda: #9a9a9a;
-  --color-scrollbar-thumb: #c5c5c5;
-  --color-scrollbar-thumb-hover: #b6b6b6;
+  --color-lambda: #9a9a9a; */
 
-  --max-width-web: 60rem;
+  --color-alpha: #121212;
+  --color-beta: #181818;
+  --color-gamma: #2a2a2a;
+  --color-delta: #a7a7a7;
+  --color-epsilon: #e9e9e9;
+  --color-zeta: #ccc;
+  --color-eta: #393a3bb4;
+  --color-theta: #282828;
+
+  --color-scrollbar-thumb: #393a3bb4;
+  --color-scrollbar-thumb-hover: #545657b4;
+
+  --max-width-web: 50rem;
+
+  --background-noise: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=');
 }
 
 html {
   scroll-behavior: smooth !important;
-  overflow: hidden;
+  overflow-x: hidden;
 
   @include responsives.VGA {
     font-size: 14px;
@@ -38,14 +50,14 @@ html {
 body {
   display: flex;
   justify-content: center;
-  background-color: var(--color-alpha);
+  background-color: black;
   font-family: 'Programme Light', sans-serif;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
 
   &::-webkit-scrollbar {
-    width: 0.4375rem;
+    width: 0.8rem;
   }
 
   &::-webkit-scrollbar-track {
@@ -54,7 +66,6 @@ body {
 
   &::-webkit-scrollbar-thumb {
     background: var(--color-scrollbar-thumb);
-    border-radius: 0.625rem;
   }
 
   &::-webkit-scrollbar-thumb:hover {

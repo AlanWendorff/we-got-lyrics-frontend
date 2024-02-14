@@ -33,6 +33,7 @@
       "@images/*": ["./src/assets/images/*"],
       "@services/*": ["./src/services/*"],
       "@styles/*": ["./src/styles/*"],
+      "@utils/*": ["./src/utils/*"],
 
       //core
       "@core/*": ["../../core/*"]

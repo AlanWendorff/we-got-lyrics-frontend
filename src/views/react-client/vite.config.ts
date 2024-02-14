@@ -24,6 +24,7 @@ export default defineConfig(({ mode }) => {
         '@images': `${path.resolve(__dirname, './src/assets/images/')}`,
         '@services': `${path.resolve(__dirname, './src/services/')}`,
         '@styles': `${path.resolve(__dirname, './src/styles/')}`,
+        '@utils': `${path.resolve(__dirname, './src/utils/')}`,
 
         // core
         '@core': `${path.resolve(__dirname, '../../core/')}`

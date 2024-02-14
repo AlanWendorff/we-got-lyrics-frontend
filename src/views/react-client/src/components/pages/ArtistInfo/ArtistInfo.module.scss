@@ -2,16 +2,31 @@
 @use '@styles/_mixins' as mixins;
 
 .container {
+  @include mixins.flex_container(column, flex-start, flex-start);
   width: var(--max-width-web);
   height: 100vh;
   position: relative;
+  background-color: var(--color-alpha);
+  border-radius: 5px;
+  // overflow: hidden;
+  color: white;
+
+  .top {
+    @include mixins.flex_container(row, flex-start, flex-end);
+    padding: 2rem;
+    width: 100%;
+    position: absolute;
+    gap: 1.5rem;
+    height: 290px;
+  }
 }
 
 .body {
-  @include mixins.flex_container(row, space-between, flex-end);
+  @include mixins.flex_container(column, space-between, flex-start);
   width: 100%;
-  position: absolute;
-  top: 0;
+  z-index: 100;
+  color: white;
+  padding: 2rem;
 }
 
 .highlights__songs {

@@ -15,7 +15,7 @@
   display: grid;
   width: 100%;
   padding: 1rem;
-  color: white;
+  color: black;
   gap: 0.5rem;
 }
 
@@ -28,10 +28,11 @@
   display: flex;
   margin-bottom: 0.5rem;
 
-  span {
+  a {
+    color: black;
     cursor: pointer;
     text-decoration: underline;
-    text-decoration-color: white;
+    text-decoration-color: black;
   }
 }
 
@@ -46,6 +47,6 @@
   span {
     font-size: 1rem;
     text-decoration: underline;
-    text-decoration-color: white;
+    text-decoration-color: black;
   }
 }

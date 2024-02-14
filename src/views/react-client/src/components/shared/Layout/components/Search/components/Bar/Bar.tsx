@@ -6,10 +6,8 @@ interface IBarProps extends ComponentProps<'form'> {}
 
 const Bar: FC<IBarProps> = ({ ...rest }) => (
   <form className={styles.container} {...rest}>
-    <input name='artist' className={styles.input__search} placeholder='Search artists' autoComplete='off' />
-    <button type='submit' className={styles.btn__submit}>
-      <img className={styles.btn__submit_icon} src={magnifierIcon} alt='magnifier icon' />
-    </button>
+    <input name='artist' className={styles.input__search} placeholder='Search' autoComplete='off' />
+    <img className={styles.search__icon} src={magnifierIcon} alt='magnifier icon' />
   </form>
 );
 

@@ -1,0 +1,10 @@
+@use '@styles/_typography.scss' as typography;
+
+.name {
+  @include typography.xl;
+  font-size: 4rem;
+}
+
+.aka {
+  @include typography.s-light;
+}

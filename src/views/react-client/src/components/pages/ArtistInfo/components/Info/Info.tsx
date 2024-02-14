@@ -17,9 +17,9 @@ interface IDescriptionProps {
 
 const Info = ({ children }: IInfoProps) => <div className={styles.container}>{children}</div>;
 
-const ThumbnailArtist: FC<IThumbnail> = ({ image_thumbnail, ...rest }) =>
-  image_thumbnail ? (
-    <img className={styles.artist__thumbnail} src={image_thumbnail} alt='artist thumbnail' {...rest} />
+const ThumbnailArtist: FC<IThumbnail> = ({ image, ...rest }) =>
+  image ? (
+    <img className={styles.artist__thumbnail} src={image} alt='artist thumbnail' {...rest} />
   ) : (
     <Skeleton width={288} height={288} circle />
   );

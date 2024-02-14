@@ -1,0 +1,42 @@
+@use '@styles/_typography.scss' as typography;
+
+.container {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  text-align: start;
+  white-space: pre-wrap;
+  background-color: var(--color-theta);
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+
+  .description_title {
+    @include typography.s-light;
+    //@include typography.s;
+  }
+
+  .description_content {
+    @include typography.m-light;
+    overflow-y: scroll;
+    height: 350px;
+    padding-right: 1rem;
+
+    &::-webkit-scrollbar {
+      width: 0.4375rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-scrollbar-thumb);
+      border-radius: 0.625rem;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--color-scrollbar-thumb-hover);
+    }
+  }
+}

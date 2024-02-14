@@ -36,7 +36,12 @@ const Song = () => {
       <Top>
         <Top.SongThumbnail img={song?.song.song_art_image_thumbnail_url} title={song?.song.title} />
         <Top.InfoContainer>
-          <Top.SongMainInfo title={song?.song.title} artistName={song?.song.artist.name} albumName={song?.song.album?.name} />
+          <Top.SongMainInfo
+            artistId={song?.song.artist.id}
+            title={song?.song.title}
+            artistName={song?.song.artist.name}
+            albumName={song?.song.album?.name}
+          />
 
           <Top.SongContributor contributorType='Featuring' contributors={song?.song.featured_artists} />
           <Top.SongContributor contributorType='Produced by' contributors={song?.song.producer} />
