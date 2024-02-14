@@ -2,9 +2,12 @@
 @use '@styles/_mixins' as mixins;
 
 .container {
-  background-color: white;
-  color: black;
-  padding: 1.5rem;
+  width: 100%;
+  /* background-color: var(--color-theta); 
+  padding: 1.5rem;*/
+  color: white;
+  padding-top: 1.5rem;
+  border-radius: 5px;
 }
 
 .song__title {
@@ -19,8 +22,8 @@
 .song__lyrics {
   @include typography.m-light;
   white-space: pre-wrap;
-  max-height: 550px;
-  overflow-y: scroll;
+  /* max-height: 550px;
+  overflow-y: scroll; */
   padding-right: 1rem;
 
   &::-webkit-scrollbar {

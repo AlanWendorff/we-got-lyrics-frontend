@@ -4,68 +4,27 @@
 .container {
   @include mixins.flex_container(column, flex-start, flex-start);
   width: var(--max-width-web);
-  height: 100vh;
+  //height: 100vh;
   position: relative;
   background-color: var(--color-alpha);
   border-radius: 5px;
-  // overflow: hidden;
+  overflow: hidden;
   color: white;
+}
 
-  .top {
-    @include mixins.flex_container(row, flex-start, flex-end);
-    padding: 2rem;
-    width: 100%;
-    position: absolute;
-    gap: 1.5rem;
-    height: 290px;
-  }
+.top {
+  @include mixins.flex_container(row, flex-start, flex-end);
+  padding: 2rem;
+  width: 100%;
+  position: absolute;
+  gap: 1.5rem;
+  height: var(--banner-height);
 }
 
 .body {
   @include mixins.flex_container(column, space-between, flex-start);
   width: 100%;
-  z-index: 100;
+  z-index: 1;
   color: white;
   padding: 2rem;
-}
-
-.highlights__songs {
-  @include mixins.flex_container(column, flex-start, flex-end);
-  width: 535px;
-  gap: 0.55rem;
-}
-
-.section__title {
-  @include typography.s-light;
-  color: white;
-  text-transform: uppercase;
-  width: 300px;
-}
-
-.song__item {
-  @include mixins.flex_container(row, flex-start, flex-start);
-  width: 300px;
-  height: 76px;
-  background-color: white;
-  color: black;
-
-  img {
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .song__info {
-    @include mixins.flex_container(column, flex-start, flex-start);
-    padding: 0.38rem;
-
-    .title {
-      @include typography.font-feature-settings;
-      @include typography.l;
-    }
-
-    .artist {
-      @include typography.xs-light;
-      margin-top: 0.125rem;
-    }
-  }
 }

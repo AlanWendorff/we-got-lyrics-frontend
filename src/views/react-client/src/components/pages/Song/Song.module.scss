@@ -2,7 +2,28 @@
 @use '@styles/_mixins' as mixins;
 
 .container {
-  //padding-top: 1rem;
+  @include mixins.flex_container(column, flex-start, flex-start);
+  position: relative;
+  background-color: var(--color-alpha);
   width: var(--max-width-web);
-  height: 100vh;
+  border-radius: 5px;
+  overflow: hidden;
+  color: white;
+}
+
+.top {
+  @include mixins.flex_container(row, flex-start, flex-end);
+  padding: 2rem;
+  width: 100%;
+  position: absolute;
+  gap: 1.5rem;
+  height: var(--banner-height);
+}
+
+.body {
+  @include mixins.flex_container(column, space-between, flex-start);
+  width: 100%;
+  z-index: 1;
+  color: white;
+  padding: 2rem;
 }

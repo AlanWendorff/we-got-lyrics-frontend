@@ -1,7 +1,12 @@
+/* .container {
+  padding: 1rem 0;
+  position: fixed;
+  z-index: 1000;
+  width: var(--max-width-web);
+} */
+
 .container {
   padding: 1rem 0;
-  position: absolute;
-  z-index: 1000;
   width: 100%;
   background-color: black;
 }

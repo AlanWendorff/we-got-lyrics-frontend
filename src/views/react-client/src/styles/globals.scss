@@ -22,11 +22,14 @@
   --color-zeta: #ccc;
   --color-eta: #393a3bb4;
   --color-theta: #282828;
+  --color-iota: #0000006c;
+  --color-kappa: #00000080;
 
   --color-scrollbar-thumb: #393a3bb4;
   --color-scrollbar-thumb-hover: #545657b4;
 
   --max-width-web: 50rem;
+  --banner-height: 290px;
 
   --background-noise: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=');
 }
@@ -53,7 +56,7 @@ body {
   background-color: black;
   font-family: 'Programme Light', sans-serif;
   overflow-x: hidden;
-  padding: 0;
+  padding: 0 0 1rem 0;
   margin: 0;
 
   &::-webkit-scrollbar {

@@ -1,0 +1,22 @@
+@use '@styles/_typography.scss' as typography;
+
+.title {
+  @include typography.xl;
+  font-size: 4rem;
+  color: white;
+}
+
+.subtitle {
+  @include typography.l-light;
+  display: flex;
+  margin-bottom: 0.5rem;
+  color: white;
+
+  a {
+    @include typography.l;
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: white;
+  }
+}

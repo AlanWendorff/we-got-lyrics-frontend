@@ -1,0 +1,16 @@
+@use '@styles/_typography.scss' as typography;
+@use '@styles/_mixins' as mixins;
+
+.contributor {
+  @include typography.xs-light;
+  display: grid;
+  flex-direction: column;
+  color: white;
+  padding: 0.5rem 0;
+
+  span {
+    font-size: 1rem;
+    text-decoration: underline;
+    text-decoration-color: white;
+  }
+}

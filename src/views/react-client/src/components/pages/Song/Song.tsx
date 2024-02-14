@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Top from './components/Top';
+import Lyrics from './components/Lyrics';
+import Thumbnail from './components/Thumbnail';
+import Banner from './components/Banner';
+import Identity from './components/Identity';
+import Contributor from './components/Contributor';
 import songRepository from '@core/song/infrastructure/repositories/Song.repository';
 import songController from '@core/song/application/SongController';
 import TSong from '@core/song/domain/models/Song.model';
@@ -8,7 +12,6 @@ import lyricsRepository from '@core/lyrics/infrastructure/repositories/Lyrics.re
 import lyricsController from '@core/lyrics/application/LyricsController';
 import TLyricsData from '@core/lyrics/domain/models/Lyrics.model';
 import styles from './Song.module.scss';
-import Lyrics from './components/Lyrics';
 
 const Song = () => {
   const { id } = useParams();
@@ -33,22 +36,25 @@ const Song = () => {
 
   return (
     <div className={styles.container}>
-      <Top>
-        <Top.SongThumbnail img={song?.song.song_art_image_thumbnail_url} title={song?.song.title} />
-        <Top.InfoContainer>
-          <Top.SongMainInfo
+      <Banner bannerColors={song?.song.header_image_colors} />
+
+      <div className={styles.top}>
+        <Thumbnail image={song?.song.song_art_image_thumbnail_url} title={song?.song.title} />
+        <div>
+          <Identity
             artistId={song?.song.artist.id}
             title={song?.song.title}
             artistName={song?.song.artist.name}
             albumName={song?.song.album?.name}
           />
+          <Contributor type='Featuring' contributors={song?.song.featured_artists} />
+          <Contributor type='Produced by' contributors={song?.song.producer} />
+        </div>
+      </div>
 
-          <Top.SongContributor contributorType='Featuring' contributors={song?.song.featured_artists} />
-          <Top.SongContributor contributorType='Produced by' contributors={song?.song.producer} />
-        </Top.InfoContainer>
-      </Top>
-
-      <Lyrics songTitle={song?.song.title} lyrics={lyrics?.lyrics} />
+      <div className={styles.body}>
+        <Lyrics songTitle={song?.song.title} lyrics={lyrics?.lyrics} />
+      </div>
     </div>
   );
 };

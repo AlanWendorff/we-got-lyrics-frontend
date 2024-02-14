@@ -8,7 +8,7 @@ import { ROOT, ARTIST, SONG } from '@/constants/routes';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const Layout = () => (
-  <SkeletonTheme baseColor='#313131' highlightColor='#525252'>
+  <SkeletonTheme baseColor='#2a2a2a' highlightColor='#525252'>
     <BrowserRouter>
       <Search />
       <Routes>

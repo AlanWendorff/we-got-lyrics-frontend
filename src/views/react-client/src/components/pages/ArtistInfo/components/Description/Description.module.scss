@@ -19,7 +19,7 @@
   .description_content {
     @include typography.m-light;
     overflow-y: scroll;
-    height: 350px;
+    //height: 350px;
     padding-right: 1rem;
 
     &::-webkit-scrollbar {
