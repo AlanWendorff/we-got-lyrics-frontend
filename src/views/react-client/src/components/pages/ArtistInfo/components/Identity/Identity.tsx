@@ -9,7 +9,7 @@ interface INameProps {
 
 const Identity: FC<INameProps> = ({ name, aka }) => (
   <div>
-    <p className={styles.name}>{name || <Skeleton height={25} width={150} />}</p>
+    <p className={styles.name}>{name || <Skeleton height={62} width={200} />}</p>
     {aka ? (
       <p className={styles.aka}>
         AKA:{' '}

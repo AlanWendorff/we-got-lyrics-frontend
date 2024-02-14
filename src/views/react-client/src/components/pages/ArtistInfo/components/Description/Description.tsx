@@ -9,8 +9,16 @@ interface IDescriptionProps {
 
 const Description: FC<IDescriptionProps> = ({ name, description }) => (
   <div className={styles.container}>
-    <p className={styles.description_title}>{name ? `About “${name}”` : <Skeleton />}</p>
-    <p className={styles.description_content}>{description || <Skeleton count={3} />}</p>
+    {name && <p className={styles.description_title}>{`About “${name}”`}</p>}
+    <p className={styles.description_content}>
+      {description || (
+        <>
+          <Skeleton />
+          <Skeleton width={600} />
+          <Skeleton width={500} />
+        </>
+      )}
+    </p>
   </div>
 );
 
