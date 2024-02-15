@@ -33,7 +33,6 @@ const ArtistInfo = () => {
         setArtistSongs(response);
       });
   }, [id]);
-  console.log(artistInfo?.artist);
 
   return (
     <div className={styles.container}>

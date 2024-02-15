@@ -1,0 +1,38 @@
+@use '@styles/_typography.scss' as typography;
+@use '@styles/_mixins' as mixins;
+
+.container {
+  padding: 0;
+  width: 100%;
+
+  li {
+    width: 100%;
+    height: fit-content;
+  }
+}
+
+.artist {
+  @include mixins.flex_container(row, flex-start, center);
+  gap: 0.9rem;
+  width: 100%;
+  padding: 0.7rem 3.7rem;
+  color: white;
+  border-radius: 0.25rem;
+  overflow: hidden;
+
+  &:hover {
+    background-color: var(--color-eta);
+  }
+
+  &__thumbnail {
+    height: 59px;
+    width: 59px;
+    object-fit: cover;
+    vertical-align: middle;
+    border-radius: 100px;
+  }
+
+  &__name {
+    @include typography.l;
+  }
+}
