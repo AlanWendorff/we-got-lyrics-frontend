@@ -1,4 +1,5 @@
-import { IMeta } from '@/core/configuration/http/dto/Song.dto';
+import IHeaderImageColors from '@/core/configuration/http/dto/shared/HeaderImageColors.dto';
+import IMeta from '@/core/configuration/http/dto/shared/Meta.dto';
 
 type TSongData = {
   meta: IMeta;
@@ -11,6 +12,7 @@ type TSong = {
   embed_content: string;
   release_date_with_abbreviated_month_for_display: string;
   song_art_image_thumbnail_url: string;
+  header_image_colors: IHeaderImageColors;
   pageviews: number | undefined;
   album: TAlbum | null;
   artist: TArtist;

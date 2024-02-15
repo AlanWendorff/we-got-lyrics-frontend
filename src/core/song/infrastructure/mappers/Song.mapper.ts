@@ -12,6 +12,7 @@ const songMapper = (DTO: ISongDTO): TSongData => {
       embed_content: song.embed_content,
       release_date_with_abbreviated_month_for_display: song.release_date_with_abbreviated_month_for_display,
       song_art_image_thumbnail_url: song.song_art_image_thumbnail_url,
+      header_image_colors: song.header_image_colors,
       pageviews: song.stats.pageviews ?? undefined,
       album: song.album
         ? {

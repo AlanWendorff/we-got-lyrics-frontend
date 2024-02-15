@@ -1,10 +1,9 @@
+import IHeaderImageColors from './shared/HeaderImageColors.dto';
+import IMeta from './shared/Meta.dto';
+
 interface IArtistDTO {
   meta: IMeta;
   response: IResponse;
-}
-
-export interface IMeta {
-  status: number;
 }
 
 interface IResponse {
@@ -18,6 +17,7 @@ interface IArtist {
   facebook_name: string;
   followers_count: number;
   header_image_url: string;
+  header_image_colors: IHeaderImageColors;
   id: number;
   image_url: string;
   instagram_name: string;
