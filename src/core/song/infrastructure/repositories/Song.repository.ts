@@ -2,8 +2,7 @@ import http from '../../../configuration/http/Http';
 import ISongRepository from '../../domain/repositories/Song.repository';
 import ISongDTO from '../../../configuration/http/dto/Song.dto';
 import songMapper from '../mappers/Song.mapper';
-
-const BASE_URL = process.env.API_URL;
+import { BASE_URL } from '../../../configuration/env';
 
 const songRepository = (): ISongRepository => ({
   getSong: async (id: string) => {

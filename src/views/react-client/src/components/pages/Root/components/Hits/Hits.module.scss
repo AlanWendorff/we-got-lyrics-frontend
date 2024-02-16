@@ -1,0 +1,15 @@
+@use '@styles/_typography.scss' as typography;
+@use '@styles/_mixins' as mixins;
+
+.container {
+  @include mixins.flex_container(column, flex-start, flex-start);
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.title {
+  @include typography.m;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}

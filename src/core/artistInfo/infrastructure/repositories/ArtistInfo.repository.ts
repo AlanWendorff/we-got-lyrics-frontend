@@ -4,8 +4,7 @@ import IArtistInfoDTO from '../../../configuration/http/dto/ArtistInfo.dto';
 import artistInfoMapper from '../mapper/ArtistInfo.mapper';
 import ISongsDTO from '@/core/configuration/http/dto/Songs.dto';
 import artistSongsMapper from '../mapper/ArtistSongs.mapper';
-
-const BASE_URL = process.env.API_URL;
+import { BASE_URL } from '../../../configuration/env';
 
 const artistInfoRepository = (): IArtistInfoRepository => ({
   getArtistInfo: async (id) => {

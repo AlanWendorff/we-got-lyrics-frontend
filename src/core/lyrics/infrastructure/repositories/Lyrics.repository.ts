@@ -1,8 +1,7 @@
 import http from '../../../configuration/http/Http';
 import ILyricsRepository from '../../domain/repositories/Lyrics.repository';
 import ILyricsDTO from '../../../configuration/http/dto/Lyrics.dto';
-
-const BASE_URL = process.env.API_URL;
+import { BASE_URL } from '../../../configuration/env';
 
 const lyricsRepository = (): ILyricsRepository => ({
   getLyrics: async (url: string) => {
