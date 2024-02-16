@@ -14,6 +14,16 @@
   border-radius: 5px;
   text-align: center;
 
+  &::placeholder {
+    //Firefox & chrome
+    transition: color 50ms ease-in-out;
+  }
+
+  &::-ms-input-placeholder {
+    //Edge
+    transition: color 50ms ease-in-out;
+  }
+
   &:focus {
     &::placeholder {
       //Firefox & chrome
@@ -27,14 +37,27 @@
   }
 }
 
-.input__search:not(:placeholder-shown) ~ .search__icon {
-  left: 0.5%;
+.input__search:not(:placeholder-shown) ~ .icon__container {
+  width: 100%;
 }
 
-.search__icon {
+.input__search:focus ~ .icon__container .icon {
+  opacity: 0.25;
+}
+
+.icon__container {
+  @include mixins.flex_container(row, flex-start, center);
   position: absolute;
-  left: 44.5%;
-  height: 19px;
-  opacity: 0.4;
-  transition: left 200ms ease-in-out;
+  left: 50%;
+  translate: -50% 0%;
+  width: 6.5rem;
+  padding-left: 0.5rem;
+  transition: width 200ms ease-in-out;
+  pointer-events: none;
+
+  .icon {
+    transition: opacity 50ms ease-in-out;
+    height: 1.188rem;
+    opacity: 0.5;
+  }
 }

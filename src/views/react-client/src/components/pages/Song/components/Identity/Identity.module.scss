@@ -1,4 +1,5 @@
 @use '@styles/_typography.scss' as typography;
+@use '@styles/_responsives' as responsives;
 
 .title {
   @include typography.xl;
@@ -18,5 +19,15 @@
     cursor: pointer;
     text-decoration: underline;
     text-decoration-color: white;
+  }
+}
+
+@include responsives.VGA {
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    @include typography.l-light;
   }
 }

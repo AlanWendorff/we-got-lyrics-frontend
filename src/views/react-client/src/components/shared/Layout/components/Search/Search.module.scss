@@ -1,16 +1,18 @@
-/* .container {
-  padding: 1rem 0;
-  position: fixed;
-  z-index: 1000;
-  width: var(--max-width-web);
-} */
+@use '@styles/_responsives' as responsives;
 
 .container {
   padding: 1rem 0;
   width: 100%;
   background-color: black;
+  /*   position: relative; */
 }
 
-/* input:not(:focus) ~ ul {
-  display: none;
-} */
+@include responsives.VGA {
+  .container {
+    padding: 1rem;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    background-color: transparent;
+  }
+}

@@ -8,7 +8,7 @@ interface IContributorProps {
 
 const Contributor: FC<IContributorProps> = ({ contributors, type }) =>
   contributors && (
-    <div className={styles.contributor}>
+    <div className={styles.container}>
       <p>{type}</p>
       {contributors.map((contributor) => (
         <span>{contributor}</span>

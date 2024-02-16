@@ -1,8 +1,16 @@
+@use '@styles/_responsives' as responsives;
+
 .thumbnail {
-  width: 211px;
-  height: 211px;
+  width: 13.188rem;
+  height: 13.188rem;
   object-fit: cover;
   border-radius: 5px;
-
   box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+@include responsives.VGA {
+  .thumbnail {
+    width: 9.3rem;
+    height: 9.3rem;
+  }
 }

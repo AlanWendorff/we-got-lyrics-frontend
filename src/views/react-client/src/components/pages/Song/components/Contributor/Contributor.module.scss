@@ -1,7 +1,8 @@
 @use '@styles/_typography.scss' as typography;
+@use '@styles/_responsives' as responsives;
 @use '@styles/_mixins' as mixins;
 
-.contributor {
+.container {
   @include typography.xs-light;
   display: grid;
   flex-direction: column;
@@ -12,5 +13,11 @@
     font-size: 1rem;
     text-decoration: underline;
     text-decoration-color: white;
+  }
+}
+
+@include responsives.VGA {
+  .container {
+    padding: 0;
   }
 }

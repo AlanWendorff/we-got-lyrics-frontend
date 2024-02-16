@@ -47,12 +47,19 @@ const Song = () => {
             artistName={song?.song.artist.name}
             albumName={song?.song.album?.name}
           />
-          <Contributor type='Featuring' contributors={song?.song.featured_artists} />
-          <Contributor type='Produced by' contributors={song?.song.producer} />
+          <div className={styles.contributors_desktop}>
+            <Contributor type='Featuring' contributors={song?.song.featured_artists} />
+            <Contributor type='Produced by' contributors={song?.song.producer} />
+          </div>
         </div>
       </div>
 
       <div className={styles.body}>
+        <div className={styles.contributors_mobile}>
+          <Contributor type='Featuring' contributors={song?.song.featured_artists} />
+          <Contributor type='Produced by' contributors={song?.song.producer} />
+        </div>
+
         <Lyrics songTitle={song?.song.title} lyrics={lyrics?.lyrics} />
       </div>
     </div>

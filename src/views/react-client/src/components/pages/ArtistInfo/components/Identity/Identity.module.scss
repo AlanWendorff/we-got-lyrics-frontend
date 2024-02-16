@@ -1,4 +1,5 @@
 @use '@styles/_typography.scss' as typography;
+@use '@styles/_responsives' as responsives;
 
 .name {
   @include typography.xl;
@@ -8,4 +9,15 @@
 .aka {
   @include typography.s-light;
   min-height: 17px;
+}
+
+@include responsives.VGA {
+  .name {
+    @include typography.xl;
+    font-size: 3rem;
+  }
+
+  .aka {
+    @include typography.xs-light;
+  }
 }
