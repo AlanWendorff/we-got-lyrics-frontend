@@ -9,7 +9,7 @@ const PopularSongsSkeleton = () => (
     {[...Array(5)].map((id) => (
       <div key={id} className={styles.song}>
         <p className={styles.song__number}>
-          <Skeleton className={styles.song__thumbnail} height={15} width={15} />
+          <Skeleton height={15} width={15} />
         </p>
 
         <Skeleton className={styles.song__thumbnail} height={59} width={59} />
