@@ -49,7 +49,7 @@ body {
   background-color: black;
   font-family: Programme Light, sans-serif;
   overflow-x: hidden;
-  padding: 0 0 1rem 0;
+  padding: 1rem;
   margin: 0;
 
   @include responsives.VGA {
@@ -76,6 +76,8 @@ body {
 #root {
   position: relative;
   width: 100%;
+    display: flex;
+  justify-content: flex-end;
 }
 
 input {

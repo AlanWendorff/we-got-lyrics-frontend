@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import Skeleton from 'react-loading-skeleton';
 import styles from './Identity.module.scss';
 import IdentitySkeleton from './Identity.skeleton';
 
@@ -16,7 +15,8 @@ const Identity: FC<INameProps> = ({ name, aka }) => {
   return (
     <div>
       <p className={styles.name}>{name}</p>
-      <p className={styles.aka}>{aka && `AKA: ${aka.map((alternateName) => ` ${alternateName}`)}`}</p>
+      <p className={styles.aka__desktop}>{aka && `AKA: ${aka.map((alternateName) => ` ${alternateName}`)}`}</p>
+      <p className={styles.aka__mobile}>{aka && `AKA: ${aka[0]}`}</p>
     </div>
   );
 };

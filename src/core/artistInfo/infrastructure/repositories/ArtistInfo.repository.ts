@@ -20,8 +20,6 @@ const artistInfoRepository = (): IArtistInfoRepository => ({
       const response = await http.get<ISongsDTO>(
         `${BASE_URL}/artists/${artist_id}/songs/?per_page=${per_page}&sort=popularity&page=${page}`
       );
-      console.log(response);
-
       return artistSongsMapper(response);
     } catch (error) {
       throw new Error(`Error getting user: ${error}`);

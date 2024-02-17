@@ -1,18 +1,27 @@
 @use '@styles/_responsives' as responsives;
 
-.container {
-  padding: 1rem 0;
-  width: 100%;
-  background-color: black;
-  /*   position: relative; */
+.container__fixed {
+  padding: 1rem;
+  position: fixed;
+  z-index: 1000;
+  width: 500px;
+
+  .container__relative {
+    position: relative;
+  }
 }
 
 @include responsives.VGA {
-  .container {
+  .container__fixed {
     padding: 1rem;
     position: fixed;
     z-index: 1000;
     width: 100%;
-    background-color: transparent;
   }
 }
+
+/* .container {
+  padding: 1rem 0;
+  width: 100%;
+  background-color: black;
+} */

@@ -24,10 +24,11 @@
 
 @include responsives.VGA {
   .title {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .subtitle {
-    @include typography.l-light;
+    @include typography.s-light;
   }
 }

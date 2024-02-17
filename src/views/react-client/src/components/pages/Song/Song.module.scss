@@ -6,7 +6,7 @@
   @include mixins.flex_container(column, flex-start, flex-start);
   position: relative;
   background-color: var(--color-alpha);
-  width: var(--max-width-web);
+  width: 100%;
   border-radius: 5px;
   overflow: hidden;
   color: white;
@@ -35,7 +35,6 @@
 
 @include responsives.VGA {
   .container {
-    width: 100%;
     border-radius: 0;
   }
 

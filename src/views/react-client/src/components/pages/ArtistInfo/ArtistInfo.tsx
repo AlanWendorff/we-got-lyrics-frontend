@@ -13,7 +13,6 @@ import Description from './components/Description';
 
 const ArtistInfo = () => {
   const { id } = useParams();
-  console.log('Artist ID:', id);
   const [artistInfo, setArtistInfo] = useState<TArtistInfo | null>(null);
   const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
 

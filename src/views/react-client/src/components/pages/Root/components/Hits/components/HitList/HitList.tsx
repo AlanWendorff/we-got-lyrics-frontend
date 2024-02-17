@@ -2,7 +2,7 @@ import { ComponentProps, FC } from 'react';
 import { Link, generatePath } from 'react-router-dom';
 import { SONG } from '@/constants/routes';
 import styles from './HitList.module.scss';
-import TCharts, { THit } from '@core/charts/domain/models/Charts.model';
+import  { THit } from '@core/charts/domain/models/Charts.model';
 
 interface IHitListProps extends ComponentProps<'ul'> {
   hits: THit[] | undefined;
@@ -10,7 +10,7 @@ interface IHitListProps extends ComponentProps<'ul'> {
 
 const HitList: FC<IHitListProps> = ({ hits }) => (
   <ul className={styles.container}>
-    {hits?.map(({ id, url, title, img, owner }, key) => (
+    {hits?.map(({ id, title, img, owner }, key) => (
       <li>
         <Link key={id} className={styles.song} to={generatePath(SONG, { id: `${id}`, name: title })}>
           <p className={styles.song__number}>{key + 1}</p>

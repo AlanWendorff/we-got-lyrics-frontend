@@ -3,8 +3,10 @@
 
 .container {
   @include mixins.flex_container(column, flex-start, center);
-  width: var(--max-width-web);
-  padding-top: 2rem;
+  width: 100%;
+  background-color: var(--color-beta);
+  border-radius: 5px;
+  padding: 2rem;
 }
 
 /* .container {
@@ -20,5 +22,9 @@
     @include mixins.flex_container(column, flex-start, center);
     width: 100%;
     padding: 5rem 1rem 0 1rem;
+
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
   }
 }

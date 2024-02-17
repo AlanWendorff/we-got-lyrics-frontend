@@ -6,18 +6,27 @@
   font-size: 4rem;
 }
 
-.aka {
+.aka__desktop {
   @include typography.s-light;
   min-height: 17px;
 }
 
+.aka__mobile {
+  display: none;
+}
+
 @include responsives.VGA {
   .name {
-    @include typography.xl;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  .aka {
-    @include typography.xs-light;
+  .aka__desktop {
+    display: none;
+  }
+
+  .aka__mobile {
+    @include typography.s-light;
+    display: block;
   }
 }

@@ -27,24 +27,25 @@ const Search = () => {
 
   useEffect(() => {
     setSearchedData(null);
-    console.log('useEffect loop =>', location);
   }, [location]);
 
   const debounceSearching = useCallback(debounce(search, 500), []);
 
   return (
-    <div className={styles.container}>
-      <Bar
-        onChange={(e: FormEvent<HTMLFormElement>) => {
-          e.preventDefault();
-          debounceSearching(e.currentTarget.artist.value);
-        }}
-        onSubmit={(e: FormEvent<HTMLFormElement>) => {
-          e.preventDefault();
-        }}
-      />
+    <div className={styles.container__fixed}>
+      <div className={styles.container__relative}>
+        <Bar
+          onChange={(e: FormEvent<HTMLFormElement>) => {
+            e.preventDefault();
+            debounceSearching(e.currentTarget.artist.value);
+          }}
+          onSubmit={(e: FormEvent<HTMLFormElement>) => {
+            e.preventDefault();
+          }}
+        />
 
-      {searchedData && <List songs={searchedData.searched_data.songs} artists={searchedData.searched_data.artists} />}
+        {searchedData && <List songs={searchedData.searched_data.songs} artists={searchedData.searched_data.artists} />}
+      </div>
     </div>
   );
 };

@@ -4,13 +4,12 @@
 
 .container {
   @include mixins.flex_container(column, flex-start, flex-start);
-  width: var(--max-width-web);
-  //height: 100vh;
   position: relative;
   background-color: var(--color-alpha);
   border-radius: 5px;
   overflow: hidden;
   color: white;
+  width: 100%;
 }
 
 .top {
@@ -32,7 +31,6 @@
 
 @include responsives.VGA {
   .container {
-    width: 100%;
     border-radius: 0;
   }
 

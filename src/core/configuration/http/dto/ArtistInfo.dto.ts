@@ -68,7 +68,7 @@ interface IDescriptionAnnotation {
   id: number;
   is_description: boolean;
   path: string;
-  range: Range;
+  range: IRange;
   song_id: any;
   url: string;
   verified_annotator_ids: any[];
@@ -93,7 +93,7 @@ interface IAnnotatable {
 
 interface IAnnotation {
   api_path: string;
-  body: Body;
+  body: IBody;
   comment_count: number;
   community: boolean;
   custom_preview: any;
