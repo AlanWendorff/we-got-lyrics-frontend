@@ -47,7 +47,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: black;
-  font-family: 'Programme Light', sans-serif;
+  font-family: Programme Light, sans-serif;
   overflow-x: hidden;
   padding: 0 0 1rem 0;
   margin: 0;
@@ -76,16 +76,6 @@ body {
 #root {
   position: relative;
   width: 100%;
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 0;
-  font-weight: 400;
-  font-feature-settings: 'ss07', 'ss08', 'ss11', 'ss12', 'ss14', 'ss15', 'ss16', 'ss18', 'ss19', 'ss20', 'ss21';
-  line-height: 1.125;
-  overflow-wrap: break-word;
-  font-family: 'Programme Normal', sans-serif !important;
 }
 
 input {
@@ -117,13 +107,4 @@ a {
   text-decoration: none;
   width: auto;
   height: auto;
-}
-
-.notFound {
-  text-align: center;
-  color: var(--color-eta);
-
-  h1 {
-    font-size: 3rem;
-  }
 }
