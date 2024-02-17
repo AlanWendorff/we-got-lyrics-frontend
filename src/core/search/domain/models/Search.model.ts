@@ -1,4 +1,4 @@
-import { IMeta } from '@/core/configuration/http/dto/Search.dto';
+import IMeta from '../../../../core/configuration/http/dto/shared/Meta.dto';
 
 type TSearch = {
   meta: IMeta;

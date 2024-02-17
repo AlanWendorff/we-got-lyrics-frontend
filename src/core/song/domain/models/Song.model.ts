@@ -1,5 +1,5 @@
-import IHeaderImageColors from '@/core/configuration/http/dto/shared/HeaderImageColors.dto';
-import IMeta from '@/core/configuration/http/dto/shared/Meta.dto';
+import IHeaderImageColors from '../../../../core/configuration/http/dto/shared/HeaderImageColors.dto';
+import IMeta from '../../../../core/configuration/http/dto/shared/Meta.dto';
 
 type TSongData = {
   meta: IMeta;

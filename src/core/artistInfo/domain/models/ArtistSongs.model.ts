@@ -1,4 +1,4 @@
-import IMeta from '@/core/configuration/http/dto/shared/Meta.dto';
+import IMeta from '../../../../core/configuration/http/dto/shared/Meta.dto';
 
 type TArtistSongs = {
   meta: IMeta;

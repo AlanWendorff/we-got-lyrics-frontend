@@ -1,4 +1,4 @@
-import ISearchDTO from '@/core/configuration/http/dto/Search.dto';
+import ISearchDTO from '../../../../core/configuration/http/dto/Search.dto';
 import TSearch from '../../domain/models/Search.model';
 
 const ARRAY_SIZE = 4;
