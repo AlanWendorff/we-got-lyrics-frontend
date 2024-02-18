@@ -10,6 +10,7 @@ import TArtistSongs from '@core/artistInfo/domain/models/ArtistSongs.model';
 import PopularSongs from './components/PopularSongs';
 import Identity from './components/Identity';
 import Description from './components/Description';
+import AllSongs from './components/AllSongs';
 
 const ArtistInfo = () => {
   const { id } = useParams();
@@ -49,12 +50,16 @@ const ArtistInfo = () => {
       </div>
 
       <div className={`${styles.body}`}>
-        <PopularSongs
-          artistId={`${id}`}
-          artistName={artistInfo?.artist.name}
-          songs={artistSongs?.songs}
-          setScreenStatus={setScreenStatus}
-        />
+        {screenStatus ? (
+          <AllSongs artistId={`${id}`} artistName={artistInfo?.artist.name} songs={artistSongs?.songs} setScreenStatus={setScreenStatus} />
+        ) : (
+          <PopularSongs
+            artistId={`${id}`}
+            artistName={artistInfo?.artist.name}
+            songs={artistSongs?.songs}
+            setScreenStatus={setScreenStatus}
+          />
+        )}
         {!screenStatus && <Description name={artistInfo?.artist.name} description={artistInfo?.artist.description} />}
       </div>
     </div>
