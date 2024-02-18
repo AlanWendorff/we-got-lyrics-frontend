@@ -5,6 +5,7 @@
   @include mixins.flex_container(column, flex-start, flex-start);
   width: 100%;
   position: relative;
+  transition: margin-top 300ms ease-in-out;
 }
 
 .banner {

@@ -2,23 +2,13 @@
 @use '@styles/_mixins' as mixins;
 
 .container {
-  @include mixins.flex_container(column, flex-start, flex-start);
+  padding: 0;
   width: 100%;
-  padding-bottom: 2rem;
-}
 
-.title {
-  @include typography.m;
-  color: white;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.more {
-  @include typography.s;
-  color: white;
-  text-transform: uppercase;
-  margin-top: 1rem;
+  li {
+    width: 100%;
+    height: fit-content;
+  }
 }
 
 .song {
@@ -40,16 +30,16 @@
   }
 
   &__thumbnail {
-    height: 3.688rem !important;
-    width: 3.688rem !important;
+    height: 59px;
+    width: 59px;
     object-fit: cover;
     vertical-align: middle;
-    border-radius: 5px !important;
+    border-radius: 5px;
   }
 
   &__info {
     @include mixins.flex_container(column, flex-start, flex-start);
-    height: 3.688rem;
+    height: 59px;
     padding: 0 0.9rem;
     gap: 0.125rem;
 

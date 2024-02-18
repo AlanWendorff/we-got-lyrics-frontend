@@ -1,9 +1,10 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import Search from './components/Search';
+import ArtistInfo from '@/components/pages/ArtistInfo';
 import Song from '@/components/pages/Song';
 import Root from '@/components/pages/Root';
-import ArtistInfo from '@/components/pages/ArtistInfo';
+import NotFound from '@/components/pages/NotFound';
 import { ROOT, ARTIST, SONG } from '@/constants/routes';
 import 'react-loading-skeleton/dist/skeleton.css';
 
@@ -15,7 +16,7 @@ const Layout = () => (
         <Route path={ROOT} element={<Root />} />
         <Route path={ARTIST} element={<ArtistInfo />} />
         <Route path={SONG} element={<Song />} />
-        <Route path='*' element={<p>There's nothing here: 404!</p>} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </SkeletonTheme>

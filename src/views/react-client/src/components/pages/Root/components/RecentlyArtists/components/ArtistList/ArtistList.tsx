@@ -11,8 +11,8 @@ interface IArtistListProps extends ComponentProps<'ul'> {
 const ArtistList: FC<IArtistListProps> = ({ artists }) => (
   <ul className={styles.container}>
     {artists?.map(({ id, name, image_thumbnail }) => (
-      <li>
-        <Link key={id} className={styles.artist} to={generatePath(ARTIST, { id: `${id}`, name })}>
+      <li key={id}>
+        <Link className={styles.artist} to={generatePath(ARTIST, { id: `${id}`, name })}>
           <img className={styles.artist__thumbnail} src={image_thumbnail} alt='album thumbnail' />
           <p className={styles.artist__name}>{name}</p>
         </Link>

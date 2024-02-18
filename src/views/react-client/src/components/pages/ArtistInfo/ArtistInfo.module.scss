@@ -12,6 +12,14 @@
   width: 100%;
 }
 
+.hide {
+  margin-top: calc(var(--banner-height) * -1);
+}
+
+.scaleToDisappear {
+  margin-top: calc(var(--banner-height) * -1);
+}
+
 .top {
   @include mixins.flex_container(row, flex-start, flex-end);
   padding: 2rem;
@@ -19,6 +27,7 @@
   position: absolute;
   gap: 1.5rem;
   height: var(--banner-height);
+  transition: margin-top 300ms ease-in-out;
 }
 
 .body {

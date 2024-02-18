@@ -11,7 +11,7 @@ const Contributor: FC<IContributorProps> = ({ contributors, type }) =>
     <div className={styles.container}>
       <p>{type}</p>
       {contributors.map((contributor) => (
-        <span>{contributor}</span>
+        <span key={contributor}>{contributor}</span>
       ))}
     </div>
   );

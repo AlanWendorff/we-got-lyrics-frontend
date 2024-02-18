@@ -16,6 +16,8 @@ const ArtistInfo = () => {
   const [artistInfo, setArtistInfo] = useState<TArtistInfo | null>(null);
   const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
 
+  const [screenStatus, setScreenStatus] = useState(false);
+
   useEffect(() => {
     setArtistInfo(null);
     setArtistSongs(null);
@@ -35,16 +37,25 @@ const ArtistInfo = () => {
 
   return (
     <div className={styles.container}>
-      <Banner banner={artistInfo?.artist.header_image_url} bannerColors={artistInfo?.artist.header_image_colors} />
+      <Banner
+        className={screenStatus ? styles.hide : ''}
+        banner={artistInfo?.artist.header_image_url}
+        bannerColors={artistInfo?.artist.header_image_colors}
+      />
 
-      <div className={styles.top}>
+      <div className={`${styles.top} ${screenStatus && styles.scaleToDisappear}`}>
         <Thumbnail image={artistInfo?.artist.image_url} />
         <Identity name={artistInfo?.artist.name} aka={artistInfo?.artist.alternate_names} />
       </div>
 
-      <div className={styles.body}>
-        <PopularSongs artistName={artistInfo?.artist.name} songs={artistSongs?.songs} />
-        <Description name={artistInfo?.artist.name} description={artistInfo?.artist.description} />
+      <div className={`${styles.body}`}>
+        <PopularSongs
+          artistId={`${id}`}
+          artistName={artistInfo?.artist.name}
+          songs={artistSongs?.songs}
+          setScreenStatus={setScreenStatus}
+        />
+        {!screenStatus && <Description name={artistInfo?.artist.name} description={artistInfo?.artist.description} />}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 import { Link, generatePath } from 'react-router-dom';
 import { SONG } from '@/constants/routes';
 import { TSongs } from '@core/artistInfo/domain/models/ArtistSongs.model';
@@ -8,16 +8,18 @@ import PopularSongsSkeleton from './PopularSongs.skeleton';
 interface IPopularSongs {
   songs: TSongs[] | undefined;
   artistName: string | undefined;
+  artistId: string | undefined;
+  setScreenStatus: Dispatch<SetStateAction<boolean>>;
 }
 
-const PopularSongs: FC<IPopularSongs> = ({ songs, artistName }) => {
+const PopularSongs: FC<IPopularSongs> = ({ songs, artistName, setScreenStatus }) => {
   if (!songs) {
     return <PopularSongsSkeleton />;
   }
 
   return (
     <div className={styles.container}>
-      <p className={styles.title}>POPULAR {artistName} SONGS</p>
+      <p className={styles.title}>POPULAR {artistName} CHARTS</p>
 
       {songs.map(({ id, thumbnail_url, title, artist }, key) => (
         <Link key={id} className={styles.song} to={generatePath(SONG, { id: `${id}`, name: title })}>
@@ -29,7 +31,9 @@ const PopularSongs: FC<IPopularSongs> = ({ songs, artistName }) => {
           </div>
         </Link>
       ))}
-      <p className={styles.more}>See more</p>
+      <button className={styles.more} onClick={() => setScreenStatus(true)}>
+        See more
+      </button>
     </div>
   );
 };

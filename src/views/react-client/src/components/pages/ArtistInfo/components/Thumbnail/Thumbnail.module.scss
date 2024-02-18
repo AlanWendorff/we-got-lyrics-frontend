@@ -1,15 +1,17 @@
 @use '@styles/_responsives' as responsives;
 
-.thumbnail {
-  width: 9.688rem;
-  height: 9.688rem;
+.thumbnail,
+.thumbnail__skeleton {
+  width: 11rem !important;
+  height: 11rem !important;
   border-radius: 100%;
 }
 
 @include responsives.VGA {
-  .thumbnail {
-    width: 8.3rem;
-    height: 8.3rem;
+  .thumbnail,
+  .thumbnail__skeleton {
+    width: 8.3rem !important;
+    height: 8.3rem !important;
     border-radius: 100%;
   }
 }
