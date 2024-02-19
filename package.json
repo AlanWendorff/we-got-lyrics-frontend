@@ -17,6 +17,9 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "eslint -c .eslintrc.js --ext .ts src"
   },
+  "workspaces": [
+    "src/views/*"
+  ],
   "author": "ALAN WENDORFF",
   "license": "MIT",
   "dependencies": {

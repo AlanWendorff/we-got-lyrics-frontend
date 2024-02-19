@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from 'react';
+import { FC } from 'react';
 import SongItem from '@/components/shared/SongItem/SongItem';
 import { TSongs } from '@core/artistInfo/domain/models/ArtistSongs.model';
 import styles from './PopularSongs.module.scss';
