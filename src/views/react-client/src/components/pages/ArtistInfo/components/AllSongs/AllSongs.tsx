@@ -1,40 +1,49 @@
-import { Dispatch, FC, SetStateAction } from 'react';
-import { Link, generatePath } from 'react-router-dom';
-import { SONG } from '@/constants/routes';
-import { TSongs } from '@core/artistInfo/domain/models/ArtistSongs.model';
-import styles from './AllSongs.module.scss';
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
+import SongItem from '@/components/shared/SongItem/SongItem';
 import AllSongsSkeleton from './AllSongs.skeleton';
+import TArtistSongs from '@core/artistInfo/domain/models/ArtistSongs.model';
+import artistInfoController from '@core/artistInfo/application/ArtistInfo.controller';
+import artistInfoRepository from '@core/artistInfo/infrastructure/repositories/ArtistInfo.repository';
+import styles from './AllSongs.module.scss';
 
 interface IAllSongsProps {
-  songs: TSongs[] | undefined;
   artistName: string | undefined;
   artistId: string | undefined;
+  artistThumbnail: string | undefined;
   setScreenStatus: Dispatch<SetStateAction<boolean>>;
 }
 
-const AllSongs: FC<IAllSongsProps> = ({ songs, artistName, setScreenStatus }) => {
-  if (!songs) {
+const AllSongs: FC<IAllSongsProps> = ({ artistId, artistName, artistThumbnail, setScreenStatus }) => {
+  const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
+
+  useEffect(() => {
+    setArtistSongs(null);
+
+    artistInfoController(artistInfoRepository())
+      .getArtistSongs(`${artistId}`, 50, 1)
+      .then((response) => {
+        setArtistSongs(response);
+      });
+  }, []);
+
+  if (!artistSongs?.songs) {
     return <AllSongsSkeleton />;
   }
 
   return (
     <div className={styles.container}>
-      <button className={styles.more} onClick={() => setScreenStatus(false)}>
-        Back
-      </button>
+      <div className={styles.top}>
+        <img className={styles.thumbnail} src={artistThumbnail} alt='band thumbnail' />•
+        <p className={styles.title}>
+          All songs by <button onClick={() => setScreenStatus(false)}>{artistName}</button>
+        </p>
+      </div>
 
-      <p className={styles.title}>ALL SONGS BY {artistName}</p>
-
-      {songs.map(({ id, thumbnail_url, title, artist }, key) => (
-        <Link key={id} className={styles.song} to={generatePath(SONG, { id: `${id}`, name: title })}>
-          <p className={styles.song__number}>{key + 1}</p>
-          <img className={styles.song__thumbnail} src={thumbnail_url} alt='album thumbnail' />
-          <div className={styles.song__info}>
-            <p className={styles.song__info_title}>{title}</p>
-            <p className={styles.song__info_artist}>{artist}</p>
-          </div>
-        </Link>
-      ))}
+      <ul>
+        {artistSongs.songs.map(({ id, thumbnail_url, title, artist }, key) => (
+          <SongItem key={key} id={`${id}`} number={key + 1} title={title} thumbail={thumbnail_url} artist={artist} />
+        ))}
+      </ul>
     </div>
   );
 };

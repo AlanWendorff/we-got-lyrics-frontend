@@ -1,6 +1,5 @@
 import { Dispatch, FC, SetStateAction } from 'react';
-import { Link, generatePath } from 'react-router-dom';
-import { SONG } from '@/constants/routes';
+import SongItem from '@/components/shared/SongItem/SongItem';
 import { TSongs } from '@core/artistInfo/domain/models/ArtistSongs.model';
 import styles from './PopularSongs.module.scss';
 import PopularSongsSkeleton from './PopularSongs.skeleton';
@@ -21,16 +20,12 @@ const PopularSongs: FC<IPopularSongs> = ({ songs, artistName, setScreenStatus })
     <div className={styles.container}>
       <p className={styles.title}>POPULAR {artistName} CHARTS</p>
 
-      {songs.map(({ id, thumbnail_url, title, artist }, key) => (
-        <Link key={id} className={styles.song} to={generatePath(SONG, { id: `${id}`, name: title })}>
-          <p className={styles.song__number}>{key + 1}</p>
-          <img className={styles.song__thumbnail} src={thumbnail_url} alt='album thumbnail' />
-          <div className={styles.song__info}>
-            <p className={styles.song__info_title}>{title}</p>
-            <p className={styles.song__info_artist}>{artist}</p>
-          </div>
-        </Link>
-      ))}
+      <ul>
+        {songs.map(({ id, thumbnail_url, title, artist }, key) => (
+          <SongItem key={key} id={`${id}`} number={key + 1} title={title} thumbail={thumbnail_url} artist={artist} />
+        ))}
+      </ul>
+
       <button className={styles.more} onClick={() => setScreenStatus(true)}>
         See more
       </button>

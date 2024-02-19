@@ -22,6 +22,7 @@ const ArtistInfo = () => {
   useEffect(() => {
     setArtistInfo(null);
     setArtistSongs(null);
+    setScreenStatus(false);
 
     artistInfoController(artistInfoRepository())
       .getArtistInfo(`${id}`)
@@ -51,7 +52,12 @@ const ArtistInfo = () => {
 
       <div className={`${styles.body}`}>
         {screenStatus ? (
-          <AllSongs artistId={`${id}`} artistName={artistInfo?.artist.name} songs={artistSongs?.songs} setScreenStatus={setScreenStatus} />
+          <AllSongs
+            artistId={`${id}`}
+            artistThumbnail={artistInfo?.artist.image_url}
+            artistName={artistInfo?.artist.name}
+            setScreenStatus={setScreenStatus}
+          />
         ) : (
           <PopularSongs
             artistId={`${id}`}

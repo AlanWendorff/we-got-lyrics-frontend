@@ -14,15 +14,32 @@ import TLyricsData from '@core/lyrics/domain/models/Lyrics.model';
 import styles from './Song.module.scss';
 
 const Song = () => {
-  const { id } = useParams();
+  const { id, name } = useParams();
   const [song, setSong] = useState<TSong | null>(null);
   const [lyrics, setLyrics] = useState<TLyricsData | null>(null);
 
   useEffect(() => {
     setSong(null);
     setLyrics(null);
+
+    if (id === '000') {
+      songController(songRepository())
+        .getSong('000', `${name}`)
+        .then((response) => {
+          setSong(response);
+
+          lyricsController(lyricsRepository())
+            .getLyrics(response.song.url)
+            .then((response) => {
+              setLyrics(response);
+            });
+        });
+
+      return;
+    }
+
     songController(songRepository())
-      .getSong(`${id}`)
+      .getSong(`${id}`, '')
       .then((response) => {
         setSong(response);
 
