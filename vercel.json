@@ -1,0 +1,10 @@
+{
+  "builds": [
+    {
+      "src": "/*"
+    },
+    {
+      "src": "/src/views/react-client/src/main.tsx"
+    }
+  ]
+}
