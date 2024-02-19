@@ -16,13 +16,16 @@ const ArtistInfo = () => {
   const { id } = useParams();
   const [artistInfo, setArtistInfo] = useState<TArtistInfo | null>(null);
   const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
+  const [isAllSongs, setIsAllSongs] = useState(false);
 
-  const [screenStatus, setScreenStatus] = useState(false);
+  const handleSetIsAllSongs = () => {
+    setIsAllSongs(!isAllSongs);
+  };
 
   useEffect(() => {
     setArtistInfo(null);
     setArtistSongs(null);
-    setScreenStatus(false);
+    setIsAllSongs(false);
 
     artistInfoController(artistInfoRepository())
       .getArtistInfo(`${id}`)
@@ -40,33 +43,33 @@ const ArtistInfo = () => {
   return (
     <div className={styles.container}>
       <Banner
-        className={screenStatus ? styles.hide : ''}
+        className={isAllSongs ? styles.banner__collapse : ''}
         banner={artistInfo?.artist.header_image_url}
         bannerColors={artistInfo?.artist.header_image_colors}
       />
 
-      <div className={`${styles.top} ${screenStatus && styles.scaleToDisappear}`}>
+      <div className={`${styles.top} ${isAllSongs && styles.top__collapse}`}>
         <Thumbnail image={artistInfo?.artist.image_url} />
         <Identity name={artistInfo?.artist.name} aka={artistInfo?.artist.alternate_names} />
       </div>
 
       <div className={`${styles.body}`}>
-        {screenStatus ? (
+        {isAllSongs ? (
           <AllSongs
             artistId={`${id}`}
             artistThumbnail={artistInfo?.artist.image_url}
             artistName={artistInfo?.artist.name}
-            setScreenStatus={setScreenStatus}
+            handleSetIsAllSongs={handleSetIsAllSongs}
           />
         ) : (
           <PopularSongs
             artistId={`${id}`}
             artistName={artistInfo?.artist.name}
             songs={artistSongs?.songs}
-            setScreenStatus={setScreenStatus}
+            handleSetIsAllSongs={handleSetIsAllSongs}
           />
         )}
-        {!screenStatus && <Description name={artistInfo?.artist.name} description={artistInfo?.artist.description} />}
+        {!isAllSongs && <Description name={artistInfo?.artist.name} description={artistInfo?.artist.description} />}
       </div>
     </div>
   );

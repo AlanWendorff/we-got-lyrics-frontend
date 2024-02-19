@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import SongItem from '@/components/shared/SongItem/SongItem';
 import AllSongsSkeleton from './AllSongs.skeleton';
 import TArtistSongs from '@core/artistInfo/domain/models/ArtistSongs.model';
@@ -10,10 +10,10 @@ interface IAllSongsProps {
   artistName: string | undefined;
   artistId: string | undefined;
   artistThumbnail: string | undefined;
-  setScreenStatus: Dispatch<SetStateAction<boolean>>;
+  handleSetIsAllSongs: () => void;
 }
 
-const AllSongs: FC<IAllSongsProps> = ({ artistId, artistName, artistThumbnail, setScreenStatus }) => {
+const AllSongs: FC<IAllSongsProps> = ({ artistId, artistName, artistThumbnail, handleSetIsAllSongs }) => {
   const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const AllSongs: FC<IAllSongsProps> = ({ artistId, artistName, artistThumbnail, s
       <div className={styles.top}>
         <img className={styles.thumbnail} src={artistThumbnail} alt='band thumbnail' />•
         <p className={styles.title}>
-          All songs by <button onClick={() => setScreenStatus(false)}>{artistName}</button>
+          All songs by <button onClick={handleSetIsAllSongs}>{artistName}</button>
         </p>
       </div>
 

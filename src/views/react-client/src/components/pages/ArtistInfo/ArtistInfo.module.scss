@@ -12,11 +12,7 @@
   width: 100%;
 }
 
-.hide {
-  margin-top: calc(var(--banner-height) * -1);
-}
-
-.scaleToDisappear {
+.banner__collapse {
   margin-top: calc(var(--banner-height) * -1);
 }
 
@@ -28,6 +24,10 @@
   gap: 1.5rem;
   height: var(--banner-height);
   transition: margin-top 300ms ease-in-out;
+
+  &.top__collapse {
+    margin-top: calc(var(--banner-height) * -1);
+  }
 }
 
 .body {

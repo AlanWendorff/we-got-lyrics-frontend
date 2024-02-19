@@ -8,10 +8,10 @@ interface IPopularSongs {
   songs: TSongs[] | undefined;
   artistName: string | undefined;
   artistId: string | undefined;
-  setScreenStatus: Dispatch<SetStateAction<boolean>>;
+  handleSetIsAllSongs: () => void;
 }
 
-const PopularSongs: FC<IPopularSongs> = ({ songs, artistName, setScreenStatus }) => {
+const PopularSongs: FC<IPopularSongs> = ({ songs, artistName, handleSetIsAllSongs }) => {
   if (!songs) {
     return <PopularSongsSkeleton />;
   }
@@ -26,7 +26,7 @@ const PopularSongs: FC<IPopularSongs> = ({ songs, artistName, setScreenStatus })
         ))}
       </ul>
 
-      <button className={styles.more} onClick={() => setScreenStatus(true)}>
+      <button className={styles.more} onClick={handleSetIsAllSongs}>
         See more
       </button>
     </div>

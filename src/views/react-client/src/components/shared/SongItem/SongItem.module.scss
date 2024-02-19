@@ -22,6 +22,7 @@
   .number {
     @include mixins.flex_container(row, center, center);
     @include typography.m;
+    word-break: normal;
     padding-right: 1.5rem;
   }
 
