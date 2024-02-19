@@ -22,8 +22,8 @@
   .number {
     @include mixins.flex_container(row, center, center);
     @include typography.m;
-    word-break: normal;
-    padding-right: 1.5rem;
+    margin-right: 1.5rem;
+    width: 14px;
   }
 
   .thumbnail {

@@ -19,12 +19,22 @@
 }
 
 .top {
+  @include mixins.flex_container(row, space-between, flex-start);
   border-bottom: 1px solid var(--color-gamma);
 
   &__title {
     @include typography.s;
     color: white;
     padding-bottom: 1rem;
+  }
+
+  .close {
+    width: 18px;
+    margin-right: 0.5rem;
+
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -63,8 +73,5 @@
 @include responsives.VGA {
   .container {
     position: static;
-
-    /*  width: calc(100% + 43px);
-    margin-left: -43px; */
   }
 }

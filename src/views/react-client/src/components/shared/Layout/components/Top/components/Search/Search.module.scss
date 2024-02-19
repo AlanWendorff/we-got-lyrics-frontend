@@ -1,0 +1,13 @@
+@use '@styles/_responsives' as responsives;
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+@include responsives.VGA {
+  .list__width {
+    width: calc(100% + 43px);
+    margin-left: -43px;
+  }
+}

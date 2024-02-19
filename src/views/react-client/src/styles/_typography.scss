@@ -7,8 +7,6 @@
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   user-select: none;
-  word-wrap: break-word;
-  word-break: break-word;
 }
 
 @mixin s {
@@ -16,8 +14,6 @@
   font-size: 0.875rem;
   letter-spacing: 0.04em;
   user-select: none;
-  word-wrap: break-word;
-  word-break: break-word;
 }
 
 @mixin m {
@@ -25,8 +21,6 @@
   font-size: 1rem;
   letter-spacing: 0.04em;
   user-select: none;
-  word-wrap: break-word;
-  word-break: break-word;
 }
 
 @mixin l {
@@ -47,8 +41,6 @@
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   user-select: none;
-  word-wrap: break-word;
-  word-break: break-word;
 }
 
 @mixin s-light {
@@ -56,16 +48,12 @@
   font-size: 0.875rem;
   letter-spacing: 0.04em;
   user-select: none;
-  word-wrap: break-word;
-  word-break: break-word;
 }
 
 @mixin m-light {
   font-family: Programme Light, sans-serif;
   font-size: 1rem;
   letter-spacing: 0.04em;
-  word-wrap: break-word;
-  word-break: break-word;
 }
 
 @mixin l-light {

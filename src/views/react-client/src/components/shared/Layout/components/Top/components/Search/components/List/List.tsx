@@ -1,5 +1,6 @@
 import { ComponentProps, FC } from 'react';
 import Item from './components/Item';
+import chevronUpIcon from '@images/shared/chevron-up.png';
 import { TArtist, TSong } from '@core/search/domain/models/Search.model';
 import styles from './List.module.scss';
 import { ARTIST, SONG } from '@/constants/routes';
@@ -7,12 +8,16 @@ import { ARTIST, SONG } from '@/constants/routes';
 interface IListProps extends ComponentProps<'ul'> {
   songs: TSong[];
   artists: TArtist[];
+  handleDeleteSearchedData: () => void;
 }
 
-const List: FC<IListProps> = ({ songs, artists, ...rest }) => (
-  <ul className={styles.container} {...rest}>
+const List: FC<IListProps> = ({ songs, artists, handleDeleteSearchedData, ...rest }) => (
+  <ul className={`${styles.container} ${rest.className}`}>
     <div className={styles.top}>
       <p className={styles.top__title}>SEARCH RESULTS</p>
+      <button className={styles.close} onClick={handleDeleteSearchedData} aria-label='close search results'>
+        <img src={chevronUpIcon} alt='chevron up' />
+      </button>
     </div>
 
     <section className={styles.section}>

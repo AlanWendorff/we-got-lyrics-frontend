@@ -19,6 +19,7 @@ const ArtistInfo = () => {
   const [isAllSongs, setIsAllSongs] = useState(false);
 
   const handleSetIsAllSongs = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setIsAllSongs(!isAllSongs);
   };
 

@@ -12,8 +12,8 @@ interface IIdentityProps {
 }
 
 const Identity: FC<IIdentityProps> = ({ artistId, title, artistName, albumName }) => (
-  <div>
-    <p className={styles.title}>{title || <Skeleton width={300} />}</p>
+  <div className={styles.container}>
+    <p className={styles.title}>{title || <Skeleton />}</p>
 
     {artistName ? (
       <p className={styles.subtitle}>

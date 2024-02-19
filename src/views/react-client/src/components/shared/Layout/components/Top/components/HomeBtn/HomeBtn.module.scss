@@ -11,11 +11,15 @@
   border-radius: 5px;
   box-shadow: 0 0 3px var(--color-epsilon) inset;
   z-index: 1000;
+  transition: scale 200ms ease-in-out;
 
   img {
     width: 1rem;
-    height: 0.96rem;
     opacity: 0.75;
+  }
+
+  &:hover {
+    scale: 0.95;
   }
 }
 

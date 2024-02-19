@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import { ROOT } from '@/constants/routes';
 import styles from './HomeBtn.module.scss';
 
-interface IHomeBtnProps {}
-
-const HomeBtn: FC<IHomeBtnProps> = () => (
+const HomeBtn: FC = () => (
   <Link className={styles.container} to={ROOT} aria-label='go back to home'>
     <img src={homeIcon} alt='home icon' />
   </Link>
