@@ -63,5 +63,8 @@
 @include responsives.VGA {
   .container {
     position: static;
+
+    /*  width: calc(100% + 43px);
+    margin-left: -43px; */
   }
 }

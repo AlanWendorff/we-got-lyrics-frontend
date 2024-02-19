@@ -1,6 +1,9 @@
 @use '@styles/_responsives' as responsives;
+@use '@styles/_mixins' as mixins;
 
 .container__fixed {
+  @include mixins.flex_container(row, center, flex-start);
+  gap: 16px;
   padding: 1rem;
   position: fixed;
   z-index: 1000;
@@ -8,20 +11,16 @@
 
   .container__relative {
     position: relative;
+    width: 100%;
   }
 }
 
 @include responsives.VGA {
   .container__fixed {
+    gap: 8px;
     padding: 1rem;
     position: fixed;
     z-index: 1000;
     width: 100%;
   }
 }
-
-/* .container {
-  padding: 1rem 0;
-  width: 100%;
-  background-color: black;
-} */

@@ -7,6 +7,7 @@ import searchRepository from '@core/search/infrastructure/repositories/Search.re
 import searchController from '@core/search/application/Search.controller';
 import TSearch from '@core/search/domain/models/Search.model';
 import styles from './Search.module.scss';
+import HomeBtn from '../HomeBtn/HomeBtn';
 
 const Search = () => {
   const location = useLocation();
@@ -33,6 +34,7 @@ const Search = () => {
 
   return (
     <div className={styles.container__fixed}>
+      <HomeBtn /> {/* only if is not location ROOT & styles from search same */}
       <div className={styles.container__relative}>
         <Bar
           onChange={(e: FormEvent<HTMLFormElement>) => {

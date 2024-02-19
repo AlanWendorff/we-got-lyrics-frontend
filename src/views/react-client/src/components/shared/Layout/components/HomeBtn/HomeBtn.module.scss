@@ -1,0 +1,28 @@
+@use '@styles/_typography.scss' as typography;
+@use '@styles/_responsives' as responsives;
+@use '@styles/_mixins' as mixins;
+
+.container {
+  @include mixins.flex_container(row, center, center);
+  height: 30px;
+  width: 30px;
+  min-width: 30px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 3px var(--color-epsilon) inset;
+  z-index: 1000;
+
+  img {
+    width: 1rem;
+    height: 0.96rem;
+    opacity: 0.75;
+  }
+}
+
+@include responsives.VGA {
+  .container {
+    height: 35px;
+    width: 35px;
+    min-width: 35px;
+  }
+}
