@@ -1,5 +1,6 @@
 import * as path from 'path';
 import { defineConfig, loadEnv } from 'vite';
+import { VitePWA } from 'vite-plugin-pwa';
 import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
@@ -10,7 +11,7 @@ export default defineConfig(({ mode }) => {
     define: {
       'process.env': env
     },
-    plugins: [react()],
+    plugins: [react(), VitePWA({ registerType: 'autoUpdate' })],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
