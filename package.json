@@ -1,7 +1,11 @@
 {
   "name": "mini-genius",
   "version": "1.0.0",
-  "description": "Mini Genius: your favorite site for consulting lyrics.",
+  "description": "project",
+  "private": true,
+  "workspaces": [
+    "src/views/*"
+  ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "node": "--env-file='.env'",
@@ -17,10 +21,6 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "eslint -c .eslintrc.js --ext .ts src"
   },
-  "workspaces": [
-    "src/views/*"
-  ],
-  "private": true,
   "author": "ALAN WENDORFF",
   "license": "MIT",
   "dependencies": {
