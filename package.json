@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "project",
   "private": true,
+  "workspaces": [
+    "src/views/*"
+  ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "node": "--env-file='.env'",
