@@ -1,15 +1,17 @@
 @font-face {
   font-display: swap;
   font-family: 'Programme Light';
-  src: url('~@fonts/programme/woff2/programme-light.woff2') format('woff2'),
-    url('~@fonts/programme/woff/programme-light.woff') format('woff'), url('~@fonts/programme/woff/programme-light.woff') format('woff'),
-    url('~@fonts/programme/ttf/programme-light.ttf') format('truetype');
+  src: url('../assets/fonts/programme/woff2/programme-light.woff2') format('woff2'),
+    url('../assets/fonts/programme/woff/programme-light.woff') format('woff'),
+    url('../assets/fonts/programme/woff/programme-light.woff') format('woff'),
+    url('../assets/fonts/programme/ttf/programme-light.ttf') format('truetype');
 }
 
 @font-face {
   font-display: swap;
   font-family: 'Programme Normal';
-  src: url('~@fonts/programme/woff2/programme-normal.woff2') format('woff2'),
-    url('~@fonts/programme/woff/programme-normal.woff') format('woff'), url('~@fonts/programme/woff/programme-light.woff') format('woff'),
-    url('~@fonts/programme/ttf/programme-normal.ttf') format('truetype');
+  src: url('../assets/fonts/programme/woff2/programme-normal.woff2') format('woff2'),
+    url('../assets/fonts/programme/woff/programme-normal.woff') format('woff'),
+    url('../assets/fonts/programme/woff/programme-light.woff') format('woff'),
+    url('../assets/fonts/programme/ttf/programme-normal.ttf') format('truetype');
 }
