@@ -11,7 +11,56 @@ export default defineConfig(({ mode }) => {
     define: {
       'process.env': env
     },
-    plugins: [react(), VitePWA({ registerType: 'autoUpdate' })],
+    plugins: [
+      react(),
+      VitePWA({
+        registerType: 'autoUpdate',
+        manifest: {
+          name: 'You got lyrics',
+          short_name: 'Lyrics',
+          description: 'Your favorite site for consulting lyrics.',
+          theme_color: '#000000',
+          background_color: '#1CC976',
+          display: 'standalone',
+          orientation: 'portrait',
+          scope: '/',
+          id: '/',
+          start_url: '/',
+          icons: [
+            {
+              src: 'src/assets/images/web/icon-45.png',
+              sizes: '45x45',
+              type: 'image/png',
+              purpose: 'maskable any'
+            },
+            {
+              src: 'src/assets/images/web/icon-96.png',
+              sizes: '96x96',
+              type: 'image/png',
+              purpose: 'maskable any'
+            },
+            {
+              src: 'src/assets/images/web/icon-128.png',
+              sizes: '128x128',
+              type: 'image/png',
+              purpose: 'maskable any'
+            },
+            {
+              src: 'src/assets/images/web/icon-256.png',
+              sizes: '256x256',
+              type: 'image/png',
+              purpose: 'maskable any'
+            },
+            {
+              src: 'src/assets/images/web/icon-512.png',
+              sizes: '512x512',
+              type: 'image/png',
+              purpose: 'maskable any'
+            }
+          ]
+        }
+      })
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
