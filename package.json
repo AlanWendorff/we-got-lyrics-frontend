@@ -4,7 +4,7 @@
   "description": "project",
   "private": true,
   "workspaces": [
-    "src/views/*"
+    "src/views/react-client"
   ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
