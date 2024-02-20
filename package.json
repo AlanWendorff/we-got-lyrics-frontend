@@ -20,6 +20,7 @@
   "workspaces": [
     "src/views/*"
   ],
+  "private": true,
   "author": "ALAN WENDORFF",
   "license": "MIT",
   "dependencies": {
