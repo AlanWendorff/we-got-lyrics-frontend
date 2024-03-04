@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import BannerComponent from './Banner';
-import { BannerMock } from '@/mocks/Song.mock';
+import { BannerMock } from '@/mocks/Artist.mock';
 
 const meta = {
-  title: 'Pages/Song/Banner',
+  title: 'Pages/Artist/Banner',
   component: BannerComponent,
   parameters: {
     layout: 'fullscreen'
@@ -16,4 +16,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Banner: Story = {
   args: BannerMock
+};
+
+export const BannerSkeleton: Story = {
+  args: {
+    banner: undefined,
+    bannerColors: undefined
+  }
 };

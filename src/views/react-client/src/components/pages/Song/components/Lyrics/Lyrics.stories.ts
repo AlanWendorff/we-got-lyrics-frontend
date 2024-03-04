@@ -3,7 +3,7 @@ import LyricsComponent from './Lyrics';
 import { LyricsMock } from '@/mocks/Song.mock';
 
 const meta = {
-  title: 'Song/Lyrics',
+  title: 'Pages/Song/Lyrics',
   component: LyricsComponent
 } satisfies Meta<typeof LyricsComponent>;
 

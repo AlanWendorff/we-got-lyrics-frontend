@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import IdentityComponent from './Identity';
-import { IdentityMock } from '@/mocks/Song.mock';
+import { IdentityMock } from '@/mocks/Artist.mock';
 import { ROUTER_WRAP_ROOT } from '../../../../../../.storybook/decorators';
 
 const meta = {
-  title: 'Pages/Song/Identity',
+  title: 'Pages/Artist/Identity',
   component: IdentityComponent,
   decorators: [ROUTER_WRAP_ROOT]
 } satisfies Meta<typeof IdentityComponent>;
@@ -19,9 +19,7 @@ export const Identity: Story = {
 
 export const IdentitySkeleton: Story = {
   args: {
-    artistId: undefined,
-    artistName: undefined,
-    albumName: undefined,
-    title: undefined
+    name: undefined,
+    aka: undefined
   }
 };

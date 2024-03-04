@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ThumbnailComponent from './Thumbnail';
-import { SongMock } from '@/mocks/Song.mock';
+import { ArtistMock } from '@/mocks/Artist.mock';
 
 const meta = {
-  title: 'Pages/Song/Thumbnail',
+  title: 'Pages/Artist/Thumbnail',
   component: ThumbnailComponent
 } satisfies Meta<typeof ThumbnailComponent>;
 
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Thumbnail: Story = {
   args: {
-    image: SongMock.thumbnail
+    image: ArtistMock.thumbnail
   }
 };
 

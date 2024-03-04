@@ -3,7 +3,7 @@ import ContributorComponent from './Contributor';
 import { ContributorMock } from '@/mocks/Song.mock';
 
 const meta = {
-  title: 'Song/Contributor',
+  title: 'Pages/Song/Contributor',
   component: ContributorComponent
 } satisfies Meta<typeof ContributorComponent>;
 
