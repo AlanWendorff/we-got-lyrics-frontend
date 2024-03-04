@@ -16,23 +16,17 @@ export default defineConfig(({ mode }) => {
       VitePWA({
         registerType: 'autoUpdate',
         manifest: {
-          name: 'You got lyrics',
+          name: 'We got lyrics',
           short_name: 'Lyrics',
           description: 'Your favorite site for consulting lyrics.',
           theme_color: '#000000',
-          background_color: '#1CC976',
+          background_color: '#000000',
           display: 'standalone',
           orientation: 'portrait',
           scope: '/',
           id: '/',
           start_url: '/',
           icons: [
-            {
-              src: 'src/assets/images/web/icon-45.png',
-              sizes: '45x45',
-              type: 'image/png',
-              purpose: 'maskable any'
-            },
             {
               src: 'src/assets/images/web/icon-96.png',
               sizes: '96x96',
