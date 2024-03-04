@@ -34,6 +34,7 @@
       "@services/*": ["./src/services/*"],
       "@styles/*": ["./src/styles/*"],
       "@utils/*": ["./src/utils/*"],
+      "@mocks/*": ["./src/mocks/*"],
 
       //core
       "@core/*": ["../../core/*"]

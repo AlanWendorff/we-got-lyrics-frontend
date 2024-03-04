@@ -41,7 +41,7 @@ const AllSongs: FC<IAllSongsProps> = ({ artistId, artistName, artistThumbnail, h
 
       <ul>
         {artistSongs.songs.map(({ id, thumbnail_url, title, artist }, key) => (
-          <SongItem key={key} id={`${id}`} number={key + 1} title={title} thumbail={thumbnail_url} artist={artist} />
+          <SongItem key={key} id={`${id}`} number={key + 1} title={title} thumbnail={thumbnail_url} artist={artist} />
         ))}
       </ul>
     </div>

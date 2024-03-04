@@ -6,16 +6,16 @@ import styles from './SongItem.module.scss';
 interface ISongItemProps extends ComponentProps<'li'> {
   id: string;
   number: number;
-  thumbail: string;
+  thumbnail: string;
   title: string;
   artist: string;
 }
 
-const SongItem: FC<ISongItemProps> = ({ id, number, thumbail, title, artist }) => (
+const SongItem: FC<ISongItemProps> = ({ id, number, thumbnail, title, artist }) => (
   <li className={styles.container}>
     <Link className={styles.body} to={generatePath(SONG, { id, name: title })}>
       <p className={styles.number}>{number}</p>
-      <img className={styles.thumbnail} src={thumbail} alt='song thumbnail' />
+      <img className={styles.thumbnail} src={thumbnail} alt='song thumbnail' />
       <div className={styles.info}>
         <p className={styles.title}>{title}</p>
         <p className={styles.artist}>{artist}</p>

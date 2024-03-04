@@ -15,7 +15,7 @@ const HitList: FC<IHitListProps> = ({ hits, ...rest }) => {
   return (
     <ul {...rest}>
       {hits?.map(({ title, img, owner }, key) => (
-        <SongItem key={key} id={'000'} number={key + 1} title={title} thumbail={img} artist={owner} />
+        <SongItem key={key} id={'000'} number={key + 1} title={title} thumbnail={img} artist={owner} />
       ))}
     </ul>
   );
