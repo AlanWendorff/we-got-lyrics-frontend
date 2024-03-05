@@ -3,7 +3,7 @@ import SongItemSkeleton from '@/components/shared/SongItem/SongItem.skeleton';
 
 const HitListSkeleton: FC = () => (
   <ul>
-    {[...Array(10)].map((index) => (
+    {[...Array(10)].map((_, index) => (
       <SongItemSkeleton key={index} />
     ))}
   </ul>

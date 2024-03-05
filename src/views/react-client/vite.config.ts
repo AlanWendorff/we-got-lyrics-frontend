@@ -23,9 +23,9 @@ export default defineConfig(({ mode }) => {
           background_color: '#000000',
           display: 'standalone',
           orientation: 'portrait',
-          scope: '/',
-          id: '/',
-          start_url: '/',
+          scope: 'https://we-got-lyrics.vercel.app/',
+          id: 'we-got-lyrics',
+          start_url: 'https://we-got-lyrics.vercel.app/',
           icons: [
             {
               src: 'src/assets/images/web/icon-96.png',

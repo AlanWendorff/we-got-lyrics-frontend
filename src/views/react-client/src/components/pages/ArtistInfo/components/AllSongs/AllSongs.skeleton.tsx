@@ -10,7 +10,7 @@ const AllSongsSkeleton = () => (
     </div>
 
     <ul>
-      {[...Array(10)].map((index) => (
+      {[...Array(10)].map((_, index) => (
         <SongItemSkeleton key={index} />
       ))}
     </ul>
