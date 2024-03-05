@@ -22,7 +22,7 @@ const Song = () => {
     setSong(null);
     setLyrics(null);
 
-    if (id === '000') {
+    if (id === '_') {
       songController(songRepository())
         .getSong('000', `${name}`)
         .then((response) => {

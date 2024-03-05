@@ -3,6 +3,8 @@ import { defineConfig, loadEnv } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import react from '@vitejs/plugin-react';
 
+import manifestJson from './public/manifest.json';
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
@@ -17,7 +19,7 @@ export default defineConfig(({ mode }) => {
         registerType: 'autoUpdate',
         manifest: {
           name: 'We got lyrics',
-          short_name: 'Lyrics',
+          short_name: 'WG.lyrics',
           description: 'Your favorite site for consulting lyrics.',
           theme_color: '#000000',
           background_color: '#000000',
