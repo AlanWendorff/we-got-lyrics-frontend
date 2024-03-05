@@ -1,0 +1,44 @@
+{
+  "name": "We got lyrics",
+  "short_name": "Lyrics",
+  "description": "Your favorite site for consulting lyrics.",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "https://we-got-lyrics.vercel.app/",
+  "id": "we-got-lyrics",
+  "start_url": "https://we-got-lyrics.vercel.app/",
+  "icons": [
+    {
+      "src": "public/pwa/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "public/pwa/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "public/pwa/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "apple touch icon"
+    },
+    {
+      "src": "public/pwa/icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "public/pwa/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
