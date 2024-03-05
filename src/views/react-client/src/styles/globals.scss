@@ -1,4 +1,5 @@
 @use './_fonts.scss';
+@use './_typography.scss';
 @use './_responsives.scss';
 
 :root {
@@ -48,7 +49,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: black;
-  font-family: Programme Light, sans-serif;
+  font-family: Programme Light;
   overflow-x: hidden;
   padding: 1rem;
   margin: 0;
@@ -82,9 +83,9 @@ body {
 }
 
 input {
+  @include typography.font-feature-settings;
+  @include typography.l;
   border: none;
-  font-family: Programme, Arial, sans-serif;
-  font-feature-settings: 'ss07', 'ss08', 'ss11', 'ss12', 'ss14', 'ss15', 'ss16', 'ss18', 'ss19', 'ss20', 'ss21';
 
   &:focus {
     outline: none;

@@ -3,32 +3,32 @@
 }
 
 @mixin xs {
-  font-family: Programme, Arial, sans-serif;
+  font-family: Programme;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   user-select: none;
 }
 
 @mixin s {
-  font-family: Programme, Arial, sans-serif;
+  font-family: Programme;
   font-size: 0.875rem;
   letter-spacing: 0.04em;
   user-select: none;
 }
 
 @mixin m {
-  font-family: Programme, Arial, sans-serif;
+  font-family: Programme;
   font-size: 1rem;
   letter-spacing: 0.04em;
   user-select: none;
 }
 
 @mixin l {
-  font-family: Programme, Arial, sans-serif;
+  font-family: Programme;
 }
 
 @mixin xl {
-  font-family: Programme, Arial, sans-serif !important;
+  font-family: Programme !important;
   font-size: 2rem;
   font-weight: 400;
   font-feature-settings: 'ss07', 'ss08', 'ss11', 'ss12', 'ss14', 'ss15', 'ss16', 'ss18', 'ss19', 'ss20', 'ss21';
@@ -37,31 +37,31 @@
 }
 
 @mixin xs-light {
-  font-family: Programme Light, sans-serif;
+  font-family: Programme Light;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   user-select: none;
 }
 
 @mixin s-light {
-  font-family: Programme Light, sans-serif;
+  font-family: Programme Light;
   font-size: 0.875rem;
   letter-spacing: 0.04em;
   user-select: none;
 }
 
 @mixin m-light {
-  font-family: Programme Light, sans-serif;
+  font-family: Programme Light;
   font-size: 1rem;
   letter-spacing: 0.04em;
 }
 
 @mixin l-light {
-  font-family: Programme Light, sans-serif;
+  font-family: Programme Light;
 }
 
 @mixin xl-light {
-  font-family: Programme Light, sans-serif !important;
+  font-family: Programme Light !important;
   font-size: 2rem;
   font-weight: 400;
   font-feature-settings: 'ss07', 'ss08', 'ss11', 'ss12', 'ss14', 'ss15', 'ss16', 'ss18', 'ss19', 'ss20', 'ss21';
