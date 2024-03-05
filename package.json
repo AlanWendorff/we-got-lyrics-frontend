@@ -1,7 +1,7 @@
 {
   "name": "we-got-lyrics",
   "version": "1.0.0",
-  "description": "project",
+  "description": "We got lyrics project",
   "private": true,
   "workspaces": [
     "src/views/*"
