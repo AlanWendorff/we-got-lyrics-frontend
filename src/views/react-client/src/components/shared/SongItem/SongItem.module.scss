@@ -31,7 +31,7 @@
     width: 59px;
     object-fit: cover;
     vertical-align: middle;
-    border-radius: 5px;
+    border-radius: var(--images-border-radius);
 
     -webkit-box-shadow: 0 0 14px var(--color-kappa);
     box-shadow: 0 0 14px var(--color-kappa);

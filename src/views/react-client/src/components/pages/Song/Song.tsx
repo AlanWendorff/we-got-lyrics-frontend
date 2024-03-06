@@ -13,6 +13,7 @@ import lyricsController from '@core/lyrics/application/LyricsController';
 import TLyricsData from '@core/lyrics/domain/models/Lyrics.model';
 import styles from './Song.module.scss';
 import useTabName from '@/hooks/useTabName';
+import AddToFav from '@/components/shared/AddToFav';
 
 const Song = () => {
   const { id, name } = useParams();
@@ -66,14 +67,16 @@ const Song = () => {
             artistName={song?.song.artist.name}
             albumName={song?.song.album?.name}
           />
-          <div className={styles.contributors_desktop}>
+          {/*  <div className={styles.contributors_desktop}>
             <Contributor type='Featuring' contributors={song?.song.featured_artists} />
             <Contributor type='Produced by' contributors={song?.song.producer} />
-          </div>
+          </div> */}
         </div>
       </div>
 
       <div className={styles.body}>
+        {song && <AddToFav />}
+
         <div className={styles.contributors_mobile}>
           <Contributor type='Featuring' contributors={song?.song.featured_artists} />
           <Contributor type='Produced by' contributors={song?.song.producer} />

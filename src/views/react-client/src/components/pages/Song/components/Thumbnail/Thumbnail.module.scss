@@ -4,7 +4,7 @@
   width: 13.188rem !important;
   height: 13.188rem !important;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: var(--images-border-radius);
   box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
 }
 

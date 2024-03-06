@@ -8,10 +8,16 @@
 }
 
 .title {
+  @include mixins.flex_container(row, flex-start, center);
   @include typography.m;
   color: white;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  gap: 0.5rem;
+
+  img {
+    width: 18px;
+  }
 }
 
 .more {

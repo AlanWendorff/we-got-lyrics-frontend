@@ -4,7 +4,7 @@
 .link {
   cursor: pointer;
   height: 4.688rem;
-  border-radius: 5px;
+  border-radius: var(--web-border-radius);
   padding: 0.5rem;
 
   &:hover {
@@ -16,7 +16,7 @@
   height: 3.688rem;
   width: 3.688rem;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: var(--web-border-radius);
 }
 
 .thumbnail_artist {

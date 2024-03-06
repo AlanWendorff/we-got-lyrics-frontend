@@ -3,6 +3,8 @@ import SongItem from '@/components/shared/SongItem/SongItem';
 import { TSongs } from '@core/artistInfo/domain/models/ArtistSongs.model';
 import styles from './PopularSongs.module.scss';
 import PopularSongsSkeleton from './PopularSongs.skeleton';
+import chartIcon from '@images/shared/chart-icon.png';
+import AddToFav from '@/components/shared/AddToFav';
 
 interface IPopularSongs {
   songs: TSongs[] | undefined;
@@ -18,7 +20,12 @@ const PopularSongs: FC<IPopularSongs> = ({ songs, artistName, handleSetIsAllSong
 
   return (
     <div className={styles.container}>
-      <p className={styles.title}>POPULAR {artistName} CHARTS</p>
+      <AddToFav />
+
+      <p className={styles.title}>
+        <img src={chartIcon} alt='chart icon' />
+        POPULAR {artistName} CHARTS
+      </p>
 
       <ul>
         {songs.map(({ id, thumbnail_url, title, artist }, key) => (

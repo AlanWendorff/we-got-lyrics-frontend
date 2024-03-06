@@ -30,14 +30,12 @@ export default defineConfig(({ mode }) => {
             {
               src: './public/pwa/icon-96.png',
               sizes: '96x96',
-              type: 'image/png',
-              purpose: 'maskable any'
+              type: 'image/png'
             },
             {
               src: './public/pwa/icon-128.png',
               sizes: '128x128',
-              type: 'image/png',
-              purpose: 'maskable any'
+              type: 'image/png'
             },
             {
               src: './public/pwa/icon-128.png',
@@ -48,14 +46,12 @@ export default defineConfig(({ mode }) => {
             {
               src: './public/pwa/icon-256.png',
               sizes: '256x256',
-              type: 'image/png',
-              purpose: 'maskable any'
+              type: 'image/png'
             },
             {
               src: './public/pwa/icon-512.png',
               sizes: '512x512',
-              type: 'image/png',
-              purpose: 'maskable any'
+              type: 'image/png'
             }
           ]
         }
