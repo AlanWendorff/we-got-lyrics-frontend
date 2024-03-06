@@ -14,22 +14,32 @@
   background-color: var(--color-gamma);
   border-radius: 5px;
   padding: 1rem;
-}
 
-.title {
-  @include typography.m;
-  color: white;
-  text-transform: uppercase;
+  .title {
+    @include typography.m;
+    color: white;
+    text-transform: uppercase;
+  }
 }
 
 @include responsives.VGA {
   .container {
     @include mixins.flex_container(column, flex-start, center);
     width: 100%;
-    padding: 5rem 1rem 0 1rem;
-
+    padding: 1rem;
     background-color: transparent;
     border-radius: 0;
+  }
+
+  .btn {
+    background-color: var(--color-alpha);
+    padding: 0.7rem;
+
+    .title {
+      @include typography.s;
+      color: white;
+      text-transform: uppercase;
+    }
   }
 }
 
