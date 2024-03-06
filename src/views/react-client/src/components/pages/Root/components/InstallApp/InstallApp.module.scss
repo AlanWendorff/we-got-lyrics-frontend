@@ -1,29 +1,40 @@
-@use '@styles/_typography.scss' as typography;
-@use '@styles/_responsives' as responsives;
 @use '@styles/_mixins' as mixins;
+@use '@styles/_responsives' as responsives;
+@use '@styles/_typography.scss' as typography;
 
 .container {
   @include mixins.flex_container(column, flex-start, flex-start);
+  width: 100%;
   background-color: var(--color-beta);
   border-radius: 5px;
   padding: 2rem;
-  width: 100%;
+}
+
+.btn {
+  background-color: var(--color-gamma);
+  border-radius: 5px;
+  padding: 1rem;
 }
 
 .title {
   @include typography.m;
   color: white;
   text-transform: uppercase;
-  margin-bottom: 1rem;
 }
 
 @include responsives.VGA {
   .container {
+    @include mixins.flex_container(column, flex-start, center);
+    width: 100%;
     padding: 5rem 1rem 0 1rem;
+
     background-color: transparent;
     border-radius: 0;
   }
-  .title {
-    margin: 0;
+}
+
+@media all and (display-mode: standalone) {
+  .container {
+    display: none;
   }
 }

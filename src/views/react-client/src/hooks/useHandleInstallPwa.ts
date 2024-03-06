@@ -1,3 +1,4 @@
+import { BeforeInstallPromptEvent } from '@/types/beforeInstallPromptEvent';
 import { useEffect, useState } from 'react';
 
 interface IUseHandleInstallPwa {
@@ -6,7 +7,7 @@ interface IUseHandleInstallPwa {
 }
 
 const useHandleInstallPwa = (): IUseHandleInstallPwa => {
-  const [deferredPrompt, setDeferredPrompt] = useState<any>();
+  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isAppInstalled, setIsAppInstalled] = useState(false);
 
   const handleInstallApp = () => {
@@ -28,6 +29,8 @@ const useHandleInstallPwa = (): IUseHandleInstallPwa => {
       e.preventDefault();
       setDeferredPrompt(e);
     });
+
+    handleInstallApp();
   }, []);
 
   return { isAppInstalled, handleInstallApp };
