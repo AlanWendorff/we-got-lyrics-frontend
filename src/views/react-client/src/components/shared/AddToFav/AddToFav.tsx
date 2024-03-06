@@ -1,17 +1,19 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import heartIconOl from '@images/shared/heart-icon-ol.png';
 import heartIconSol from '@images/shared/heart-icon-sol.png';
 import styles from './AddToFav.module.scss';
+import useAddSongToFav from '@/hooks/useAddSongToFav';
+import ISong from '@/interfaces/songOnLocalStorage.interface';
 
-const AddToFav: FC = () => {
-  const [isOnFav, setIsOnFav] = useState(false);
+interface IAddToFav {
+  song: ISong;
+}
 
-  const handleSetIsOnFav = () => {
-    setIsOnFav(!isOnFav);
-  };
+const AddToFav: FC<IAddToFav> = ({ song }) => {
+  const { isOnFav, handleSetIsOnFav } = useAddSongToFav();
 
   return (
-    <button className={styles.container} onClick={handleSetIsOnFav}>
+    <button className={styles.container} onClick={() => handleSetIsOnFav(song)} aria-label='Add to fav'>
       <img src={isOnFav ? heartIconSol : heartIconOl} alt='heart icon' />
       {isOnFav ? 'Saved' : 'Save'}
     </button>

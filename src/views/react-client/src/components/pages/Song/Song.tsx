@@ -75,7 +75,16 @@ const Song = () => {
       </div>
 
       <div className={styles.body}>
-        {song && <AddToFav />}
+        {song && (
+          <AddToFav
+            song={{
+              id: song?.song.id,
+              name: song?.song.title,
+              owner: song?.song.artist.name,
+              thumbnail: song?.song.song_art_image_thumbnail_url
+            }}
+          />
+        )}
 
         <div className={styles.contributors_mobile}>
           <Contributor type='Featuring' contributors={song?.song.featured_artists} />

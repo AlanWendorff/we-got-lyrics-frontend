@@ -1,7 +1,5 @@
 import Layout from '@/components/shared/Layout';
 
-function App() {
-  return <Layout />;
-}
+const App = () => <Layout />;
 
 export default App;
