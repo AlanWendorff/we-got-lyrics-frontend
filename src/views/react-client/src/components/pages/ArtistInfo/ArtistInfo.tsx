@@ -11,12 +11,15 @@ import PopularSongs from './components/PopularSongs';
 import Identity from './components/Identity';
 import Description from './components/Description';
 import AllSongs from './components/AllSongs';
+import useTabName from '@/hooks/useTabName';
+import { APP_NAME } from '@/constants/config';
 
 const ArtistInfo = () => {
   const { id } = useParams();
   const [artistInfo, setArtistInfo] = useState<TArtistInfo | null>(null);
   const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
   const [isAllSongs, setIsAllSongs] = useState(false);
+  useTabName({ tabName: `${artistInfo?.artist.name} | ${APP_NAME}`, dynamicInfo: artistInfo?.artist.name });
 
   const handleSetIsAllSongs = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

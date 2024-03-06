@@ -12,11 +12,13 @@ import lyricsRepository from '@core/lyrics/infrastructure/repositories/Lyrics.re
 import lyricsController from '@core/lyrics/application/LyricsController';
 import TLyricsData from '@core/lyrics/domain/models/Lyrics.model';
 import styles from './Song.module.scss';
+import useTabName from '@/hooks/useTabName';
 
 const Song = () => {
   const { id, name } = useParams();
   const [song, setSong] = useState<TSong | null>(null);
   const [lyrics, setLyrics] = useState<TLyricsData | null>(null);
+  useTabName({ tabName: `${song?.song.title} Lyrics`, dynamicInfo: song?.song.title });
 
   useEffect(() => {
     setSong(null);
