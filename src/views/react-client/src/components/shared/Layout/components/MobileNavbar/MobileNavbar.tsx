@@ -1,17 +1,16 @@
-import useHandleInstallPwa from '@/hooks/useHandleInstallPwa';
-import { ROOT } from '@/constants/routes';
 import { NavLink, useLocation } from 'react-router-dom';
-import styles from './Controls.module.scss';
 import homeIconOutlined from '@images/shared/home-icon.png';
 import homeIconSolid from '@images/shared/home-icon-sol.png';
 import downloadIcon from '@images/shared/download-icon.png';
+import styles from './MobileNavbar.module.scss';
+import { ROOT } from '@/constants/routes';
 import { PWA_PROMPT_INCOMPATIBLE_BROWSER } from '@/constants/config';
+import useHandleInstallPwa from '@/hooks/useHandleInstallPwa';
 
-const Controls = () => {
-  const location = useLocation();
-
-  const isWebOnRoot = location.pathname === ROOT;
+const MobileNavbar = () => {
   const { isAppInstalled, handleInstallApp } = useHandleInstallPwa();
+  const location = useLocation();
+  const isWebOnRoot = location.pathname === ROOT;
 
   return (
     <div className={styles.container}>
@@ -34,4 +33,4 @@ const Controls = () => {
     </div>
   );
 };
-export default Controls;
+export default MobileNavbar;
