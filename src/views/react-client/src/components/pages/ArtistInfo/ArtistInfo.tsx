@@ -23,7 +23,7 @@ const ArtistInfo = () => {
   const [artistInfo, setArtistInfo] = useState<TArtistInfo | null>(null);
   const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
   const [isAllSongs, setIsAllSongs] = useState(false);
-  const { isArtistStored, handleArtistFav } = useFavourite();
+  const { isArtistStored, handleArtistFav, handleIsArtistStored } = useFavourite();
 
   useTabName({ tabName: `${artistInfo?.artist.name} | ${APP_NAME}`, dynamicInfo: artistInfo?.artist.name });
 
@@ -36,6 +36,7 @@ const ArtistInfo = () => {
     setArtistInfo(null);
     setArtistSongs(null);
     setIsAllSongs(false);
+    handleIsArtistStored(`${id}`);
 
     artistInfoController(artistInfoRepository())
       .getArtistInfo(`${id}`)

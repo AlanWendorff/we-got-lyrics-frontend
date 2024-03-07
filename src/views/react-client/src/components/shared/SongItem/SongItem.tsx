@@ -1,10 +1,9 @@
-import { ComponentProps, FC } from 'react';
+import { ComponentProps, FC, useEffect } from 'react';
 import { Link, generatePath } from 'react-router-dom';
 import { SONG } from '@/constants/routes';
 import styles from './SongItem.module.scss';
 import AddToFav from '../AddToFav';
 import useFavourite from '@/hooks/useFavourite';
-import useFavouriteStore from '@/store/useFavourite.store';
 
 interface ISongItemProps extends ComponentProps<'li'> {
   id: string;
@@ -16,10 +15,11 @@ interface ISongItemProps extends ComponentProps<'li'> {
 }
 
 const SongItem: FC<ISongItemProps> = ({ id, number, thumbnail, title, artist, showControls }) => {
-  const { isSongStored, handleSongFav } = useFavourite();
-  const { songs } = useFavouriteStore((state) => state);
+  const { isSongStored, handleSongFav, handleIsSongStored } = useFavourite();
 
-  const FINDED = songs.find((item) => `${item.id}` === id);
+  useEffect(() => {
+    handleIsSongStored(id);
+  }, []);
 
   return (
     <li className={styles.container}>
@@ -35,7 +35,7 @@ const SongItem: FC<ISongItemProps> = ({ id, number, thumbnail, title, artist, sh
         <div className={styles.controls}>
           <AddToFav
             slim
-            favouriteStatus={FINDED ? true : false}
+            favouriteStatus={isSongStored}
             onClick={() => handleSongFav({ id: parseInt(id), name: title, owner: artist, thumbnail })}
           />
         </div>

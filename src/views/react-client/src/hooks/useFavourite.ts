@@ -11,6 +11,8 @@ interface IUseFavourite {
   isArtistStored: boolean;
   handleSongFav: (song: TSong) => void;
   handleArtistFav: (artist: TArtist) => void;
+  handleIsSongStored: (songId: string) => boolean;
+  handleIsArtistStored: (artistId: string) => boolean;
 }
 
 const useFavourite = (): IUseFavourite => {
@@ -19,18 +21,20 @@ const useFavourite = (): IUseFavourite => {
   const [isArtistStored, setIsArtistStored] = useState(false);
   const { addArtist, deleteArtist, addSong, deleteSong, setInitialStore, setHasUserFav } = useFavouriteStore((state) => state);
 
-  const handleIsArtistStored = (artistId: string) =>
-    setIsArtistStored(storeAssetsController(storeAssetsRepository()).isArtistSavedOnLs(artistId));
+  const handleIsArtistStored = (artistId: string) => {
+    const isFinded = storeAssetsController(storeAssetsRepository()).isArtistSavedOnLs(artistId);
+    setIsArtistStored(isFinded);
+    return isFinded;
+  };
 
   const handleIsSongStored = (songId: string) => {
-    console.log('exec?');
-
-    setIsSongStored(storeAssetsController(storeAssetsRepository()).isSongSavedOnLs(songId));
+    const isFinded = storeAssetsController(storeAssetsRepository()).isSongSavedOnLs(songId);
+    setIsSongStored(isFinded);
+    return isFinded;
   };
 
   const handleSongFav = (song: TSong) => {
     if (isSongStored) {
-      // esto esta dependiendo en ese estado pelotudo, es propenso a fallar
       deleteSong(`${song.id}`);
       setIsSongStored(false);
     } else {
@@ -42,7 +46,6 @@ const useFavourite = (): IUseFavourite => {
 
   const handleArtistFav = (artist: TArtist) => {
     if (isArtistStored) {
-      // esto esta dependiendo en ese estado pelotudo, es propenso a fallar
       deleteArtist(`${artist.id}`);
       setIsArtistStored(false);
     } else {
@@ -56,16 +59,13 @@ const useFavourite = (): IUseFavourite => {
     try {
       setInitialStore();
       setHasUserFav();
-
-      handleIsSongStored(`${id}`); // THIS IS FOR PAGE SONG NOT FOR SONG ITEM
-      handleIsArtistStored(`${id}`); // THIS IS FOR ARTIST
     } catch (err) {
       localStorage.setItem(KEY_FAV_SONGS, JSON.stringify([]));
       localStorage.setItem(KEY_FAV_ARTISTS, JSON.stringify([]));
     }
   }, [id]);
 
-  return { isSongStored, isArtistStored, handleSongFav, handleArtistFav };
+  return { isSongStored, isArtistStored, handleSongFav, handleArtistFav, handleIsSongStored, handleIsArtistStored };
 };
 
 export default useFavourite;

@@ -22,12 +22,13 @@ const Song = () => {
   const { id, name } = useParams();
   const [song, setSong] = useState<TSong | null>(null);
   const [lyrics, setLyrics] = useState<TLyricsData | null>(null);
-  const { isSongStored, handleSongFav } = useFavourite();
+  const { isSongStored, handleSongFav, handleIsSongStored } = useFavourite();
   useTabName({ tabName: `${song?.song.title} Lyrics`, dynamicInfo: song?.song.title });
 
   useEffect(() => {
     setSong(null);
     setLyrics(null);
+    handleIsSongStored(`${id}`);
 
     if (id === '_') {
       songController(songRepository())
