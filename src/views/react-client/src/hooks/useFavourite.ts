@@ -30,6 +30,7 @@ const useFavourite = (): IUseFavourite => {
 
   const handleSongFav = (song: TSong) => {
     if (isSongStored) {
+      // esto esta dependiendo en ese estado pelotudo, es propenso a fallar
       deleteSong(`${song.id}`);
       setIsSongStored(false);
     } else {
@@ -41,6 +42,7 @@ const useFavourite = (): IUseFavourite => {
 
   const handleArtistFav = (artist: TArtist) => {
     if (isArtistStored) {
+      // esto esta dependiendo en ese estado pelotudo, es propenso a fallar
       deleteArtist(`${artist.id}`);
       setIsArtistStored(false);
     } else {
