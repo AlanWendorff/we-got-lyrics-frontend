@@ -1,17 +1,18 @@
 import { Link, generatePath } from 'react-router-dom';
 import { SONG } from '@/constants/routes';
-import useFavourite from '@/hooks/useFavourite';
 import styles from './SongList.module.scss';
+import useFavouriteStore from '@/store/useFavourite.store';
 
 const SongList = () => {
-  const { handleGetFavSongs } = useFavourite();
-  const SONGS = handleGetFavSongs();
+  const { songs } = useFavouriteStore((state) => state);
 
   return (
     <>
-      {SONGS.length !== 0 ? (
+      {songs.length === 0 ? (
+        <p className={styles.advice}>Here you will see your favourite Songs.</p>
+      ) : (
         <ul className={styles.container}>
-          {SONGS.map(({ id, name, owner, thumbnail }) => (
+          {songs.map(({ id, name, owner, thumbnail }) => (
             <li key={id}>
               <Link to={generatePath(SONG, { id: `${id}`, name })} className={styles.song}>
                 <img className={styles.song__thumbnail} src={thumbnail} alt='song thumbnail' />
@@ -21,8 +22,6 @@ const SongList = () => {
             </li>
           ))}
         </ul>
-      ) : (
-        <p className={styles.advice}>Here you will see your favourite Songs.</p>
       )}
     </>
   );

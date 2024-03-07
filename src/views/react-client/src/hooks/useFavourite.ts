@@ -4,41 +4,50 @@ import storeAssetsController from '@core/storeAssets/application/StoreAssets.con
 import storeAssetsRepository from '@core/storeAssets/infrastructure/repositories/StoreAssets.repository';
 import { TArtist, TSong } from '@core/storeAssets/domain/models/StoreAssets.model';
 import { KEY_FAV_SONGS, KEY_FAV_ARTISTS } from '@core/configuration/localStorage/localStorage';
+import useFavouriteStore from '@/store/useFavourite.store';
 
 interface IUseFavourite {
   isSongStored: boolean;
   isArtistStored: boolean;
-  hasUserFav: boolean;
   handleSongFav: (song: TSong) => void;
   handleArtistFav: (artist: TArtist) => void;
-  handleGetFavSongs: () => TSong[];
-  handleGetFavArtists: () => TArtist[];
 }
 
 const useFavourite = (): IUseFavourite => {
   const { id } = useParams();
   const [isSongStored, setIsSongStored] = useState(false);
   const [isArtistStored, setIsArtistStored] = useState(false);
-  const [hasUserFav, setHasUserFav] = useState(false);
-
-  const handleAddSong = (song: TSong) => setIsSongStored(storeAssetsController(storeAssetsRepository()).addSongOnLs(song));
-  const handleDeleteSong = () => setIsSongStored(storeAssetsController(storeAssetsRepository()).deleteSongFromLs(`${id}`));
-
-  const handleAddArtist = (artist: TArtist) => setIsArtistStored(storeAssetsController(storeAssetsRepository()).addArtistOnLs(artist));
-  const handleDeleteArtist = () => setIsArtistStored(storeAssetsController(storeAssetsRepository()).deleteArtistFromLs(`${id}`));
+  const { addArtist, deleteArtist, addSong, deleteSong, setInitialStore, setHasUserFav } = useFavouriteStore((state) => state);
 
   const handleIsArtistStored = () => setIsArtistStored(storeAssetsController(storeAssetsRepository()).isArtistSavedOnLs(`${id}`));
   const handleIsSongStored = () => setIsSongStored(storeAssetsController(storeAssetsRepository()).isSongSavedOnLs(`${id}`));
 
-  const handleSongFav = (song: TSong) => (isSongStored ? handleDeleteSong() : handleAddSong(song));
-  const handleArtistFav = (artist: TArtist) => (isArtistStored ? handleDeleteArtist() : handleAddArtist(artist));
+  const handleSongFav = (song: TSong) => {
+    if (isSongStored) {
+      deleteSong(`${song.id}`);
+      setIsSongStored(false);
+    } else {
+      addSong(song);
+      setIsSongStored(true);
+    }
+    setHasUserFav();
+  };
 
-  const handleGetFavSongs = () => storeAssetsController(storeAssetsRepository()).getSongsFromLs();
-  const handleGetFavArtists = () => storeAssetsController(storeAssetsRepository()).getArtistsFromLs();
+  const handleArtistFav = (artist: TArtist) => {
+    if (isArtistStored) {
+      deleteArtist(`${artist.id}`);
+      setIsArtistStored(false);
+    } else {
+      addArtist(artist);
+      setIsArtistStored(true);
+    }
+    setHasUserFav();
+  };
 
   useEffect(() => {
     try {
-      setHasUserFav(!(handleGetFavArtists().length === 0 && handleGetFavSongs().length === 0));
+      setInitialStore();
+      setHasUserFav();
       handleIsSongStored();
       handleIsArtistStored();
     } catch (err) {
@@ -47,7 +56,7 @@ const useFavourite = (): IUseFavourite => {
     }
   }, [id]);
 
-  return { hasUserFav, isSongStored, isArtistStored, handleSongFav, handleArtistFav, handleGetFavSongs, handleGetFavArtists };
+  return { isSongStored, isArtistStored, handleSongFav, handleArtistFav };
 };
 
 export default useFavourite;

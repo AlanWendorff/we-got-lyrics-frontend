@@ -9,7 +9,7 @@ const PopularSongsSkeleton = () => (
     </p>
 
     <ul>
-      {[...Array(5)].map((index) => (
+      {[...Array(5)].map((_, index) => (
         <SongItemSkeleton key={index} />
       ))}
     </ul>

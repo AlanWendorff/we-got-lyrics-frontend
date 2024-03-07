@@ -3,8 +3,8 @@ import { TArtist, TSong } from '../models/StoreAssets.model';
 interface IStoreAssetsRepository {
   getSongsFromLs: () => TSong[];
   getArtistsFromLs: () => TArtist[];
-  deleteSongFromLs: (songId: string) => boolean;
-  deleteArtistFromLs: (artistId: string) => boolean;
+  deleteSongFromLs: (songId: string) => TSong[] | [];
+  deleteArtistFromLs: (artistId: string) => TArtist[] | [];
   addSongOnLs: (song: TSong) => boolean;
   addArtistOnLs: (artist: TArtist) => boolean;
   isArtistSavedOnLs: (artistId: string) => boolean;

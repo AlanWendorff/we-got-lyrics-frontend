@@ -14,20 +14,20 @@ const storeAssetsRepository = (): IStoreAssetsRepository => ({
   deleteSongFromLs: (songId) => {
     const GETTED_ITEMS = localStorage.getItem(KEY_FAV_SONGS);
     const PARSED_ITEMS: TSong[] = JSON.parse(GETTED_ITEMS!);
-    const FAV_SONGS = PARSED_ITEMS.filter((item) => `${item.id}` !== songId);
+    const FILTER = PARSED_ITEMS.filter((item) => `${item.id}` !== songId);
 
-    localStorage.setItem(KEY_FAV_SONGS, JSON.stringify(FAV_SONGS));
+    localStorage.setItem(KEY_FAV_SONGS, JSON.stringify(FILTER));
 
-    return false;
+    return FILTER;
   },
   deleteArtistFromLs: (artistId) => {
     const GETTED_ITEMS = localStorage.getItem(KEY_FAV_ARTISTS);
     const PARSED_ITEMS: TArtist[] = JSON.parse(GETTED_ITEMS!);
-    const FAV_SONGS = PARSED_ITEMS.filter((item) => `${item.id}` !== artistId);
+    const FILTER = PARSED_ITEMS.filter((item) => `${item.id}` !== artistId);
 
-    localStorage.setItem(KEY_FAV_ARTISTS, JSON.stringify(FAV_SONGS));
+    localStorage.setItem(KEY_FAV_ARTISTS, JSON.stringify(FILTER));
 
-    return false;
+    return FILTER;
   },
   addSongOnLs: (song) => {
     const GETTED_ITEMS = localStorage.getItem(KEY_FAV_SONGS);

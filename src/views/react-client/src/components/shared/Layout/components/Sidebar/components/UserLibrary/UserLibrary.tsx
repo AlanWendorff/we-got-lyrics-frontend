@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import styles from './UserLibrary.module.scss';
 import libraryIcon from '@images/shared/library-icon.png';
-import useFavourite from '@/hooks/useFavourite';
 import ArtistList from './components/ArtistList';
 import SongList from './components/SongList';
+import useFavouriteStore from '@/store/useFavourite.store';
 
 const UserLibrary = () => {
-  const { hasUserFav } = useFavourite();
+  const { hasUserFav } = useFavouriteStore((state) => state);
 
   const [controlState, setControlState] = useState({
     artists: true,
