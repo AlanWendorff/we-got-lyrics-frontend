@@ -19,8 +19,14 @@ const useFavourite = (): IUseFavourite => {
   const [isArtistStored, setIsArtistStored] = useState(false);
   const { addArtist, deleteArtist, addSong, deleteSong, setInitialStore, setHasUserFav } = useFavouriteStore((state) => state);
 
-  const handleIsArtistStored = () => setIsArtistStored(storeAssetsController(storeAssetsRepository()).isArtistSavedOnLs(`${id}`));
-  const handleIsSongStored = () => setIsSongStored(storeAssetsController(storeAssetsRepository()).isSongSavedOnLs(`${id}`));
+  const handleIsArtistStored = (artistId: string) =>
+    setIsArtistStored(storeAssetsController(storeAssetsRepository()).isArtistSavedOnLs(artistId));
+
+  const handleIsSongStored = (songId: string) => {
+    console.log('exec?');
+
+    setIsSongStored(storeAssetsController(storeAssetsRepository()).isSongSavedOnLs(songId));
+  };
 
   const handleSongFav = (song: TSong) => {
     if (isSongStored) {
@@ -48,8 +54,9 @@ const useFavourite = (): IUseFavourite => {
     try {
       setInitialStore();
       setHasUserFav();
-      handleIsSongStored();
-      handleIsArtistStored();
+
+      handleIsSongStored(`${id}`); // THIS IS FOR PAGE SONG NOT FOR SONG ITEM
+      handleIsArtistStored(`${id}`); // THIS IS FOR ARTIST
     } catch (err) {
       localStorage.setItem(KEY_FAV_SONGS, JSON.stringify([]));
       localStorage.setItem(KEY_FAV_ARTISTS, JSON.stringify([]));

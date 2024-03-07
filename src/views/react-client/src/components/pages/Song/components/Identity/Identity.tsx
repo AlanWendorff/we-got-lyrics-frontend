@@ -16,9 +16,10 @@ const Identity: FC<IIdentityProps> = ({ artistId, title, artistName, albumName }
     <p className={styles.title}>{title || <Skeleton />}</p>
 
     {artistName ? (
-      <p className={styles.subtitle}>
-        <Link to={generatePath(ARTIST, { id: `${artistId}`, name: artistName })}>{artistName}</Link>&nbsp;{albumName && `•  ${albumName}`}
-      </p>
+      <div className={styles.subtitle}>
+        <Link to={generatePath(ARTIST, { id: `${artistId}`, name: artistName })}>{artistName}</Link>&nbsp;
+        <p>{albumName && `•  ${albumName}`}</p>
+      </div>
     ) : (
       <Skeleton width={200} />
     )}
