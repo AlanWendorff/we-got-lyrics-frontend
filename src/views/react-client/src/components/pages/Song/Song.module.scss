@@ -28,6 +28,12 @@
   color: white;
   padding: 2rem;
 
+  .controls {
+    @include mixins.flex_container(row, flex-start, flex-start);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
   .contributors_mobile {
     @include mixins.flex_container(row, flex-start, flex-start);
     gap: 1.5rem;

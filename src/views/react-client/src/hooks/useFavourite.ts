@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import storeAssetsController from '@core/storeAssets/application/StoreAssets.controller';
 import storeAssetsRepository from '@core/storeAssets/infrastructure/repositories/StoreAssets.repository';
 import { TArtist, TSong } from '@core/storeAssets/domain/models/StoreAssets.model';
+import { KEY_FAV_ARTISTS, KEY_FAV_SONGS } from '@core/configuration/localStorage/localStorage';
 
 interface IUseFavourite {
   isSongStored: boolean;
@@ -33,11 +34,11 @@ const useFavourite = (): IUseFavourite => {
   const handleGetFavSongs = () => storeAssetsController(storeAssetsRepository()).getSongsFromLs();
   const handleGetFavArtists = () => storeAssetsController(storeAssetsRepository()).getArtistsFromLs();
 
-  /*   useEffect(() => {
+  /*  useEffect(() => {
+    localStorage.setItem(KEY_FAV_SONGS, JSON.stringify([]));
     localStorage.setItem(KEY_FAV_ARTISTS, JSON.stringify([]));
-    localStorage.setItem(KEY_FAV_ARTISTS, JSON.stringify([]));
-  }, []); */
-
+  }, []);
+ */
   useEffect(() => {
     setIsSongStored(handleIsSongStored());
     setIsArtistStored(handleIsArtistStored());

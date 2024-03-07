@@ -4,6 +4,7 @@
 .container {
   width: 100%;
   height: fit-content;
+  position: relative;
 }
 
 .body {
@@ -53,4 +54,12 @@
       color: var(--color-delta);
     }
   }
+}
+
+.controls {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  translate: 0 -50%;
+  padding-right: 1rem;
 }

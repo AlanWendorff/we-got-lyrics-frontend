@@ -15,6 +15,8 @@ import useTabName from '@/hooks/useTabName';
 import { APP_NAME } from '@/constants/config';
 import AddToFav from '@/components/shared/AddToFav';
 import useFavourite from '@/hooks/useFavourite';
+import Share from '@/components/shared/Share';
+import { generateArtistMsg } from '@/utils/generateSocialMsg';
 
 const ArtistInfo = () => {
   const { id } = useParams();
@@ -63,10 +65,14 @@ const ArtistInfo = () => {
 
       <div className={`${styles.body}`}>
         {artistInfo && id && (
-          <AddToFav
-            favouriteStatus={isArtistStored}
-            onClick={() => handleArtistFav({ id: parseInt(id), name: artistInfo?.artist.name, thumbnail: artistInfo?.artist.image_url })}
-          />
+          <div className={styles.controls}>
+            <AddToFav
+              favouriteStatus={isArtistStored}
+              onClick={() => handleArtistFav({ id: parseInt(id), name: artistInfo.artist.name, thumbnail: artistInfo.artist.image_url })}
+            />
+
+            <Share message={generateArtistMsg(artistInfo.artist.name)} />
+          </div>
         )}
         {isAllSongs ? (
           <AllSongs

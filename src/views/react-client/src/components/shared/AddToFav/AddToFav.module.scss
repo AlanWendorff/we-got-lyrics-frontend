@@ -7,13 +7,13 @@
   padding: 0.4rem 0.9rem;
   border-radius: 100px;
   color: white;
-  background-color: var(--color-eta);
+  background-color: var(--color-alpha);
   transition: background-color 100ms ease-in-out;
   gap: 0.5rem;
-  margin-bottom: 2rem;
+  height: 33px;
 
   &:hover {
-    background-color: var(--color-mu);
+    background-color: var(--color-gamma);
   }
 
   &.active {
@@ -23,5 +23,16 @@
 
   img {
     width: 20px;
+  }
+
+  &.slim {
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+    padding: 0;
+
+    img {
+      width: 16px;
+    }
   }
 }

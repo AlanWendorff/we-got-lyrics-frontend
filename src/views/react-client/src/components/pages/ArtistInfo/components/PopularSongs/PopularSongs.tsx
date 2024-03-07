@@ -25,7 +25,7 @@ const PopularSongs: FC<IPopularSongs> = ({ songs, artistName, handleSetIsAllSong
 
       <ul>
         {songs.map(({ id, thumbnail_url, title, artist }, key) => (
-          <SongItem key={key} id={`${id}`} number={key + 1} title={title} thumbnail={thumbnail_url} artist={artist} />
+          <SongItem key={key} id={`${id}`} number={key + 1} title={title} thumbnail={thumbnail_url} artist={artist} showControls />
         ))}
       </ul>
 

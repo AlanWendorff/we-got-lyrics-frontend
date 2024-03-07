@@ -15,6 +15,8 @@ import styles from './Song.module.scss';
 import useTabName from '@/hooks/useTabName';
 import AddToFav from '@/components/shared/AddToFav';
 import useFavourite from '@/hooks/useFavourite';
+import Share from '@/components/shared/Share';
+import { generateSongMsg } from '@/utils/generateSocialMsg';
 
 const Song = () => {
   const { id, name } = useParams();
@@ -78,17 +80,21 @@ const Song = () => {
 
       <div className={styles.body}>
         {song && (
-          <AddToFav
-            favouriteStatus={isSongStored}
-            onClick={() =>
-              handleSongFav({
-                id: song?.song.id,
-                name: song?.song.title,
-                owner: song?.song.artist.name,
-                thumbnail: song?.song.song_art_image_thumbnail_url
-              })
-            }
-          />
+          <div className={styles.controls}>
+            <AddToFav
+              favouriteStatus={isSongStored}
+              onClick={() =>
+                handleSongFav({
+                  id: song.song.id,
+                  name: song.song.title,
+                  owner: song.song.artist.name,
+                  thumbnail: song.song.song_art_image_thumbnail_url
+                })
+              }
+            />
+
+            <Share message={generateSongMsg(song.song.artist.name, song.song.title)} />
+          </div>
         )}
 
         <div className={styles.contributors_mobile}>
