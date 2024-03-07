@@ -7,7 +7,7 @@
   position: relative;
   background-color: var(--color-alpha);
   width: 100%;
-  border-radius: 5px;
+  border-radius: var(--web-border-radius);
   overflow: hidden;
   color: white;
 }
@@ -28,8 +28,14 @@
   color: white;
   padding: 2rem;
 
+  .controls {
+    @include mixins.flex_container(row, flex-start, flex-start);
+    gap: 1rem;
+  }
+
   .contributors_mobile {
-    display: none;
+    @include mixins.flex_container(row, flex-start, flex-start);
+    gap: 1.5rem;
   }
 }
 
@@ -50,9 +56,9 @@
   .body {
     padding: 1.5rem 2rem;
 
-    .contributors_mobile {
+    /* .contributors_mobile {
       @include mixins.flex_container(row, flex-start, flex-start);
       gap: 1.5rem;
-    }
+    } */
   }
 }

@@ -1,0 +1,32 @@
+@use '@styles/_mixins' as mixins;
+@use '@styles/_responsives' as responsives;
+@use '@styles/_typography.scss' as typography;
+
+.container {
+  @include mixins.flex_container(row, center, center);
+  height: var(--mobile-navbar-height);
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  background: linear-gradient(0deg, black 55%, rgba(0, 0, 0, 0.1));
+  display: none;
+
+  .control {
+    @include mixins.flex_container(column, flex-start, center);
+    @include typography.xs-light;
+    color: white;
+    gap: 0.5rem;
+    width: 100%;
+
+    img {
+      filter: invert(100%);
+    }
+  }
+}
+
+@include responsives.SVGA {
+  .container {
+    display: flex;
+  }
+}

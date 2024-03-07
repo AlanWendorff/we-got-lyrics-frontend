@@ -1,0 +1,59 @@
+@use '@styles/_mixins' as mixins;
+@use '@styles/_responsives' as responsives;
+@use '@styles/_typography.scss' as typography;
+
+.container {
+  @include mixins.flex_container(column, flex-start, flex-start);
+  background-color: var(--color-alpha);
+  border-radius: var(--web-border-radius);
+  padding: 1.5rem;
+  width: 100%;
+  gap: 2rem;
+
+  li {
+    width: 100%;
+  }
+}
+
+.title {
+  @include mixins.flex_container(row, flex-start, center);
+  @include typography.m;
+  color: var(--color-zeta);
+  gap: 1rem;
+  transition: color 100ms ease-in-out;
+
+  img {
+    width: 20px;
+    filter: invert(70%);
+  }
+}
+
+.filters {
+  @include mixins.flex_container(row, flex-start, center);
+  gap: 0.5rem;
+
+  .control {
+    @include typography.xs;
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+    color: white;
+    background-color: var(--color-eta);
+    transition: background-color 100ms ease-in-out;
+
+    &:hover {
+      background-color: var(--color-nu);
+    }
+
+    &.active {
+      color: var(--color-alpha);
+      background-color: white;
+    }
+  }
+}
+
+.advice {
+  @include typography.xs;
+  color: white;
+  text-align: center;
+  width: 100%;
+}

@@ -6,13 +6,13 @@
   @include mixins.flex_container(column, flex-start, flex-start);
   width: 100%;
   background-color: var(--color-beta);
-  border-radius: 5px;
+  border-radius: var(--web-border-radius);
   padding: 2rem;
 }
 
 .btn {
   background-color: var(--color-gamma);
-  border-radius: 5px;
+  border-radius: var(--web-border-radius);
   padding: 1rem;
 
   .title {

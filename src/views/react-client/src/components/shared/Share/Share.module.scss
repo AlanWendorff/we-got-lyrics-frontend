@@ -1,0 +1,50 @@
+@use '@styles/_typography.scss' as typography;
+@use '@styles/_mixins' as mixins;
+
+.container {
+  position: relative;
+
+  .button {
+    @include mixins.flex_container(row, flex-start, center);
+    @include typography.xs;
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+    color: white;
+    background-color: var(--color-alpha);
+    transition: background-color 100ms ease-in-out;
+    gap: 0.5rem;
+    height: 33px;
+
+    &:hover {
+      background-color: var(--color-gamma);
+    }
+
+    &.active {
+      color: var(--color-alpha);
+      background-color: white;
+    }
+
+    img {
+      height: 18px;
+    }
+  }
+
+  .social {
+    @include mixins.flex_container(row, center, center);
+    padding: 0.5rem;
+    border-radius: 100px;
+    gap: 0.5rem;
+    position: absolute;
+    bottom: -30%;
+    right: -50%;
+    translate: 70% 0%;
+
+    background-color: var(--color-alpha);
+    -webkit-box-shadow: 0 0 14px var(--color-kappa);
+    box-shadow: 0 0 14px var(--color-kappa);
+
+    button {
+      height: 30px;
+    }
+  }
+}

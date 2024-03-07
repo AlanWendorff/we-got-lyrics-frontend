@@ -1,3 +1,7 @@
+/**
+ * This component is unused
+ */
+
 import useHandleInstallPwa from '@/hooks/useHandleInstallPwa';
 import styles from './InstallApp.module.scss';
 

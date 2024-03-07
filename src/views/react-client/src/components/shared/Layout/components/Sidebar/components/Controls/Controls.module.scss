@@ -1,0 +1,45 @@
+@use '@styles/_mixins' as mixins;
+@use '@styles/_responsives' as responsives;
+@use '@styles/_typography.scss' as typography;
+
+.container {
+  @include mixins.flex_container(column, flex-start, flex-start);
+  background-color: var(--color-alpha);
+  border-radius: var(--web-border-radius);
+  padding: 1rem 1.5rem;
+  width: 100%;
+
+  .control {
+    @include mixins.flex_container(row, flex-start, center);
+    @include typography.m;
+    cursor: pointer;
+    padding: 1rem 0;
+    width: 100%;
+    color: var(--color-zeta);
+    gap: 1rem;
+    transition: color 100ms ease-in-out;
+
+    img {
+      width: 20px;
+      filter: invert(70%);
+
+      transition: filter 100ms ease-in-out;
+    }
+
+    &:hover {
+      color: white;
+
+      img {
+        filter: invert(100%);
+      }
+    }
+
+    &.active {
+      color: white;
+
+      img {
+        filter: invert(100%);
+      }
+    }
+  }
+}

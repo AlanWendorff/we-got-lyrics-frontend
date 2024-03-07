@@ -13,16 +13,22 @@ import lyricsController from '@core/lyrics/application/LyricsController';
 import TLyricsData from '@core/lyrics/domain/models/Lyrics.model';
 import styles from './Song.module.scss';
 import useTabName from '@/hooks/useTabName';
+import AddToFav from '@/components/shared/AddToFav';
+import useFavourite from '@/hooks/useFavourite';
+import Share from '@/components/shared/Share';
+import { generateSongMsg } from '@/utils/generateSocialMsg';
 
 const Song = () => {
   const { id, name } = useParams();
   const [song, setSong] = useState<TSong | null>(null);
   const [lyrics, setLyrics] = useState<TLyricsData | null>(null);
+  const { isSongStored, handleSongFav, handleIsSongStored } = useFavourite();
   useTabName({ tabName: `${song?.song.title} Lyrics`, dynamicInfo: song?.song.title });
 
   useEffect(() => {
     setSong(null);
     setLyrics(null);
+    handleIsSongStored(`${id}`);
 
     if (id === '_') {
       songController(songRepository())
@@ -66,14 +72,32 @@ const Song = () => {
             artistName={song?.song.artist.name}
             albumName={song?.song.album?.name}
           />
-          <div className={styles.contributors_desktop}>
+          {/*  <div className={styles.contributors_desktop}>
             <Contributor type='Featuring' contributors={song?.song.featured_artists} />
             <Contributor type='Produced by' contributors={song?.song.producer} />
-          </div>
+          </div> */}
         </div>
       </div>
 
       <div className={styles.body}>
+        {song && (
+          <div className={styles.controls}>
+            <AddToFav
+              favouriteStatus={isSongStored}
+              onClick={() =>
+                handleSongFav({
+                  id: song.song.id,
+                  name: song.song.title,
+                  owner: song.song.artist.name,
+                  thumbnail: song.song.song_art_image_thumbnail_url
+                })
+              }
+            />
+
+            <Share message={generateSongMsg(song.song.artist.name, song.song.title)} />
+          </div>
+        )}
+
         <div className={styles.contributors_mobile}>
           <Contributor type='Featuring' contributors={song?.song.featured_artists} />
           <Contributor type='Produced by' contributors={song?.song.producer} />

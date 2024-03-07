@@ -7,17 +7,11 @@
   display: grid;
   flex-direction: column;
   color: white;
-  padding: 0.5rem 0;
+  padding-top: 1.5rem;
 
   span {
     font-size: 1rem;
     text-decoration: underline;
     text-decoration-color: white;
-  }
-}
-
-@include responsives.VGA {
-  .container {
-    padding: 0;
   }
 }

@@ -8,7 +8,7 @@
   width: 30px;
   min-width: 30px;
   background-color: white;
-  border-radius: 5px;
+  border-radius: var(--web-border-radius);
   box-shadow: 0 0 3px var(--color-epsilon) inset;
   z-index: 1000;
   transition: scale 200ms ease-in-out;

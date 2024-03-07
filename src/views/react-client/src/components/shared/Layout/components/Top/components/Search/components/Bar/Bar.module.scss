@@ -12,7 +12,7 @@
   padding: 0px 0.125rem 0px 0.5rem;
   font-size: 16px;
   box-shadow: 0 0 3px var(--color-epsilon) inset;
-  border-radius: 5px;
+  border-radius: var(--web-border-radius);
   text-align: center;
 
   &::placeholder {
@@ -66,8 +66,22 @@
 @include responsives.VGA {
   .input__search {
     height: 35px;
+
+    &.mimetize {
+      background-color: var(--color-xi);
+      backdrop-filter: blur(5px);
+      box-shadow: none;
+
+      transition: all 100ms ease-in-out;
+
+      color: var(--color-theta);
+
+      &:focus {
+        color: black;
+        background-color: white;
+        backdrop-filter: none;
+        box-shadow: 0 0 3px var(--color-epsilon) inset;
+      }
+    }
   }
 }
-
-/* backdrop-filter: blur(7px); */
-/* background-color: rgba(255, 255, 255, 0); */

@@ -9,7 +9,7 @@
   background-color: var(--color-theta);
   color: white;
   padding: 1rem;
-  border-radius: 5px;
+  border-radius: var(--web-border-radius);
 
   .description_title {
     @include typography.s-light;

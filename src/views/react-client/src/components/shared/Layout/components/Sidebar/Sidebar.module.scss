@@ -1,0 +1,15 @@
+@use '@styles/_mixins' as mixins;
+@use '@styles/_responsives' as responsives;
+@use '@styles/_typography.scss' as typography;
+
+.container {
+  @include mixins.flex_container(column, flex-start, center);
+  gap: 1rem;
+  width: 26rem;
+}
+
+@include responsives.SVGA {
+  .container {
+    display: none;
+  }
+}

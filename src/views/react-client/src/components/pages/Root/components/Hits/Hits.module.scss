@@ -4,16 +4,17 @@
 
 .container {
   @include mixins.flex_container(column, flex-start, flex-start);
-  background-color: var(--color-beta);
-  border-radius: 5px;
+  background-color: var(--color-alpha);
+  border-radius: var(--web-border-radius);
   padding: 2rem;
   width: 100%;
 }
 
 .title {
+  @include mixins.flex_container(row, flex-start, center);
   @include typography.m;
+  gap: 1rem;
   color: white;
-  text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
@@ -23,7 +24,8 @@
     background-color: transparent;
     border-radius: 0;
   }
+
   .title {
-    margin: 0;
+    margin-bottom: 0.5rem;
   }
 }

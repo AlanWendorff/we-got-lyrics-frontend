@@ -1,0 +1,38 @@
+@use '@styles/_typography.scss' as typography;
+@use '@styles/_mixins' as mixins;
+
+.container {
+  @include mixins.flex_container(row, flex-start, center);
+  @include typography.xs;
+  padding: 0.4rem 0.9rem;
+  border-radius: 100px;
+  color: white;
+  background-color: var(--color-alpha);
+  transition: background-color 100ms ease-in-out;
+  gap: 0.5rem;
+  height: 33px;
+
+  &:hover {
+    background-color: var(--color-gamma);
+  }
+
+  &.active {
+    color: var(--color-alpha);
+    background-color: white;
+  }
+
+  img {
+    width: 20px;
+  }
+
+  &.slim {
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+    padding: 0;
+
+    img {
+      width: 16px;
+    }
+  }
+}

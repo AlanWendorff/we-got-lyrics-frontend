@@ -1,0 +1,22 @@
+@use '@styles/_typography.scss' as typography;
+@use '@styles/_responsives' as responsives;
+@use '@styles/_mixins' as mixins;
+
+.container {
+  @include mixins.flex_container(column, flex-start, flex-start);
+  padding: 5rem 1rem 0 1rem;
+  gap: 1rem;
+  width: 100%;
+}
+
+.title {
+  @include mixins.flex_container(row, flex-start, center);
+  @include typography.m;
+  gap: 1rem;
+  color: white;
+  margin-bottom: 0.5rem;
+
+  img {
+    width: 24px;
+  }
+}

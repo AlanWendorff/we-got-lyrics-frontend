@@ -2,14 +2,14 @@
 @use '@styles/_responsives' as responsives;
 
 .container {
-  @include mixins.flex_container(column, flex-start, center);
+  @include mixins.flex_container(column, flex-start, flex-start);
   gap: 1rem;
   width: 100%;
 }
 
 @include responsives.VGA {
   .container {
-    @include mixins.flex_container(column, flex-start, center);
+    @include mixins.flex_container(column, flex-start, flex-start);
     width: 100%;
   }
 }
