@@ -19,12 +19,12 @@
     background-color: var(--color-eta);
   }
 
-  img {
+  &__thumbnail {
     border-radius: 100%;
     width: 2.5rem;
   }
 
-  p {
+  &__name {
     @include typography.font-feature-settings;
     @include typography.s-light;
     color: white;
@@ -36,4 +36,37 @@
   color: white;
   text-align: center;
   width: 100%;
+}
+
+@include responsives.VGA {
+  .container {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-left: -0.5rem;
+    gap: 1rem;
+  }
+
+  .artist {
+    @include mixins.flex_container(column, flex-start, flex-start);
+    gap: 0.125rem;
+
+    &__thumbnail {
+      border-radius: 100%;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    &__name {
+      @include typography.l-light;
+      width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 }

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styles from './UserLibrary.module.scss';
 import libraryIcon from '@images/shared/library-icon.png';
-import ArtistList from './components/ArtistList';
-import SongList from './components/SongList';
+import ArtistList from '@shared/ArtistList';
+import SongList from '@shared/SongList';
 import useFavouriteStore from '@/store/useFavourite.store';
 
 const UserLibrary = () => {

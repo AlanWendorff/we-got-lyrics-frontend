@@ -1,3 +1,7 @@
+/**
+ * This component is unused
+ */
+
 import { FC } from 'react';
 import homeIcon from '@images/shared/home-icon.png';
 import { Link } from 'react-router-dom';
