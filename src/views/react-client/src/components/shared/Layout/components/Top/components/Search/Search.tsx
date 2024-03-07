@@ -8,11 +8,7 @@ import searchController from '@core/search/application/Search.controller';
 import TSearch from '@core/search/domain/models/Search.model';
 import styles from './Search.module.scss';
 
-interface ISearchProps {
-  isHomeBtnShow: boolean;
-}
-
-const Search: FC<ISearchProps> = ({ isHomeBtnShow }) => {
+const Search: FC = () => {
   const location = useLocation();
   const [searchedData, setSearchedData] = useState<TSearch | null>(null);
 
@@ -53,7 +49,6 @@ const Search: FC<ISearchProps> = ({ isHomeBtnShow }) => {
 
       {searchedData && (
         <List
-          className={`${isHomeBtnShow && styles.list__width}`}
           songs={searchedData.searched_data.songs}
           artists={searchedData.searched_data.artists}
           handleDeleteSearchedData={handleDeleteSearchedData}

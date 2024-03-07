@@ -1,0 +1,54 @@
+@use '@styles/_mixins' as mixins;
+@use '@styles/_responsives' as responsives;
+@use '@styles/_typography.scss' as typography;
+
+.container {
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-left: -0.5rem;
+}
+
+.song {
+  @include mixins.flex_container(column, flex-start, flex-start);
+  gap: 0.125rem;
+  width: 100%;
+  border-radius: var(--web-border-radius);
+  transition: background-color 100ms ease-in-out;
+  padding: 0.5rem;
+
+  &:hover {
+    background-color: var(--color-eta);
+  }
+
+  p {
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__thumbnail {
+    border-radius: var(--images-border-radius);
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  &__name {
+    @include typography.font-feature-settings;
+    @include typography.s-light;
+    color: white;
+  }
+
+  &__owner {
+    @include typography.xs-light;
+    color: var(--color-delta);
+  }
+}
+
+.advice {
+  @include typography.xs;
+  color: white;
+  text-align: center;
+  width: 100%;
+}

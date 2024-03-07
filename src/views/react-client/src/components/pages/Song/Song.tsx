@@ -14,11 +14,13 @@ import TLyricsData from '@core/lyrics/domain/models/Lyrics.model';
 import styles from './Song.module.scss';
 import useTabName from '@/hooks/useTabName';
 import AddToFav from '@/components/shared/AddToFav';
+import useFavourite from '@/hooks/useFavourite';
 
 const Song = () => {
   const { id, name } = useParams();
   const [song, setSong] = useState<TSong | null>(null);
   const [lyrics, setLyrics] = useState<TLyricsData | null>(null);
+  const { isSongStored, handleSongFav } = useFavourite();
   useTabName({ tabName: `${song?.song.title} Lyrics`, dynamicInfo: song?.song.title });
 
   useEffect(() => {
@@ -77,12 +79,15 @@ const Song = () => {
       <div className={styles.body}>
         {song && (
           <AddToFav
-            song={{
-              id: song?.song.id,
-              name: song?.song.title,
-              owner: song?.song.artist.name,
-              thumbnail: song?.song.song_art_image_thumbnail_url
-            }}
+            favouriteStatus={isSongStored}
+            onClick={() =>
+              handleSongFav({
+                id: song?.song.id,
+                name: song?.song.title,
+                owner: song?.song.artist.name,
+                thumbnail: song?.song.song_art_image_thumbnail_url
+              })
+            }
           />
         )}
 

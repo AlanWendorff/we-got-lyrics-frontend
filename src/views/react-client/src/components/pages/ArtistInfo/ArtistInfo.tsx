@@ -13,12 +13,16 @@ import Description from './components/Description';
 import AllSongs from './components/AllSongs';
 import useTabName from '@/hooks/useTabName';
 import { APP_NAME } from '@/constants/config';
+import AddToFav from '@/components/shared/AddToFav';
+import useFavourite from '@/hooks/useFavourite';
 
 const ArtistInfo = () => {
   const { id } = useParams();
   const [artistInfo, setArtistInfo] = useState<TArtistInfo | null>(null);
   const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
   const [isAllSongs, setIsAllSongs] = useState(false);
+  const { isArtistStored, handleArtistFav } = useFavourite();
+
   useTabName({ tabName: `${artistInfo?.artist.name} | ${APP_NAME}`, dynamicInfo: artistInfo?.artist.name });
 
   const handleSetIsAllSongs = () => {
@@ -58,20 +62,21 @@ const ArtistInfo = () => {
       </div>
 
       <div className={`${styles.body}`}>
+        {artistInfo && id && (
+          <AddToFav
+            favouriteStatus={isArtistStored}
+            onClick={() => handleArtistFav({ id: parseInt(id), name: artistInfo?.artist.name, thumbnail: artistInfo?.artist.image_url })}
+          />
+        )}
         {isAllSongs ? (
           <AllSongs
-            artistId={`${id}`}
+            artistId={id}
             artistThumbnail={artistInfo?.artist.image_url}
             artistName={artistInfo?.artist.name}
             handleSetIsAllSongs={handleSetIsAllSongs}
           />
         ) : (
-          <PopularSongs
-            artistId={`${id}`}
-            artistName={artistInfo?.artist.name}
-            songs={artistSongs?.songs}
-            handleSetIsAllSongs={handleSetIsAllSongs}
-          />
+          <PopularSongs artistName={artistInfo?.artist.name} songs={artistSongs?.songs} handleSetIsAllSongs={handleSetIsAllSongs} />
         )}
         {!isAllSongs && <Description name={artistInfo?.artist.name} description={artistInfo?.artist.description} />}
       </div>

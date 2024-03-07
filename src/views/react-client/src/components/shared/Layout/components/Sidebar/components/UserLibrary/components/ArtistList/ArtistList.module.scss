@@ -1,0 +1,39 @@
+@use '@styles/_mixins' as mixins;
+@use '@styles/_responsives' as responsives;
+@use '@styles/_typography.scss' as typography;
+
+.container {
+  @include mixins.flex_container(column, flex-start, flex-start);
+  margin-left: -0.5rem;
+}
+
+.artist {
+  @include mixins.flex_container(row, flex-start, center);
+  gap: 0.5rem;
+  width: calc(100% + 1rem);
+  border-radius: 100px;
+  transition: background-color 100ms ease-in-out;
+  padding: 0.5rem;
+
+  &:hover {
+    background-color: var(--color-eta);
+  }
+
+  img {
+    border-radius: 100%;
+    width: 2.5rem;
+  }
+
+  p {
+    @include typography.font-feature-settings;
+    @include typography.s-light;
+    color: white;
+  }
+}
+
+.advice {
+  @include typography.xs;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
