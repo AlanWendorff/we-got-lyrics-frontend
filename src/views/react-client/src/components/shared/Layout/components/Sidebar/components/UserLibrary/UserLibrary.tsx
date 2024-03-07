@@ -6,9 +6,7 @@ import ArtistList from './components/ArtistList';
 import SongList from './components/SongList';
 
 const UserLibrary = () => {
-  const { handleGetFavArtists, handleGetFavSongs } = useFavourite();
-
-  const HAS_USER_FAV = handleGetFavArtists().length === 0 && handleGetFavSongs().length === 0;
+  const { hasUserFav } = useFavourite();
 
   const [controlState, setControlState] = useState({
     artists: true,
@@ -22,9 +20,7 @@ const UserLibrary = () => {
         Your Saves
       </p>
 
-      {HAS_USER_FAV ? (
-        <p className={styles.advice}>You can save your favourite Artists and Songs.</p>
-      ) : (
+      {hasUserFav ? (
         <>
           <div className={styles.filters}>
             <button
@@ -44,6 +40,8 @@ const UserLibrary = () => {
           {controlState.artists && <ArtistList />}
           {controlState.songs && <SongList />}
         </>
+      ) : (
+        <p className={styles.advice}>You can save your favourite Artists and Songs.</p>
       )}
     </div>
   );
