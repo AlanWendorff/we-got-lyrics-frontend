@@ -53,6 +53,22 @@ export default defineConfig(({ mode }) => {
               sizes: '512x512',
               type: 'image/png'
             }
+          ],
+          screenshots: [
+            {
+              src: './public/pwa/app-screenshot-android.png',
+              sizes: '414x896',
+              type: 'image/png',
+              form_factor: 'narrow',
+              label: 'Homescreen of WG.lyrics'
+            },
+            {
+              src: './public/pwa/app-screenshot-desktop.png',
+              sizes: '1920x1080',
+              type: 'image/png',
+              form_factor: 'wide',
+              label: 'Homescreen of WG.lyrics'
+            }
           ]
         }
       })
