@@ -1,0 +1,31 @@
+@use '@styles/_typography.scss' as typography;
+@use '@styles/_responsives' as responsives;
+@use '@styles/_mixins' as mixins;
+
+.container {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar-thumb);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scrollbar-thumb-hover);
+  }
+}
+
+@include responsives.VGA {
+  .container {
+    height: auto;
+  }
+}

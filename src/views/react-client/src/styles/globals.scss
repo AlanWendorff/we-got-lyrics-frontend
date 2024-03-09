@@ -38,8 +38,11 @@ html {
   scroll-behavior: smooth !important;
   overflow-x: hidden;
 
+  // overflow-y: hidden; // test
+
   @include responsives.VGA {
     font-size: 14px;
+    // overflow-y: scroll; // test
   }
 }
 
@@ -59,8 +62,11 @@ body {
   padding: 1rem;
   margin: 0;
 
+  // overflow-y: hidden; // test
+
   @include responsives.VGA {
     padding: 0;
+    // overflow-y: scroll; // test
   }
 
   &::-webkit-scrollbar {
