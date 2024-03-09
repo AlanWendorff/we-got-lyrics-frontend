@@ -4,11 +4,11 @@ import styles from './Share.module.scss';
 import { FacebookShareButton, WhatsappShareButton, TwitterShareButton, FacebookIcon, TwitterIcon, WhatsappIcon } from 'react-share';
 import { APP_URL } from '@/constants/config';
 
-interface IShare {
+interface IShareProps {
   message: string;
 }
 
-const Share: FC<IShare> = ({ message }) => {
+const Share: FC<IShareProps> = ({ message }) => {
   const [isSocialOpen, setIsSocialOpen] = useState(false);
 
   return (
