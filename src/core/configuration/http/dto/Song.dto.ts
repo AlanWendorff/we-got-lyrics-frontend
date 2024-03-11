@@ -1,8 +1,8 @@
-import IHeaderImageColors from './shared/HeaderImageColors.dto';
-import IMeta from './shared/Meta.dto';
+import IPalletteColorsDTO from './PalletteColors.dto';
+import IMetaDTO from './Meta.dto';
 
 export interface ISongDTO {
-  meta: IMeta;
+  meta: IMetaDTO;
   response: IResponse;
 }
 
@@ -22,7 +22,7 @@ interface ISong {
   full_title: string;
   header_image_thumbnail_url: string;
   header_image_url: string;
-  header_image_colors: IHeaderImageColors;
+  header_image_colors: IPalletteColorsDTO;
   id: number;
   language: string;
   lyrics_owner_id: number;

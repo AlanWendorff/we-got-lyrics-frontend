@@ -1,4 +1,4 @@
-interface IHeaderImageColors {
+interface IPalletteColorsDTO {
   Vibrant: string;
   DarkVibrant: string;
   LightVibrant: string;
@@ -7,4 +7,4 @@ interface IHeaderImageColors {
   LightMuted: string;
 }
 
-export default IHeaderImageColors;
+export default IPalletteColorsDTO;

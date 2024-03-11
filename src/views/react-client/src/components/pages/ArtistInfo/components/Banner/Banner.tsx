@@ -1,11 +1,11 @@
 import { ComponentProps, FC } from 'react';
 import Skeleton from 'react-loading-skeleton';
+import IPalletteColorsDTO from '@core/configuration/http/dto/PalletteColors.dto';
 import styles from './Banner.module.scss';
-import IHeaderImageColors from '@core/configuration/http/dto/shared/HeaderImageColors.dto';
 
 interface IBannerProps extends ComponentProps<'div'> {
   banner: string | undefined;
-  bannerColors: IHeaderImageColors | undefined;
+  bannerColors: IPalletteColorsDTO | undefined;
 }
 
 const Banner: FC<IBannerProps> = ({ banner, bannerColors, ...rest }) => (

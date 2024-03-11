@@ -1,9 +1,9 @@
 import { ComponentProps, FC, useEffect } from 'react';
 import { Link, generatePath } from 'react-router-dom';
 import { SONG } from '@/constants/routes';
-import styles from './SongItem.module.scss';
-import AddToFav from '../AddToFav';
 import useFavourite from '@/hooks/useFavourite';
+import AddToFav from '../AddToFav';
+import styles from './SongItem.module.scss';
 
 interface ISongItemProps extends ComponentProps<'li'> {
   id: string;

@@ -1,8 +1,9 @@
+import { FC } from 'react';
 import heartIcon from '@images/shared/heart-icon-ol.png';
-import styles from './StoredArtists.module.scss';
 import ArtistList from '@shared/ArtistList';
+import styles from './StoredArtists.module.scss';
 
-const StoredArtists = () => (
+const StoredArtists: FC = () => (
   <div className={styles.container}>
     <p className={styles.title}>
       <img src={heartIcon} alt='heart icon' />

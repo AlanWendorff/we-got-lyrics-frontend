@@ -1,6 +1,6 @@
 import { ComponentProps, FC } from 'react';
-import SongItem from '@/components/shared/SongItem/SongItem';
 import { THit } from '@core/charts/domain/models/Charts.model';
+import SongItem from '@/components/shared/SongItem/SongItem';
 import HitListSkeleton from './HitList.skeleton';
 
 interface IHitListProps extends ComponentProps<'ul'> {

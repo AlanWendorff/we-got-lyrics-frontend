@@ -1,69 +1,47 @@
-import { KEY_FAV_SONGS, KEY_FAV_ARTISTS } from '../../../configuration/localStorage/localStorage';
+import { KEY_FAV_SONGS, KEY_FAV_ARTISTS } from '../../../configuration/constants/localStorage';
 import { TArtist, TSong } from '../../domain/models/StoreAssets.model';
 import IStoreAssetsRepository from '../../domain/repositories/StoreAssets.repository';
+import getItemMapper from '../mappers/GetItem.mapper';
 
 const storeAssetsRepository = (): IStoreAssetsRepository => ({
-  getSongsFromLs: () => {
-    const GETTED_ITEMS = localStorage.getItem(KEY_FAV_SONGS);
-    return JSON.parse(GETTED_ITEMS!) as TSong[];
-  },
-  getArtistsFromLs: () => {
-    const GETTED_ITEMS = localStorage.getItem(KEY_FAV_ARTISTS);
-    return JSON.parse(GETTED_ITEMS!) as TArtist[];
-  },
+  getSongsFromLs: () => getItemMapper(KEY_FAV_SONGS) as TSong[],
+  getArtistsFromLs: () => getItemMapper(KEY_FAV_ARTISTS) as TArtist[],
   deleteSongFromLs: (songId) => {
-    const GETTED_ITEMS = localStorage.getItem(KEY_FAV_SONGS);
-    const PARSED_ITEMS: TSong[] = JSON.parse(GETTED_ITEMS!);
-    const FILTER = PARSED_ITEMS.filter((item) => `${item.id}` !== songId);
+    const items = getItemMapper(KEY_FAV_SONGS) as TSong[];
+    const filteredItems = items.filter((item) => String(item.id) !== songId);
 
-    localStorage.setItem(KEY_FAV_SONGS, JSON.stringify(FILTER));
+    localStorage.setItem(KEY_FAV_SONGS, JSON.stringify(filteredItems));
 
-    return FILTER;
+    return filteredItems;
   },
   deleteArtistFromLs: (artistId) => {
-    const GETTED_ITEMS = localStorage.getItem(KEY_FAV_ARTISTS);
-    const PARSED_ITEMS: TArtist[] = JSON.parse(GETTED_ITEMS!);
-    const FILTER = PARSED_ITEMS.filter((item) => `${item.id}` !== artistId);
+    const items = getItemMapper(KEY_FAV_ARTISTS) as TArtist[];
+    const filteredItems = items.filter((item) => String(item.id) !== artistId);
 
-    localStorage.setItem(KEY_FAV_ARTISTS, JSON.stringify(FILTER));
+    localStorage.setItem(KEY_FAV_ARTISTS, JSON.stringify(filteredItems));
 
-    return FILTER;
+    return filteredItems;
   },
   addSongOnLs: (song) => {
-    const GETTED_ITEMS = localStorage.getItem(KEY_FAV_SONGS);
-    const PARSED_ITEMS: TSong[] = JSON.parse(GETTED_ITEMS!);
-
-    localStorage.setItem(KEY_FAV_SONGS, JSON.stringify([...PARSED_ITEMS, song]));
-
-    return true;
+    const items = getItemMapper(KEY_FAV_SONGS) as TSong[];
+    localStorage.setItem(KEY_FAV_SONGS, JSON.stringify([...items, song]));
   },
   addArtistOnLs: (artist) => {
-    const GETTED_ITEMS = localStorage.getItem(KEY_FAV_ARTISTS);
-    const PARSED_ITEMS: TSong[] = JSON.parse(GETTED_ITEMS!);
-
-    localStorage.setItem(KEY_FAV_ARTISTS, JSON.stringify([...PARSED_ITEMS, artist]));
-
-    return true;
+    const items = getItemMapper(KEY_FAV_ARTISTS) as TArtist[];
+    localStorage.setItem(KEY_FAV_ARTISTS, JSON.stringify([...items, artist]));
   },
   isArtistSavedOnLs: (artistId) => {
-    const GETTED_ITEMS = localStorage.getItem(KEY_FAV_ARTISTS);
-    const PARSED_ITEMS: TArtist[] = JSON.parse(GETTED_ITEMS!);
+    const items = getItemMapper(KEY_FAV_ARTISTS) as TArtist[];
+    const found: TArtist | undefined = items.find((item) => String(item.id) === artistId);
 
-    const FINDED: TArtist | undefined = PARSED_ITEMS.find((item) => `${item.id}` === artistId);
-
-    if (FINDED) return true;
-
-    return false;
+    return !!found;
   },
   isSongSavedOnLs: (songId) => {
-    const GETTED_ITEMS = localStorage.getItem(KEY_FAV_SONGS);
-    const PARSED_ITEMS: TSong[] = JSON.parse(GETTED_ITEMS!);
+    const items = getItemMapper(KEY_FAV_SONGS) as TSong[];
 
-    const FINDED: TSong | undefined = PARSED_ITEMS.find((item) => `${item.id}` === songId);
+    const found: TSong | undefined = items.find((item) => String(item.id) === songId);
 
-    if (FINDED) return true;
-
-    return false;
+    return !!found;
   }
 });
 

@@ -1,9 +1,10 @@
+import { FC } from 'react';
+import { APP_NAME } from '@/constants/config';
 import useTabName from '@/hooks/useTabName';
 import Hits from './components/Hits';
 import styles from './Root.module.scss';
-import { APP_NAME } from '@/constants/config';
 
-const Root = () => {
+const Root: FC = () => {
   useTabName({ tabName: APP_NAME });
 
   return (

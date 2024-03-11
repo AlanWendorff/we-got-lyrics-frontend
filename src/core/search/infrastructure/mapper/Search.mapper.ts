@@ -29,7 +29,6 @@ const searchMapper = (DTO: ISearchDTO): TSearch => {
   const ARTISTS = UNORDERED_ARTISTS.filter(({ id }, index) => !IDS.includes(id, index + 1)).slice(0, ARRAY_SIZE);
 
   return {
-    meta: DTO.meta,
     searched_data: {
       songs: SONGS,
       artists: ARTISTS

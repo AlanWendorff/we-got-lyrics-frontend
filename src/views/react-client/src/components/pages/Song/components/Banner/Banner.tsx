@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import styles from './Banner.module.scss';
-import IHeaderImageColors from '@core/configuration/http/dto/shared/HeaderImageColors.dto';
+import IPalletteColorsDTO from '@core/configuration/http/dto/PalletteColors.dto';
 
 interface IBannerProps {
-  bannerColors: IHeaderImageColors | undefined;
+  bannerColors: IPalletteColorsDTO | undefined;
 }
 
 const Banner: FC<IBannerProps> = ({ bannerColors }) => (

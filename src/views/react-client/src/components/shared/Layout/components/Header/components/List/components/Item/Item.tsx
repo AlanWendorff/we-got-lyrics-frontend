@@ -1,7 +1,7 @@
 import { ComponentProps, FC } from 'react';
 import { Link, generatePath } from 'react-router-dom';
 import styles from './Item.module.scss';
-import IThumbnail from '@/interfaces/thumbnail.interface';
+import IThumbnailProps from '@/interfaces/thumbnail.interface';
 
 interface IItemProps extends ComponentProps<'li'> {
   _id: number;
@@ -23,11 +23,11 @@ const Item = ({ _id, name, to, children, ...rest }: IItemProps) => (
   </li>
 );
 
-const ThumbnailSong: FC<IThumbnail> = ({ name, image, ...rest }) => (
+const ThumbnailSong: FC<IThumbnailProps> = ({ name, image, ...rest }) => (
   <img className={styles.thumbnail_song} src={image} alt={`${name} thumbnail`} {...rest} />
 );
 
-const ThumbnailArtist: FC<IThumbnail> = ({ name, image, ...rest }) => (
+const ThumbnailArtist: FC<IThumbnailProps> = ({ name, image, ...rest }) => (
   <img className={styles.thumbnail_artist} src={image} alt={`${name} thumbnail`} {...rest} />
 );
 

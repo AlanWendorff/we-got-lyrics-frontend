@@ -16,6 +16,9 @@ const Description: FC<IDescriptionProps> = ({ name, description }) => (
           <Skeleton />
           <Skeleton width={600} />
           <Skeleton width={500} />
+          <Skeleton width={600} />
+          <Skeleton width={500} />
+          <Skeleton width={600} />
         </>
       )}
     </p>

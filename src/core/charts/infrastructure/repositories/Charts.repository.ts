@@ -1,7 +1,7 @@
 import http from '../../../configuration/http/Http';
 import IChartsRepository from '../../domain/repositories/Charts.repository';
 import IChartsDTO from '../../../configuration/http/dto/Charts.dto';
-import { BASE_URL } from '../../../configuration/env';
+import { BASE_URL } from '../../../configuration/constants/env';
 
 const chartsRepository = (): IChartsRepository => ({
   getCharts: async () => {

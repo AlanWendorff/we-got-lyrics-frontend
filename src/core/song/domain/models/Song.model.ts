@@ -1,8 +1,6 @@
-import IHeaderImageColors from '../../../../core/configuration/http/dto/shared/HeaderImageColors.dto';
-import IMeta from '../../../../core/configuration/http/dto/shared/Meta.dto';
+import IPalletteColorsDTO from '../../../configuration/http/dto/PalletteColors.dto';
 
 type TSongData = {
-  meta: IMeta;
   song: TSong;
 };
 
@@ -12,7 +10,7 @@ type TSong = {
   embed_content: string;
   release_date_with_abbreviated_month_for_display: string;
   song_art_image_thumbnail_url: string;
-  header_image_colors: IHeaderImageColors;
+  header_image_colors: IPalletteColorsDTO;
   pageviews: number | undefined;
   album: TAlbum | null;
   artist: TArtist;

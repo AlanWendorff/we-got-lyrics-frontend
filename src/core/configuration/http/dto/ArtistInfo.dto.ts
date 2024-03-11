@@ -1,8 +1,8 @@
-import IHeaderImageColors from './shared/HeaderImageColors.dto';
-import IMeta from './shared/Meta.dto';
+import IPalletteColorsDTO from './PalletteColors.dto';
+import IMetaDTO from './Meta.dto';
 
 interface IArtistDTO {
-  meta: IMeta;
+  meta: IMetaDTO;
   response: IResponse;
 }
 
@@ -17,7 +17,7 @@ interface IArtist {
   facebook_name: string;
   followers_count: number;
   header_image_url: string;
-  header_image_colors: IHeaderImageColors;
+  header_image_colors: IPalletteColorsDTO;
   id: number;
   image_url: string;
   instagram_name: string;

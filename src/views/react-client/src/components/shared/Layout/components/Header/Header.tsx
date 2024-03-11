@@ -6,9 +6,9 @@ import Bar from './components/Bar';
 import searchRepository from '@core/search/infrastructure/repositories/Search.repository';
 import searchController from '@core/search/application/Search.controller';
 import TSearch from '@core/search/domain/models/Search.model';
-import styles from './Search.module.scss';
+import styles from './Header.module.scss';
 
-const Search: FC = () => {
+const Header: FC = () => {
   const location = useLocation();
   const [searchedData, setSearchedData] = useState<TSearch | null>(null);
 
@@ -36,26 +36,28 @@ const Search: FC = () => {
   const debounceHandleSearch = useCallback(debounce(handleSearch, 500), []);
 
   return (
-    <div className={styles.container}>
-      <Bar
-        onChange={(e: FormEvent<HTMLFormElement>) => {
-          e.preventDefault();
-          debounceHandleSearch(e.currentTarget.artist.value);
-        }}
-        onSubmit={(e: FormEvent<HTMLFormElement>) => {
-          e.preventDefault();
-        }}
-      />
-
-      {searchedData && (
-        <List
-          songs={searchedData.searched_data.songs}
-          artists={searchedData.searched_data.artists}
-          handleDeleteSearchedData={handleDeleteSearchedData}
+    <header className={styles.outerContainer}>
+      <div className={styles.innerContainer}>
+        <Bar
+          onChange={(e: FormEvent<HTMLFormElement>) => {
+            e.preventDefault();
+            debounceHandleSearch(e.currentTarget.artist.value);
+          }}
+          onSubmit={(e: FormEvent<HTMLFormElement>) => {
+            e.preventDefault();
+          }}
         />
-      )}
-    </div>
+
+        {searchedData && (
+          <List
+            songs={searchedData.searched_data.songs}
+            artists={searchedData.searched_data.artists}
+            handleDeleteSearchedData={handleDeleteSearchedData}
+          />
+        )}
+      </div>
+    </header>
   );
 };
 
-export default Search;
+export default Header;

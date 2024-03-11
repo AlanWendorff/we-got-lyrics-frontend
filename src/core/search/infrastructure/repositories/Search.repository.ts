@@ -2,7 +2,7 @@ import http from '../../../configuration/http/Http';
 import ISearchRepository from '../../domain/repositories/Search.repository';
 import ISearchDTO from '../../../configuration/http/dto/Search.dto';
 import searchMapper from '../mapper/Search.mapper';
-import { BASE_URL } from '../../../configuration/env';
+import { BASE_URL } from '../../../configuration/constants/env';
 
 const searchRepository = (): ISearchRepository => ({
   getSearch: async (name) => {

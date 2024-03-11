@@ -1,7 +1,7 @@
 import http from '../../../configuration/http/Http';
 import ILyricsRepository from '../../domain/repositories/Lyrics.repository';
 import ILyricsDTO from '../../../configuration/http/dto/Lyrics.dto';
-import { BASE_URL } from '../../../configuration/env';
+import { BASE_URL } from '../../../configuration/constants/env';
 
 const lyricsRepository = (): ILyricsRepository => ({
   getLyrics: async (url: string) => {

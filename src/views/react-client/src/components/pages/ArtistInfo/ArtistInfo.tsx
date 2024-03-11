@@ -1,29 +1,30 @@
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Banner from './components/Banner';
-import Thumbnail from './components/Thumbnail';
-import artistInfoController from '@core/artistInfo/application/ArtistInfo.controller';
+import { generateArtistMsg } from '@/utils/generateSocialMsg';
+import { APP_NAME } from '@/constants/config';
 import artistInfoRepository from '@core/artistInfo/infrastructure/repositories/ArtistInfo.repository';
+import artistInfoController from '@core/artistInfo/application/ArtistInfo.controller';
 import TArtistInfo from '@core/artistInfo/domain/models/ArtistInfo.model';
-import styles from './ArtistInfo.module.scss';
 import TArtistSongs from '@core/artistInfo/domain/models/ArtistSongs.model';
 import PopularSongs from './components/PopularSongs';
-import Identity from './components/Identity';
-import Description from './components/Description';
-import AllSongs from './components/AllSongs';
-import useTabName from '@/hooks/useTabName';
-import { APP_NAME } from '@/constants/config';
 import AddToFav from '@/components/shared/AddToFav';
+import Description from './components/Description';
 import useFavourite from '@/hooks/useFavourite';
+import Thumbnail from './components/Thumbnail';
 import Share from '@/components/shared/Share';
-import { generateArtistMsg } from '@/utils/generateSocialMsg';
+import Identity from './components/Identity';
+import AllSongs from './components/AllSongs';
+import Banner from './components/Banner';
+import useTabName from '@/hooks/useTabName';
+import styles from './ArtistInfo.module.scss';
 
-const ArtistInfo = () => {
-  const { id } = useParams();
-  const [artistInfo, setArtistInfo] = useState<TArtistInfo | null>(null);
-  const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
-  const [isAllSongs, setIsAllSongs] = useState(false);
+const ArtistInfo: FC = () => {
   const { isArtistStored, handleArtistFav, handleIsArtistStored } = useFavourite();
+  const { id } = useParams();
+
+  const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
+  const [artistInfo, setArtistInfo] = useState<TArtistInfo | null>(null);
+  const [isAllSongs, setIsAllSongs] = useState(false);
 
   useTabName({ tabName: `${artistInfo?.artist.name} | ${APP_NAME}`, dynamicInfo: artistInfo?.artist.name });
 
@@ -64,7 +65,7 @@ const ArtistInfo = () => {
         <Identity name={artistInfo?.artist.name} aka={artistInfo?.artist.alternate_names} />
       </div>
 
-      <div className={`${styles.body}`}>
+      <div className={styles.body}>
         {artistInfo && id && (
           <div className={styles.controls}>
             <AddToFav

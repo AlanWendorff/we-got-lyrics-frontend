@@ -5,7 +5,6 @@ const songMapper = (DTO: ISongDTO): TSongData => {
   const { song } = DTO.response;
 
   return {
-    meta: DTO.meta,
     song: {
       id: song.id,
       title: song.title,

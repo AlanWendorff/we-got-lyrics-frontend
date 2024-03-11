@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import SongItem from '@/components/shared/SongItem/SongItem';
 import { TSongs } from '@core/artistInfo/domain/models/ArtistSongs.model';
-import styles from './PopularSongs.module.scss';
+import SongItem from '@/components/shared/SongItem/SongItem';
 import PopularSongsSkeleton from './PopularSongs.skeleton';
 import chartIcon from '@images/shared/chart-icon.png';
+import styles from './PopularSongs.module.scss';
 
 interface IPopularSongs {
   songs: TSongs[] | undefined;

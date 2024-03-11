@@ -1,54 +1,39 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Lyrics from './components/Lyrics';
-import Thumbnail from './components/Thumbnail';
-import Banner from './components/Banner';
-import Identity from './components/Identity';
-import Contributor from './components/Contributor';
-import songRepository from '@core/song/infrastructure/repositories/Song.repository';
-import songController from '@core/song/application/SongController';
-import TSong from '@core/song/domain/models/Song.model';
-import lyricsRepository from '@core/lyrics/infrastructure/repositories/Lyrics.repository';
-import lyricsController from '@core/lyrics/application/LyricsController';
-import TLyricsData from '@core/lyrics/domain/models/Lyrics.model';
-import styles from './Song.module.scss';
-import useTabName from '@/hooks/useTabName';
-import AddToFav from '@/components/shared/AddToFav';
-import useFavourite from '@/hooks/useFavourite';
-import Share from '@/components/shared/Share';
 import { generateSongMsg } from '@/utils/generateSocialMsg';
+import useFavourite from '@/hooks/useFavourite';
+import useTabName from '@/hooks/useTabName';
+import lyricsRepository from '@core/lyrics/infrastructure/repositories/Lyrics.repository';
+import lyricsController from '@core/lyrics/application/Lyrics.controller';
+import getSongByName from '@/services/getSongByName';
+import getSongById from '@/services/getSongById';
+import TLyricsData from '@core/lyrics/domain/models/Lyrics.model';
+import TSong from '@core/song/domain/models/Song.model';
+import AddToFav from '@/components/shared/AddToFav';
+import Contributor from './components/Contributor';
+import Thumbnail from './components/Thumbnail';
+import Share from '@/components/shared/Share';
+import Identity from './components/Identity';
+import Lyrics from './components/Lyrics';
+import Banner from './components/Banner';
+import styles from './Song.module.scss';
 
 const Song = () => {
-  const { id, name } = useParams();
-  const [song, setSong] = useState<TSong | null>(null);
-  const [lyrics, setLyrics] = useState<TLyricsData | null>(null);
   const { isSongStored, handleSongFav, handleIsSongStored } = useFavourite();
+  const { id, name } = useParams();
+
+  const [lyrics, setLyrics] = useState<TLyricsData | null>(null);
+  const [song, setSong] = useState<TSong | null>(null);
+
   useTabName({ tabName: `${song?.song.title} Lyrics`, dynamicInfo: song?.song.title });
 
   useEffect(() => {
-    setSong(null);
+    handleIsSongStored(String(id));
     setLyrics(null);
-    handleIsSongStored(`${id}`);
+    setSong(null);
 
     if (id === '_') {
-      songController(songRepository())
-        .getSong('000', `${name}`)
-        .then((response) => {
-          setSong(response);
-
-          lyricsController(lyricsRepository())
-            .getLyrics(response.song.url)
-            .then((response) => {
-              setLyrics(response);
-            });
-        });
-
-      return;
-    }
-
-    songController(songRepository())
-      .getSong(`${id}`, '')
-      .then((response) => {
+      getSongByName(String(name)).then((response) => {
         setSong(response);
 
         lyricsController(lyricsRepository())
@@ -57,6 +42,19 @@ const Song = () => {
             setLyrics(response);
           });
       });
+
+      return;
+    }
+
+    getSongById(String(id)).then((response) => {
+      setSong(response);
+
+      lyricsController(lyricsRepository())
+        .getLyrics(response.song.url)
+        .then((response) => {
+          setLyrics(response);
+        });
+    });
   }, [id]);
 
   return (
@@ -65,18 +63,13 @@ const Song = () => {
 
       <div className={styles.top}>
         <Thumbnail image={song?.song.song_art_image_thumbnail_url} title={song?.song.title} />
-        <div>
-          <Identity
-            artistId={song?.song.artist.id}
-            title={song?.song.title}
-            artistName={song?.song.artist.name}
-            albumName={song?.song.album?.name}
-          />
-          {/*  <div className={styles.contributors_desktop}>
-            <Contributor type='Featuring' contributors={song?.song.featured_artists} />
-            <Contributor type='Produced by' contributors={song?.song.producer} />
-          </div> */}
-        </div>
+
+        <Identity
+          artistId={song?.song.artist.id}
+          title={song?.song.title}
+          artistName={song?.song.artist.name}
+          albumName={song?.song.album?.name}
+        />
       </div>
 
       <div className={styles.body}>

@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
-import shareIcon from '@images/shared/share-icon.png';
-import styles from './Share.module.scss';
 import { FacebookShareButton, WhatsappShareButton, TwitterShareButton, FacebookIcon, TwitterIcon, WhatsappIcon } from 'react-share';
 import { APP_URL } from '@/constants/config';
+import shareIcon from '@images/shared/share-icon.png';
+import styles from './Share.module.scss';
 
 interface IShareProps {
   message: string;

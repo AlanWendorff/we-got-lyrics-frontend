@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
-import chartsController from '@core/charts/application/charts.controller';
 import chartsRepository from '@core/charts/infrastructure/repositories/Charts.repository';
+import chartsController from '@core/charts/application/charts.controller';
 import TCharts from '@core/charts/domain/models/Charts.model';
 import fireIcon from '@images/shared/fire-icon.png';
 import HitList from './components/HitList';

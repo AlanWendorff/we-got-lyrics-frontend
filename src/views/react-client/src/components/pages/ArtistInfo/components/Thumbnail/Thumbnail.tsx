@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import Skeleton from 'react-loading-skeleton';
-import IThumbnail from '@/interfaces/thumbnail.interface';
+import IThumbnailProps from '@/interfaces/thumbnail.interface';
 import styles from './Thumbnail.module.scss';
 
-const Thumbnail: FC<IThumbnail> = ({ image, ...rest }) =>
+const Thumbnail: FC<IThumbnailProps> = ({ image, ...rest }) =>
   image ? (
     <img className={styles.thumbnail} src={image} alt='artist thumbnail' {...rest} />
   ) : (

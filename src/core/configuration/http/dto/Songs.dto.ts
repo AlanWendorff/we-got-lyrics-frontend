@@ -1,7 +1,7 @@
-import IMeta from './shared/Meta.dto';
+import IMetaDTO from './Meta.dto';
 
 interface ISongsDTO {
-  meta: IMeta;
+  meta: IMetaDTO;
   response: IResponse;
 }
 

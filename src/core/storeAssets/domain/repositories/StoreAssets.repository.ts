@@ -5,8 +5,8 @@ interface IStoreAssetsRepository {
   getArtistsFromLs: () => TArtist[];
   deleteSongFromLs: (songId: string) => TSong[] | [];
   deleteArtistFromLs: (artistId: string) => TArtist[] | [];
-  addSongOnLs: (song: TSong) => boolean;
-  addArtistOnLs: (artist: TArtist) => boolean;
+  addSongOnLs: (song: TSong) => void;
+  addArtistOnLs: (artist: TArtist) => void;
   isArtistSavedOnLs: (artistId: string) => boolean;
   isSongSavedOnLs: (songId: string) => boolean;
 }

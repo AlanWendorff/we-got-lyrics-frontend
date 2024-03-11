@@ -1,7 +1,7 @@
 @use '@styles/_responsives' as responsives;
 @use '@styles/_mixins' as mixins;
 
-.container {
+.outerContainer {
   @include mixins.flex_container(row, center, flex-start);
   gap: 8px;
   padding: 1rem;
@@ -10,8 +10,13 @@
   width: 500px;
 }
 
+.innerContainer {
+  position: relative;
+  width: 100%;
+}
+
 @include responsives.VGA {
-  .container {
+  .outerContainer {
     padding: 1rem;
     position: fixed;
     z-index: 1000;

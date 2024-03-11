@@ -1,7 +1,4 @@
-import IMeta from '../../../../core/configuration/http/dto/shared/Meta.dto';
-
 type TSearch = {
-  meta: IMeta;
   searched_data: TSearchedData;
 };
 

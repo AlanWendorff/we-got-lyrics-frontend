@@ -1,7 +1,7 @@
-import IMeta from './shared/Meta.dto';
+import IMetaDTO from './Meta.dto';
 
 interface ISearchDTO {
-  meta: IMeta;
+  meta: IMetaDTO;
   response: IResponse;
 }
 

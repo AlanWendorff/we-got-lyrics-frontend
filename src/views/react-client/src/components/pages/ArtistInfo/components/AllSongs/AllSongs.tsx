@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from 'react';
+import artistInfoRepository from '@core/artistInfo/infrastructure/repositories/ArtistInfo.repository';
+import artistInfoController from '@core/artistInfo/application/ArtistInfo.controller';
+import TArtistSongs from '@core/artistInfo/domain/models/ArtistSongs.model';
 import SongItem from '@/components/shared/SongItem/SongItem';
 import AllSongsSkeleton from './AllSongs.skeleton';
-import TArtistSongs from '@core/artistInfo/domain/models/ArtistSongs.model';
-import artistInfoController from '@core/artistInfo/application/ArtistInfo.controller';
-import artistInfoRepository from '@core/artistInfo/infrastructure/repositories/ArtistInfo.repository';
 import styles from './AllSongs.module.scss';
 
 interface IAllSongsProps {
