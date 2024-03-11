@@ -1,6 +1,7 @@
 import { TArtist, TSong } from '../models/StoreAssets.model';
 
 interface IStoreAssetsRepository {
+  initialize: () => void;
   getSongsFromLs: () => TSong[];
   getArtistsFromLs: () => TArtist[];
   deleteSongFromLs: (songId: string) => TSong[] | [];

@@ -4,6 +4,10 @@ import IStoreAssetsRepository from '../../domain/repositories/StoreAssets.reposi
 import getItemMapper from '../mappers/GetItem.mapper';
 
 const storeAssetsRepository = (): IStoreAssetsRepository => ({
+  initialize: () => {
+    localStorage.setItem(KEY_FAV_SONGS, JSON.stringify([]));
+    localStorage.setItem(KEY_FAV_ARTISTS, JSON.stringify([]));
+  },
   getSongsFromLs: () => getItemMapper(KEY_FAV_SONGS) as TSong[],
   getArtistsFromLs: () => getItemMapper(KEY_FAV_ARTISTS) as TArtist[],
   deleteSongFromLs: (songId) => {
@@ -38,7 +42,6 @@ const storeAssetsRepository = (): IStoreAssetsRepository => ({
   },
   isSongSavedOnLs: (songId) => {
     const items = getItemMapper(KEY_FAV_SONGS) as TSong[];
-
     const found: TSong | undefined = items.find((item) => String(item.id) === songId);
 
     return !!found;

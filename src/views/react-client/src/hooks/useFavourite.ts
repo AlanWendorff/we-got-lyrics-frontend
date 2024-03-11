@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import storeAssetsController from '@core/storeAssets/application/StoreAssets.controller';
 import storeAssetsRepository from '@core/storeAssets/infrastructure/repositories/StoreAssets.repository';
 import { TArtist, TSong } from '@core/storeAssets/domain/models/StoreAssets.model';
-import { KEY_FAV_SONGS, KEY_FAV_ARTISTS } from '@core/configuration/constants/localStorage';
 import useFavouriteStore from '@/store/useFavourite.store';
 
 interface IUseFavourite {
@@ -60,8 +59,7 @@ const useFavourite = (): IUseFavourite => {
       setInitialStore();
       setHasUserFav();
     } catch (err) {
-      localStorage.setItem(KEY_FAV_SONGS, JSON.stringify([]));
-      localStorage.setItem(KEY_FAV_ARTISTS, JSON.stringify([]));
+      storeAssetsController(storeAssetsRepository()).initialize();
     }
   }, [id]);
 

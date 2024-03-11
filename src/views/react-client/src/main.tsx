@@ -19,13 +19,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 // Seguir corrigiendo el text overflow en mobile
 // Corregir iconos, que tal vez sean mas simples sin tanto outline y que sean de mas res
 
-// Agregar HTML semantico, aside, header, nav...
-// Evitar crear componentes que contienen otro componente, si se requieren 2 containers se puede nombrar: outercontainer - innercontainer
 // Fixear aliases en core
 // dentro de useFavourite.ts estoy accediendo al local storage, es decir me paso por el culo mi logica de negocio
 
 // modelo = lo que tiene mi negocio
 // cada funcionalidad es un hexagono
 
-// reacomodar imports (primero los que tienen llaves, luego los que son components y son exactos)
 // Si el proyecto apunta a ser demo de patrones tengo que documentar (agregar comments) para detallar que es lo que se está probando en X lugar.

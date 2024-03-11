@@ -3,6 +3,7 @@ import IStoreAssetsRepository from '../repositories/StoreAssets.repository';
 interface IStoreAssetsService extends IStoreAssetsRepository {}
 
 const storeAssetsService = (repository: IStoreAssetsRepository): IStoreAssetsService => ({
+  initialize: () => repository.initialize(),
   getSongsFromLs: () => repository.getSongsFromLs(),
   getArtistsFromLs: () => repository.getArtistsFromLs(),
   deleteSongFromLs: (songId) => repository.deleteSongFromLs(songId),
