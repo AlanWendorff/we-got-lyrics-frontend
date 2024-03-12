@@ -20,7 +20,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 // Corregir iconos, que tal vez sean mas simples sin tanto outline y que sean de mas res
 
 // Fixear aliases en core
-// dentro de useFavourite.ts estoy accediendo al local storage, es decir me paso por el culo mi logica de negocio
 
 // modelo = lo que tiene mi negocio
 // cada funcionalidad es un hexagono

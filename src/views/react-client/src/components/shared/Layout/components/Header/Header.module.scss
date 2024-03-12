@@ -3,8 +3,8 @@
 
 .outerContainer {
   @include mixins.flex_container(row, center, flex-start);
-  gap: 8px;
-  padding: 1rem;
+  gap: calc(var(--web-gap) / 2);
+  padding: var(--web-gap);
   position: fixed;
   z-index: 1000;
   width: 500px;
@@ -17,9 +17,7 @@
 
 @include responsives.VGA {
   .outerContainer {
-    padding: 1rem;
     position: fixed;
-    z-index: 1000;
     width: 100%;
   }
 }

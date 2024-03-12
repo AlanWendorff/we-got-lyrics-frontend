@@ -9,9 +9,11 @@ interface IIdentityProps {
   artistName: string | undefined;
   albumName: string | undefined;
   title: string | undefined;
+  date: string | undefined;
+  views: number | null | undefined;
 }
 
-const Identity: FC<IIdentityProps> = ({ artistId, title, artistName, albumName }) => (
+const Identity: FC<IIdentityProps> = ({ artistId, title, artistName, albumName, date, views }) => (
   <div className={styles.container}>
     <p className={styles.title}>{title || <Skeleton />}</p>
 
@@ -23,6 +25,12 @@ const Identity: FC<IIdentityProps> = ({ artistId, title, artistName, albumName }
     ) : (
       <Skeleton width={200} />
     )}
+
+    <div className={styles.extra}>
+      {date !== null && <p>{date || <Skeleton width={100} height={19} />}</p>}
+      {'|'}
+      {views !== null && <p>{views ? `${(views! / 1000).toFixed(1)}K Views` : <Skeleton width={100} height={19} />}</p>}
+    </div>
   </div>
 );
 

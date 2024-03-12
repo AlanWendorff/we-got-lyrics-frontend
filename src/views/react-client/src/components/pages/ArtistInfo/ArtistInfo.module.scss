@@ -37,10 +37,28 @@
   color: white;
   padding: 2rem;
 
-  .controls {
-    @include mixins.flex_container(row, flex-start, flex-start);
-    gap: 1rem;
-    margin-bottom: 2rem;
+  height: 100%;
+  overflow-y: scroll;
+
+  &__expand {
+    padding: 1.15rem var(--web-gap) 1rem 2rem;
+    overflow-y: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar-thumb);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scrollbar-thumb-hover);
   }
 }
 

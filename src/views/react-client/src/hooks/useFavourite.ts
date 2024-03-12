@@ -34,7 +34,7 @@ const useFavourite = (): IUseFavourite => {
 
   const handleSongFav = (song: TSong) => {
     if (isSongStored) {
-      deleteSong(`${song.id}`);
+      deleteSong(String(song.id));
       setIsSongStored(false);
     } else {
       addSong(song);
@@ -45,7 +45,7 @@ const useFavourite = (): IUseFavourite => {
 
   const handleArtistFav = (artist: TArtist) => {
     if (isArtistStored) {
-      deleteArtist(`${artist.id}`);
+      deleteArtist(String(artist.id));
       setIsArtistStored(false);
     } else {
       addArtist(artist);

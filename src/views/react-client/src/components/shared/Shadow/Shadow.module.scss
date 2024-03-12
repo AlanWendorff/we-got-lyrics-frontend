@@ -1,0 +1,16 @@
+@use '@styles/_responsives' as responsives;
+
+.container {
+  position: absolute;
+  height: 10px;
+  z-index: 10;
+  background-color: var(--color-alpha);
+  -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 10px #00000099;
+}
+
+@include responsives.VGA {
+  .container {
+    display: none;
+  }
+}

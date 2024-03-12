@@ -1,0 +1,7 @@
+@use '@styles/_mixins' as mixins;
+
+.container {
+  @include mixins.flex_container(row, flex-start, flex-start);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}

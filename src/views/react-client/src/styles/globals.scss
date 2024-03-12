@@ -23,6 +23,7 @@
   --max-width-web: 50rem;
   --banner-height: 290px;
   --web-border-radius: 5px;
+  --web-gap: 1rem;
   --images-border-radius: 3px;
 
   --mobile-navbar-height: 70px;
@@ -38,7 +39,7 @@ html {
   scroll-behavior: smooth !important;
   overflow-x: hidden;
 
-  // overflow-y: hidden; // test
+  overflow-y: hidden; // test
 
   @include responsives.VGA {
     font-size: 14px;
@@ -59,13 +60,16 @@ body {
   background-color: black;
   font-family: Programme Light;
   overflow-x: hidden;
-  padding: 1rem;
+  padding: var(--web-gap);
   margin: 0;
 
-  // overflow-y: hidden; // test
+  height: 100vh; // test
+
+  //overflow-y: hidden; // test
 
   @include responsives.VGA {
     padding: 0;
+    height: auto;
     // overflow-y: scroll; // test
   }
 
@@ -91,7 +95,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  gap: 1rem;
+  gap: var(--web-gap);
 
   @include responsives.SVGA {
     padding-bottom: var(--mobile-navbar-height);

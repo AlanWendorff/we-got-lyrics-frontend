@@ -6,7 +6,7 @@
   @include mixins.flex_container(column, flex-start, flex-start);
   background-color: var(--color-alpha);
   border-radius: var(--web-border-radius);
-  padding: 1rem 1.5rem;
+  padding: 0.4rem 1.5rem;
   width: 100%;
 
   .control {

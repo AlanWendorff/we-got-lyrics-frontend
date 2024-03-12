@@ -17,6 +17,7 @@ import Identity from './components/Identity';
 import Lyrics from './components/Lyrics';
 import Banner from './components/Banner';
 import styles from './Song.module.scss';
+import Gradient from '@/components/shared/Gradient';
 
 const Song = () => {
   const { isSongStored, handleSongFav, handleIsSongStored } = useFavourite();
@@ -59,17 +60,23 @@ const Song = () => {
 
   return (
     <div className={styles.container}>
-      <Banner bannerColors={song?.song.header_image_colors} />
-
       <div className={styles.top}>
-        <Thumbnail image={song?.song.song_art_image_thumbnail_url} title={song?.song.title} />
+        <Banner bannerColors={song?.song.header_image_colors} />
 
-        <Identity
-          artistId={song?.song.artist.id}
-          title={song?.song.title}
-          artistName={song?.song.artist.name}
-          albumName={song?.song.album?.name}
-        />
+        <div className={styles.absolute}>
+          <Thumbnail image={song?.song.song_art_image_thumbnail_url} title={song?.song.title} />
+
+          <Identity
+            artistId={song?.song.artist.id}
+            title={song?.song.title}
+            artistName={song?.song.artist.name}
+            albumName={song?.song.album?.name}
+            date={song?.song.release_date_with_abbreviated_month_for_display}
+            views={song?.song.pageviews}
+          />
+        </div>
+
+        <Gradient color={String(song?.song.header_image_colors.Vibrant)} />
       </div>
 
       <div className={styles.body}>
@@ -91,7 +98,7 @@ const Song = () => {
           </div>
         )}
 
-        <div className={styles.contributors_mobile}>
+        <div className={styles.contributors}>
           <Contributor type='Featuring' contributors={song?.song.featured_artists} />
           <Contributor type='Produced by' contributors={song?.song.producer} />
         </div>

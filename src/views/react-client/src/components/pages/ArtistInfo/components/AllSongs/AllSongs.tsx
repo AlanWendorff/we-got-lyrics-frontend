@@ -39,7 +39,7 @@ const AllSongs: FC<IAllSongsProps> = ({ artistId, artistName, artistThumbnail, h
         </p>
       </div>
 
-      <ul>
+      <ul className={styles.list}>
         {artistSongs.songs.map(({ id, thumbnail_url, title, artist }, key) => (
           <SongItem key={key} id={`${id}`} number={key + 1} title={title} thumbnail={thumbnail_url} artist={artist} showControls />
         ))}

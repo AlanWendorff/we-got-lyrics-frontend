@@ -6,8 +6,9 @@
   @include mixins.flex_container(column, flex-start, flex-start);
   background-color: var(--color-alpha);
   border-radius: var(--web-border-radius);
-  padding: 2rem;
+  padding: 1.15rem var(--web-gap) 2rem 2rem;
   width: 100%;
+  height: 100%;
 }
 
 .title {
@@ -16,6 +17,14 @@
   gap: 1rem;
   color: white;
   margin-bottom: 1rem;
+  width: 100%;
+  position: relative;
+
+  .customShadow {
+    bottom: -1.15rem;
+    left: -2rem;
+    width: calc(100% + 3rem);
+  }
 }
 
 @include responsives.VGA {

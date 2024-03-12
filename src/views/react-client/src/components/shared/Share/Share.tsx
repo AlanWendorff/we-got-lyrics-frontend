@@ -1,6 +1,5 @@
 import { FC, useState } from 'react';
 import { FacebookShareButton, WhatsappShareButton, TwitterShareButton, FacebookIcon, TwitterIcon, WhatsappIcon } from 'react-share';
-import { APP_URL } from '@/constants/config';
 import shareIcon from '@images/shared/share-icon.png';
 import styles from './Share.module.scss';
 
@@ -20,15 +19,15 @@ const Share: FC<IShareProps> = ({ message }) => {
 
       {isSocialOpen && (
         <div className={styles.social}>
-          <FacebookShareButton url={APP_URL} hashtag='#music' title={message}>
+          <FacebookShareButton url={window.location.pathname} hashtag='#music' title={message}>
             <FacebookIcon size={30} round={true} />
           </FacebookShareButton>
 
-          <TwitterShareButton url={APP_URL} hashtags={['music']} title={message}>
+          <TwitterShareButton url={window.location.href} hashtags={['music']} title={message}>
             <TwitterIcon size={30} round={true} />
           </TwitterShareButton>
 
-          <WhatsappShareButton url={message}>
+          <WhatsappShareButton url={`${message} •  ${window.location.pathname}`}>
             <WhatsappIcon size={30} round={true} />
           </WhatsappShareButton>
         </div>

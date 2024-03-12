@@ -2,6 +2,11 @@
 @use '@styles/_responsives' as responsives;
 @use '@styles/_mixins' as mixins;
 
+.container {
+  @include mixins.flex_container(column, flex-end, flex-start);
+  gap: 0.6rem;
+}
+
 .title {
   @include typography.xl;
   font-size: 4rem;
@@ -11,7 +16,6 @@
 .subtitle {
   @include typography.m-light;
   display: flex;
-  margin: 0.5rem 0;
   color: white;
   width: 100%;
 
@@ -22,6 +26,11 @@
     text-decoration: underline;
     text-decoration-color: white;
   }
+}
+
+.extra {
+  @include mixins.flex_container(row, flex-start, flex-start);
+  gap: 0.8rem;
 }
 
 @include responsives.VGA {

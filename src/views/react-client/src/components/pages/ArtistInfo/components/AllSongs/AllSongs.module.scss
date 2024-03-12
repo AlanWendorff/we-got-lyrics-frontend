@@ -5,6 +5,7 @@
 .container {
   @include mixins.flex_container(column, flex-start, flex-start);
   width: 100%;
+  height: 100%;
   padding-bottom: 1rem;
 }
 
@@ -29,6 +30,28 @@
       text-transform: uppercase;
       text-decoration: underline;
     }
+  }
+}
+
+.list {
+  height: 100%;
+  overflow-y: scroll;
+  padding-top: 10px;
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar-thumb);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scrollbar-thumb-hover);
   }
 }
 
