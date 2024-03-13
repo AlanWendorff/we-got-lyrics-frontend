@@ -8,7 +8,7 @@
   width: 26rem;
 }
 
-@include responsives.SVGA {
+@include responsives.XGA {
   .container {
     display: none;
   }

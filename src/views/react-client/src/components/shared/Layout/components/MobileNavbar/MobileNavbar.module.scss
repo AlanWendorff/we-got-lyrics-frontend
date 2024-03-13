@@ -19,14 +19,13 @@
     gap: 0.5rem;
     width: 100%;
 
-    img {
-      filter: invert(100%);
-      //scale: 0.5;
+    &:active {
+      scale: 0.97;
     }
   }
 }
 
-@include responsives.SVGA {
+@include responsives.XGA {
   .container {
     display: flex;
   }

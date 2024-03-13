@@ -37,6 +37,7 @@
 
   height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     width: 0.8rem;
@@ -66,14 +67,17 @@
   }
 }
 
-@include responsives.VGA {
+@include responsives.XGA {
   .container {
     border-radius: 0;
+    background-color: black;
   }
 
   .top {
-    padding: 1.5rem 1rem;
-    gap: 1rem;
+    .absolute {
+      padding: 1.5rem 1rem;
+      gap: 1rem;
+    }
 
     .contributors_desktop {
       display: none;

@@ -8,7 +8,7 @@ const searchRepository = (): ISearchRepository => ({
   getSearch: async (name) => {
     try {
       const response = await http.get<ISearchDTO>(`${BASE_URL}/search?q=${name}`);
-      return searchMapper(response);
+      return searchMapper(response, name);
     } catch (error) {
       throw new Error(`Error getting user: ${error}`);
     }

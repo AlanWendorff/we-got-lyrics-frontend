@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import Skeleton from 'react-loading-skeleton';
+import calendarIcon from '@images/shared/calendar-icon.png';
+import eyeIcon from '@images/shared/eye-icon.png';
 import { ARTIST } from '@/constants/routes';
 import { Link, generatePath } from 'react-router-dom';
 import styles from './Identity.module.scss';
@@ -27,9 +29,19 @@ const Identity: FC<IIdentityProps> = ({ artistId, title, artistName, albumName, 
     )}
 
     <div className={styles.extra}>
-      {date !== null && <p>{date || <Skeleton width={100} height={19} />}</p>}
-      {'|'}
-      {views !== null && <p>{views ? `${(views! / 1000).toFixed(1)}K Views` : <Skeleton width={100} height={19} />}</p>}
+      {date !== null && (
+        <p>
+          {date && <img src={calendarIcon} alt='calendar icon' height={19} />}
+          {date || <Skeleton width={100} height={19} />}
+        </p>
+      )}
+      {views && <div className={styles.separator}>|</div>}
+      {views !== null && (
+        <p>
+          {views && <img src={eyeIcon} alt='eye icon' height={19} />}
+          {views ? `${(views! / 1000).toFixed(1)}K Views` : <Skeleton width={100} height={19} />}
+        </p>
+      )}
     </div>
   </div>
 );

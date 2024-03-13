@@ -15,9 +15,14 @@
   width: 100%;
 }
 
-@include responsives.VGA {
+@include responsives.XGA {
   .outerContainer {
     position: fixed;
     width: 100%;
+
+    &.blur {
+      backdrop-filter: blur(10px);
+      height: 100%;
+    }
   }
 }

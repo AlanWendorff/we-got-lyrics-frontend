@@ -7,18 +7,20 @@ import searchRepository from '@core/search/infrastructure/repositories/Search.re
 import searchController from '@core/search/application/Search.controller';
 import TSearch from '@core/search/domain/models/Search.model';
 import styles from './Header.module.scss';
+import ListMobile from './components/ListMobile';
 
 const Header: FC = () => {
   const location = useLocation();
   const [searchedData, setSearchedData] = useState<TSearch | null>(null);
+  const [isListShown, setIsListShown] = useState(false);
 
   useEffect(() => {
-    handleDeleteSearchedData();
+    setIsListShown(false);
   }, [location]);
 
   const handleSearch = (name: string) => {
     if (name === '') {
-      handleDeleteSearchedData();
+      setSearchedData(null);
       return;
     }
 
@@ -29,14 +31,14 @@ const Header: FC = () => {
       });
   };
 
-  const handleDeleteSearchedData = () => {
-    setSearchedData(null);
+  const handleIsListShown = () => {
+    setIsListShown(!isListShown);
   };
 
   const debounceHandleSearch = useCallback(debounce(handleSearch, 500), []);
 
   return (
-    <header className={styles.outerContainer}>
+    <header className={`${styles.outerContainer} ${searchedData && isListShown && styles.blur}`}>
       <div className={styles.innerContainer}>
         <Bar
           onChange={(e: FormEvent<HTMLFormElement>) => {
@@ -46,14 +48,22 @@ const Header: FC = () => {
           onSubmit={(e: FormEvent<HTMLFormElement>) => {
             e.preventDefault();
           }}
+          onClick={() => setIsListShown(true)}
         />
 
-        {searchedData && (
-          <List
-            songs={searchedData.searched_data.songs}
-            artists={searchedData.searched_data.artists}
-            handleDeleteSearchedData={handleDeleteSearchedData}
-          />
+        {searchedData && isListShown && (
+          <>
+            <List
+              songs={searchedData.searched_data.songs}
+              artists={searchedData.searched_data.artists}
+              handleIsListShown={handleIsListShown}
+            />
+            <ListMobile
+              songs={searchedData.searched_data.songs}
+              artists={searchedData.searched_data.artists}
+              handleIsListShown={handleIsListShown}
+            />
+          </>
         )}
       </div>
     </header>

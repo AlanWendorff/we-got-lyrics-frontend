@@ -8,14 +8,14 @@ import { ARTIST, SONG } from '@/constants/routes';
 interface IListProps extends ComponentProps<'ul'> {
   songs: TSong[];
   artists: TArtist[];
-  handleDeleteSearchedData: () => void;
+  handleIsListShown: () => void;
 }
 
-const List: FC<IListProps> = ({ songs, artists, handleDeleteSearchedData, ...rest }) => (
+const List: FC<IListProps> = ({ songs, artists, handleIsListShown, ...rest }) => (
   <ul className={`${styles.container} ${rest.className}`}>
     <div className={styles.top}>
       <p className={styles.top__title}>SEARCH RESULTS</p>
-      <button className={styles.close} onClick={handleDeleteSearchedData} aria-label='close search results'>
+      <button className={styles.close} onClick={handleIsListShown} aria-label='close search results'>
         <img src={chevronUpIcon} alt='chevron up' />
       </button>
     </div>

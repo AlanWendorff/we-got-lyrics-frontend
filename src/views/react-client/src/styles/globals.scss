@@ -17,6 +17,8 @@
   --color-nu: #4c4d4eb4;
   --color-xi: #ffffff96;
 
+  --color-brand: #0d72ea;
+
   --color-scrollbar-thumb: #393a3bb4;
   --color-scrollbar-thumb-hover: #545657b4;
 
@@ -37,13 +39,14 @@
 
 html {
   scroll-behavior: smooth !important;
-  overflow-x: hidden;
+  overflow: hidden;
 
-  overflow-y: hidden; // test
+  @include responsives.XGA {
+    overflow-y: scroll;
+  }
 
   @include responsives.VGA {
     font-size: 14px;
-    // overflow-y: scroll; // test
   }
 }
 
@@ -65,12 +68,9 @@ body {
 
   height: 100vh; // test
 
-  //overflow-y: hidden; // test
-
-  @include responsives.VGA {
+  @include responsives.XGA {
     padding: 0;
     height: auto;
-    // overflow-y: scroll; // test
   }
 
   &::-webkit-scrollbar {

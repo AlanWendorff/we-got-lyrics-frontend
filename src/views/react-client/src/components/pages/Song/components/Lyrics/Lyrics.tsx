@@ -9,8 +9,24 @@ interface ILyricsProps {
 
 const Lyrics: FC<ILyricsProps> = ({ songTitle, lyrics }) => (
   <div className={styles.container}>
-    <p className={styles.song__title}>{lyrics ? `${songTitle} lyrics` : <Skeleton width={100} />}</p>
-    <p className={styles.song__lyrics}>{lyrics || <Skeleton height={40} />}</p>
+    {/*  <p className={styles.song__title}>{lyrics ? `${songTitle} lyrics` : <Skeleton width={100} />}</p> */}
+    <p className={styles.song__lyrics}>
+      {lyrics || (
+        <>
+          <Skeleton width={500} height={16} />
+          <Skeleton width={400} height={16} />
+          <Skeleton width={500} height={16} />
+          <Skeleton width={400} height={16} />
+          <Skeleton width={500} height={16} />
+          <Skeleton width={400} height={16} />
+          <Skeleton width={500} height={16} />
+          <Skeleton width={400} height={16} />
+          <Skeleton width={500} height={16} />
+          <Skeleton width={400} height={16} />
+          <Skeleton width={500} height={16} />
+        </>
+      )}
+    </p>
   </div>
 );
 

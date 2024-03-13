@@ -12,7 +12,7 @@ const songMapper = (DTO: ISongDTO): TSongData => {
       release_date_with_abbreviated_month_for_display: song.release_date_with_abbreviated_month_for_display,
       song_art_image_thumbnail_url: song.song_art_image_thumbnail_url,
       header_image_colors: song.header_image_colors,
-      pageviews: song.stats.pageviews ?? undefined,
+      pageviews: song.stats.pageviews ?? null,
       album: song.album
         ? {
             id: song.album.id,
@@ -24,8 +24,8 @@ const songMapper = (DTO: ISongDTO): TSongData => {
         name: song.primary_artist.name,
         image_url: song.primary_artist.image_url
       },
-      featured_artists: song.featured_artists.length === 0 ? undefined : song.featured_artists.map(({ name }) => name),
-      producer: song.producer_artists.length === 0 ? undefined : song.producer_artists.map(({ name }) => name),
+      featured_artists: song.featured_artists.length === 0 ? [] : song.featured_artists.map(({ name }) => name),
+      producer: song.producer_artists.length === 0 ? [] : song.producer_artists.map(({ name }) => name),
       url: song.url
     }
   };

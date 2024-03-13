@@ -1,10 +1,10 @@
 import ISearchDTO from '../../../../core/configuration/http/dto/Search.dto';
 import TSearch from '../../domain/models/Search.model';
 
-const ARRAY_SIZE = 4;
+const arraySizeLimit = window.innerWidth < 1024 ? 7 : 4;
 
-const searchMapper = (DTO: ISearchDTO): TSearch => {
-  const SONGS = DTO.response.hits
+const searchMapper = (DTO: ISearchDTO, input: string): TSearch => {
+  const songs = DTO.response.hits
     .map(({ result }) => ({
       id: result.id,
       api_path: result.api_path,
@@ -12,9 +12,9 @@ const searchMapper = (DTO: ISearchDTO): TSearch => {
       artist_name: result.primary_artist.name,
       image_thumbnail: result.header_image_thumbnail_url
     }))
-    .slice(0, ARRAY_SIZE);
+    .slice(0, arraySizeLimit);
 
-  const UNORDERED_ARTISTS = DTO.response.hits.map(({ result }) => {
+  const unorderedArtists = DTO.response.hits.map(({ result }) => {
     const { primary_artist } = result;
 
     return {
@@ -25,13 +25,15 @@ const searchMapper = (DTO: ISearchDTO): TSearch => {
     };
   });
 
-  const IDS = UNORDERED_ARTISTS.map(({ id }) => id);
-  const ARTISTS = UNORDERED_ARTISTS.filter(({ id }, index) => !IDS.includes(id, index + 1)).slice(0, ARRAY_SIZE);
+  const artistsByInput = unorderedArtists.filter(({ name }) => name.toLowerCase().includes(input.toLowerCase()));
+  const artists = artistsByInput
+    .filter((value, index, self) => index === self.findIndex(({ id }) => id === value.id))
+    .slice(0, arraySizeLimit);
 
   return {
     searched_data: {
-      songs: SONGS,
-      artists: ARTISTS
+      songs,
+      artists
     }
   };
 };

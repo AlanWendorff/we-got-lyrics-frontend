@@ -10,14 +10,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </React.StrictMode>
 );
 
-// arreglar searchbar & searched list
-// arreglar scroll del contenido en desktop
-// mejorar web screenshot PWA
+// mostrar resultados mas exactos en list de la searchbar
+// hacer mas chico el contenido de la list search para mobile
+
 // Devolver todas las canciones de un artista
-// Eliminar toolbar del All songs del artista
+
 // El share en mobile se ve desalineado.
-// Seguir corrigiendo el text overflow en mobile
-// Corregir iconos, que tal vez sean mas simples sin tanto outline y que sean de mas res
 
 // Fixear aliases en core
 

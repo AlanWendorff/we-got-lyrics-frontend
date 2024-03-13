@@ -11,11 +11,11 @@ type TSong = {
   release_date_with_abbreviated_month_for_display: string;
   song_art_image_thumbnail_url: string;
   header_image_colors: IPalletteColorsDTO;
-  pageviews: number | undefined;
+  pageviews: number | null;
   album: TAlbum | null;
   artist: TArtist;
-  featured_artists: string[] | undefined;
-  producer: string[] | undefined;
+  featured_artists: string[];
+  producer: string[];
   url: string;
 };
 

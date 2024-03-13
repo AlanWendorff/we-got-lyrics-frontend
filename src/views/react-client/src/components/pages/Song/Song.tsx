@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { generateSongMsg } from '@/utils/generateSocialMsg';
 import useFavourite from '@/hooks/useFavourite';
 import useTabName from '@/hooks/useTabName';
 import lyricsRepository from '@core/lyrics/infrastructure/repositories/Lyrics.repository';
@@ -9,18 +8,17 @@ import getSongByName from '@/services/getSongByName';
 import getSongById from '@/services/getSongById';
 import TLyricsData from '@core/lyrics/domain/models/Lyrics.model';
 import TSong from '@core/song/domain/models/Song.model';
-import AddToFav from '@/components/shared/AddToFav';
 import Contributor from './components/Contributor';
+import Gradient from '@/components/shared/Gradient';
 import Thumbnail from './components/Thumbnail';
-import Share from '@/components/shared/Share';
+import Controls from './components/Controls';
 import Identity from './components/Identity';
 import Lyrics from './components/Lyrics';
 import Banner from './components/Banner';
 import styles from './Song.module.scss';
-import Gradient from '@/components/shared/Gradient';
 
 const Song = () => {
-  const { isSongStored, handleSongFav, handleIsSongStored } = useFavourite();
+  const { isSongStored, handleIsSongStored } = useFavourite();
   const { id, name } = useParams();
 
   const [lyrics, setLyrics] = useState<TLyricsData | null>(null);
@@ -80,23 +78,7 @@ const Song = () => {
       </div>
 
       <div className={styles.body}>
-        {song && (
-          <div className={styles.controls}>
-            <AddToFav
-              favouriteStatus={isSongStored}
-              onClick={() =>
-                handleSongFav({
-                  id: song.song.id,
-                  name: song.song.title,
-                  owner: song.song.artist.name,
-                  thumbnail: song.song.song_art_image_thumbnail_url
-                })
-              }
-            />
-
-            <Share message={generateSongMsg(song.song.artist.name, song.song.title)} />
-          </div>
-        )}
+        <Controls isSongStored={isSongStored} song={song} />
 
         <div className={styles.contributors}>
           <Contributor type='Featuring' contributors={song?.song.featured_artists} />

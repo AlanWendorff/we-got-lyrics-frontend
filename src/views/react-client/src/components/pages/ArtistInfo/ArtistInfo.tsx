@@ -17,7 +17,7 @@ import useTabName from '@/hooks/useTabName';
 import styles from './ArtistInfo.module.scss';
 
 const ArtistInfo: FC = () => {
-  const { handleIsArtistStored } = useFavourite();
+  const { isArtistStored, handleIsArtistStored } = useFavourite();
   const { id } = useParams();
 
   const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
@@ -26,15 +26,16 @@ const ArtistInfo: FC = () => {
 
   useTabName({ tabName: `${artistInfo?.artist.name} | ${APP_NAME}`, dynamicInfo: artistInfo?.artist.name });
 
-  const artistBody = document.querySelector('#artist-body') as HTMLDivElement;
+  const artistBodyRef = document.querySelector('#artist-body') as HTMLDivElement;
 
   const handleSetIsAllSongs = () => {
-    artistBody.scrollTop = 0;
+    artistBodyRef.scrollTop = 0;
     setIsAllSongs(!isAllSongs);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   useEffect(() => {
-    if (artistBody) artistBody.scrollTop = 0;
+    if (artistBodyRef) artistBodyRef.scrollTop = 0;
     setArtistInfo(null);
     setArtistSongs(null);
     setIsAllSongs(false);
@@ -76,7 +77,7 @@ const ArtistInfo: FC = () => {
           />
         ) : (
           <>
-            <Controls artistId={parseInt(id!)} artistInfo={artistInfo} />
+            <Controls isArtistStored={isArtistStored} artistId={parseInt(id!)} artistInfo={artistInfo} />
             <PopularSongs artistName={artistInfo?.artist.name} songs={artistSongs?.songs} handleSetIsAllSongs={handleSetIsAllSongs} />
           </>
         )}
