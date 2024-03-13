@@ -18,7 +18,7 @@ import Banner from './components/Banner';
 import styles from './Song.module.scss';
 
 const Song = () => {
-  const { isSongStored, handleIsSongStored } = useFavourite();
+  const { isSongStored, handleIsSongStored, handleSongFav } = useFavourite();
   const { id, name } = useParams();
 
   const [lyrics, setLyrics] = useState<TLyricsData | null>(null);
@@ -27,13 +27,13 @@ const Song = () => {
   useTabName({ tabName: `${song?.song.title} Lyrics`, dynamicInfo: song?.song.title });
 
   useEffect(() => {
-    handleIsSongStored(String(song?.song.id));
     setLyrics(null);
     setSong(null);
 
     if (id === '_') {
       getSongByName(String(name)).then((response) => {
         setSong(response);
+        handleIsSongStored(String(response?.song.id));
 
         lyricsController(lyricsRepository())
           .getLyrics(response.song.url)
@@ -44,6 +44,8 @@ const Song = () => {
 
       return;
     }
+
+    handleIsSongStored(String(id));
 
     getSongById(String(id)).then((response) => {
       setSong(response);
@@ -78,7 +80,7 @@ const Song = () => {
       </div>
 
       <div className={styles.body}>
-        <Controls isSongStored={isSongStored} song={song} />
+        <Controls isSongStored={isSongStored} song={song} handleSongFav={handleSongFav} />
 
         <div className={styles.contributors}>
           <Contributor type='Featuring' contributors={song?.song.featured_artists} />

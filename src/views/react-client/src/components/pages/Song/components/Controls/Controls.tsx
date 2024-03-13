@@ -1,20 +1,19 @@
 import { FC } from 'react';
 import { generateSongMsg } from '@/utils/generateSocialMsg';
-import TSong from '@core/song/domain/models/Song.model';
+import { TSong } from '@core/storeAssets/domain/models/StoreAssets.model';
+import TSongInfo from '@core/song/domain/models/Song.model';
 import Skeleton from 'react-loading-skeleton';
 import AddToFav from '@/components/shared/AddToFav';
 import Share from '@/components/shared/Share';
-import useFavourite from '@/hooks/useFavourite';
 import styles from './Controls.module.scss';
 
 interface IControlsProps {
   isSongStored: boolean;
-  song: TSong | null;
+  song: TSongInfo | null;
+  handleSongFav: (song: TSong) => void;
 }
 
-const Controls: FC<IControlsProps> = ({ isSongStored, song }) => {
-  const { handleSongFav } = useFavourite();
-
+const Controls: FC<IControlsProps> = ({ isSongStored, song, handleSongFav }) => {
   if (!song) {
     return (
       <div className={styles.container}>
