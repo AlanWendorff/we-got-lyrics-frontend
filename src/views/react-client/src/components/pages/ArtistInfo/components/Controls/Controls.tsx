@@ -3,19 +3,18 @@ import { generateArtistMsg } from '@/utils/generateSocialMsg';
 import Skeleton from 'react-loading-skeleton';
 import AddToFav from '@/components/shared/AddToFav';
 import Share from '@/components/shared/Share';
-import useFavourite from '@/hooks/useFavourite';
 import TArtistInfo from '@core/artistInfo/domain/models/ArtistInfo.model';
+import { TArtist } from '@core/storeAssets/domain/models/StoreAssets.model';
 import styles from './Controls.module.scss';
 
 interface IControlsProps {
   isArtistStored: boolean;
   artistId: number;
   artistInfo: TArtistInfo | null;
+  handleArtistFav: (artist: TArtist) => void;
 }
 
-const Controls: FC<IControlsProps> = ({ isArtistStored, artistId, artistInfo }) => {
-  const { handleArtistFav } = useFavourite();
-
+const Controls: FC<IControlsProps> = ({ isArtistStored, artistId, artistInfo, handleArtistFav }) => {
   if (!artistInfo || !artistId) {
     return (
       <div className={styles.container}>

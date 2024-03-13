@@ -27,7 +27,7 @@ const Song = () => {
   useTabName({ tabName: `${song?.song.title} Lyrics`, dynamicInfo: song?.song.title });
 
   useEffect(() => {
-    handleIsSongStored(String(id));
+    handleIsSongStored(String(song?.song.id));
     setLyrics(null);
     setSong(null);
 

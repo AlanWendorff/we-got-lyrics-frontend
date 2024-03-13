@@ -16,6 +16,10 @@
     background-color: var(--color-gamma);
   }
 
+  &:hover img {
+    animation: heart-hover 400ms infinite;
+  }
+
   &.active {
     color: var(--color-alpha);
     background-color: white;
@@ -34,5 +38,17 @@
     img {
       width: 16px;
     }
+  }
+}
+
+@keyframes heart-hover {
+  10% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
   }
 }

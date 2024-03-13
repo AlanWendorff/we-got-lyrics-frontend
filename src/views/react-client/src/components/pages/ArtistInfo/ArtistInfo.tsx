@@ -17,7 +17,7 @@ import useTabName from '@/hooks/useTabName';
 import styles from './ArtistInfo.module.scss';
 
 const ArtistInfo: FC = () => {
-  const { isArtistStored, handleIsArtistStored } = useFavourite();
+  const { isArtistStored, handleIsArtistStored, handleArtistFav } = useFavourite();
   const { id } = useParams();
 
   const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
@@ -54,6 +54,8 @@ const ArtistInfo: FC = () => {
       });
   }, [id]);
 
+  console.log(isArtistStored);
+
   return (
     <div className={styles.container}>
       <Banner
@@ -77,7 +79,7 @@ const ArtistInfo: FC = () => {
           />
         ) : (
           <>
-            <Controls isArtistStored={isArtistStored} artistId={parseInt(id!)} artistInfo={artistInfo} />
+            <Controls isArtistStored={isArtistStored} artistId={parseInt(id!)} artistInfo={artistInfo} handleArtistFav={handleArtistFav} />
             <PopularSongs artistName={artistInfo?.artist.name} songs={artistSongs?.songs} handleSetIsAllSongs={handleSetIsAllSongs} />
           </>
         )}

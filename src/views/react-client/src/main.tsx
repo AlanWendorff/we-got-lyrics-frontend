@@ -10,9 +10,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </React.StrictMode>
 );
 
-// mostrar resultados mas exactos en list de la searchbar
-// hacer mas chico el contenido de la list search para mobile
-
 // Devolver todas las canciones de un artista
 
 // El share en mobile se ve desalineado.
