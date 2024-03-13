@@ -10,6 +10,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </React.StrictMode>
 );
 
+// mejorar skeletons para mobile
 // Devolver todas las canciones de un artista
 
 // El share en mobile se ve desalineado.

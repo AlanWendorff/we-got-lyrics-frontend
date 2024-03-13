@@ -54,8 +54,6 @@ const ArtistInfo: FC = () => {
       });
   }, [id]);
 
-  console.log(isArtistStored);
-
   return (
     <div className={styles.container}>
       <Banner

@@ -1,9 +1,10 @@
 import { FC } from 'react';
+import { Link, generatePath } from 'react-router-dom';
+import { ARTIST } from '@/constants/routes';
 import Skeleton from 'react-loading-skeleton';
+import shortenNumber from '@/utils/shortenNumber';
 import calendarIcon from '@images/shared/calendar-icon.png';
 import eyeIcon from '@images/shared/eye-icon.png';
-import { ARTIST } from '@/constants/routes';
-import { Link, generatePath } from 'react-router-dom';
 import styles from './Identity.module.scss';
 
 interface IIdentityProps {
@@ -39,7 +40,7 @@ const Identity: FC<IIdentityProps> = ({ artistId, title, artistName, albumName, 
       {views !== null && (
         <p>
           {views && <img src={eyeIcon} alt='eye icon' height={19} />}
-          {views ? `${(views! / 1000).toFixed(1)}K Views` : <Skeleton width={100} height={19} />}
+          {views ? `${shortenNumber(views)} Views` : <Skeleton width={100} height={19} />}
         </p>
       )}
     </div>

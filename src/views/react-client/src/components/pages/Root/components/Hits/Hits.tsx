@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
 import chartsRepository from '@core/charts/infrastructure/repositories/Charts.repository';
 import chartsController from '@core/charts/application/charts.controller';
 import TCharts from '@core/charts/domain/models/Charts.model';
