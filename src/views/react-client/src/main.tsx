@@ -11,12 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 );
 
 // agregar aspect ratio a todas las imagenes
-
-// mejorar skeletons para mobile
-// Devolver todas las canciones de un artista
-
-// El share en mobile se ve desalineado.
-
+//Fijarse a ver si puedo cambiar el tema de la web asi como cambio el titulo de la tab
 // Fixear aliases en core
 
 // modelo = lo que tiene mi negocio
