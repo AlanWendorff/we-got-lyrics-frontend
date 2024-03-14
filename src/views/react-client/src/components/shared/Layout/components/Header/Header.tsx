@@ -43,7 +43,7 @@ const Header: FC = () => {
         <Bar
           onChange={(e: FormEvent<HTMLFormElement>) => {
             e.preventDefault();
-            debounceHandleSearch(e.currentTarget.artist.value);
+            debounceHandleSearch(e.currentTarget.search.value);
           }}
           onSubmit={(e: FormEvent<HTMLFormElement>) => {
             e.preventDefault();
