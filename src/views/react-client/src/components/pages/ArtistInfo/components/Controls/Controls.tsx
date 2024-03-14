@@ -15,11 +15,11 @@ interface IControlsProps {
 }
 
 const Controls: FC<IControlsProps> = ({ isArtistStored, artistId, artistInfo, handleArtistFav }) => {
-  if (!artistInfo || !artistId) {
+  if (!artistInfo) {
     return (
       <div className={styles.container}>
-        <Skeleton width={93} height={33} />
-        <Skeleton width={85} height={33} />
+        <Skeleton width={93} height={31} />
+        <Skeleton width={85} height={31} />
       </div>
     );
   }

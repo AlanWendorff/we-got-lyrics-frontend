@@ -63,6 +63,14 @@
 }
 
 @include responsives.XGA {
+  /*  .container {
+    background-color: black;
+  } */
+
+  .top {
+    gap: 1rem;
+  }
+
   .container {
     border-radius: 0;
   }

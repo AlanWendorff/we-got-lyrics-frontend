@@ -5,11 +5,11 @@ import SongItemSkeleton from '@/components/shared/SongItem/SongItem.skeleton';
 const AllSongsSkeleton = () => (
   <div className={styles.container}>
     <div className={styles.top}>
-      <Skeleton className={styles.thumbnail} />•
+      <Skeleton className={styles.top__thumbnail} />•
       <Skeleton width={150} />
     </div>
 
-    <ul>
+    <ul className={styles.songList}>
       {[...Array(10)].map((_, index) => (
         <SongItemSkeleton key={index} />
       ))}

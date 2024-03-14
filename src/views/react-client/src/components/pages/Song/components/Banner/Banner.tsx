@@ -9,7 +9,6 @@ interface IBannerProps {
 const Banner: FC<IBannerProps> = ({ bannerColors }) => (
   <div className={styles.container}>
     <div className={styles.vibrantLayer} style={{ backgroundColor: bannerColors?.Vibrant }} />
-    {/*     <div className={styles.darkLayer} /> */}
   </div>
 );
 

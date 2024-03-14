@@ -13,13 +13,10 @@
 
   .description_title {
     @include typography.s-light;
-    //@include typography.s;
   }
 
   .description_content {
     @include typography.m-light;
-    overflow-y: scroll;
-    //height: 350px;
     padding-right: 1rem;
 
     &::-webkit-scrollbar {
