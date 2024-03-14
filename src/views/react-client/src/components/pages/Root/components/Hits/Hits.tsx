@@ -30,11 +30,11 @@ const Hits: FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
+      <h2 className={styles.title}>
         <img src={fireIcon} alt='fire icon' />
         Top Hits
         {showShadow && <Shadow className={styles.customShadow} />}
-      </div>
+      </h2>
 
       <HitList hits={hits?.charts} innerRef={listRef} />
     </div>

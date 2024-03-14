@@ -11,8 +11,8 @@ const Contributor: FC<IContributorProps> = ({ contributors, type }) => {
   if (!contributors) {
     return (
       <div className={styles.container}>
-        <Skeleton width={100} height={12} />
-        <Skeleton width={160} height={19} />
+        <Skeleton width={90} height={12} />
+        <Skeleton width={120} height={19} />
       </div>
     );
   }

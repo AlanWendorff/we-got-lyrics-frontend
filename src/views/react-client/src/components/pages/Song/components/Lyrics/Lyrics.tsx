@@ -13,17 +13,15 @@ const Lyrics: FC<ILyricsProps> = ({ lyrics }) => (
     <p className={styles.song__lyrics}>
       {lyrics || (
         <>
-          <Skeleton width={500} height={16} />
-          <Skeleton width={400} height={16} />
-          <Skeleton width={500} height={16} />
-          <Skeleton width={400} height={16} />
-          <Skeleton width={500} height={16} />
-          <Skeleton width={400} height={16} />
-          <Skeleton width={500} height={16} />
-          <Skeleton width={400} height={16} />
-          <Skeleton width={500} height={16} />
-          <Skeleton width={400} height={16} />
-          <Skeleton width={500} height={16} />
+          <Skeleton width={'80%'} height={16} />
+          <Skeleton width={'70%'} height={16} />
+          <Skeleton width={'80%'} height={16} />
+          <Skeleton width={'70%'} height={16} />
+          <Skeleton width={'80%'} height={16} />
+          <Skeleton width={'70%'} height={16} />
+          <Skeleton width={'80%'} height={16} />
+          <Skeleton width={'70%'} height={16} />
+          <Skeleton width={'80%'} height={16} />
         </>
       )}
     </p>

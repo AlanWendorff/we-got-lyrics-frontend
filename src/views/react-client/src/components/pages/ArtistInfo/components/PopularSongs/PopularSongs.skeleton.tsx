@@ -4,9 +4,9 @@ import SongItemSkeleton from '@/components/shared/SongItem/SongItem.skeleton';
 
 const PopularSongsSkeleton = () => (
   <div className={styles.container}>
-    <p className={styles.title}>
+    <h2 className={styles.title}>
       <Skeleton width={150} />
-    </p>
+    </h2>
 
     <ul>
       {[...Array(5)].map((_, index) => (

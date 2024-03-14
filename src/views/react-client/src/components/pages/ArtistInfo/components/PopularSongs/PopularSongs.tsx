@@ -18,18 +18,18 @@ const PopularSongs: FC<IPopularSongs> = ({ songs, artistName, handleSetIsAllSong
 
   return (
     <div className={styles.container}>
-      <p className={styles.title}>
+      <h2 className={styles.title}>
         <img src={chartIcon} alt='chart icon' />
-        POPULAR {artistName} CHARTS
-      </p>
+        POPULAR {artistName} SONGS
+      </h2>
 
       <ul>
         {songs.map(({ id, thumbnail_url, title, artist }, key) => (
-          <SongItem key={key} id={`${id}`} number={key + 1} title={title} thumbnail={thumbnail_url} artist={artist} showControls />
+          <SongItem key={key} id={String(id)} number={key + 1} title={title} thumbnail={thumbnail_url} artist={artist} showControls />
         ))}
       </ul>
 
-      <button className={styles.more} onClick={handleSetIsAllSongs}>
+      <button className={styles.more} onClick={handleSetIsAllSongs} aria-label='See more songs'>
         See more
       </button>
     </div>

@@ -21,14 +21,14 @@ const Controls = () => {
         aria-label='Go to home'
       >
         <img src={isWebOnRoot ? homeIconSolid : homeIconOutlined} alt='home icon' />
-        Home
+        <span>Home</span>
       </NavLink>
 
       {PWA_PROMPT_INCOMPATIBLE_BROWSER ||
         (!isAppInstalled && (
           <button className={styles.control} onClick={handleInstallApp} aria-label='Install app on device'>
             <img src={downloadIcon} alt='download icon' />
-            <p className={styles.title}>Install PWA</p>
+            <span>Install APP</span>
           </button>
         ))}
     </div>

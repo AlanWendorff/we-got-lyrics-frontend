@@ -5,10 +5,10 @@ import styles from './StoredSongs.module.scss';
 
 const StoredSongs: FC = () => (
   <div className={styles.container}>
-    <p className={styles.title}>
+    <h2 className={styles.title}>
       <img src={heartIcon} alt='heart icon' />
       Your Favourite Songs
-    </p>
+    </h2>
 
     <SongList />
   </div>

@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 );
 
 // agregar aspect ratio a todas las imagenes
-// revisar si los botones tienen aria-label
+
 // mejorar skeletons para mobile
 // Devolver todas las canciones de un artista
 

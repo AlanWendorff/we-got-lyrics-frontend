@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.input__search {
+.input {
   width: 100%;
   height: 30px;
   padding: 0px 0.125rem 0px 0.5rem;
@@ -38,11 +38,11 @@
   }
 }
 
-.input__search:not(:placeholder-shown) ~ .icon__container {
+.input:not(:placeholder-shown) ~ .icon__container {
   width: 100%;
 }
 
-.input__search:focus ~ .icon__container .icon {
+.input:focus ~ .icon__container .icon {
   opacity: 0.25;
 }
 
@@ -64,16 +64,14 @@
 }
 
 @include responsives.XGA {
-  .input__search {
+  .input {
     height: 35px;
 
-    &.mimetize {
+    &__mimetize {
       background-color: var(--color-xi);
       backdrop-filter: blur(5px);
       box-shadow: none;
-
       transition: all 100ms ease-in-out;
-
       color: var(--color-theta);
 
       &:focus {

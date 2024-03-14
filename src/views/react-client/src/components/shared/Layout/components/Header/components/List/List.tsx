@@ -1,9 +1,9 @@
 import { ComponentProps, FC } from 'react';
+import { ARTIST, SONG } from '@/constants/routes';
+import { TArtist, TSong } from '@core/search/domain/models/Search.model';
 import Item from './components/Item';
 import chevronUpIcon from '@images/shared/chevron-up.png';
-import { TArtist, TSong } from '@core/search/domain/models/Search.model';
 import styles from './List.module.scss';
-import { ARTIST, SONG } from '@/constants/routes';
 
 interface IListProps extends ComponentProps<'ul'> {
   songs: TSong[];
@@ -15,7 +15,7 @@ const List: FC<IListProps> = ({ songs, artists, handleIsListShown, ...rest }) =>
   <ul className={`${styles.container} ${rest.className}`}>
     <div className={styles.top}>
       <p className={styles.top__title}>SEARCH RESULTS</p>
-      <button className={styles.close} onClick={handleIsListShown} aria-label='close search results'>
+      <button className={styles.close} onClick={handleIsListShown} aria-label='Close search results'>
         <img src={chevronUpIcon} alt='chevron up' />
       </button>
     </div>

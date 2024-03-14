@@ -14,13 +14,13 @@
   gap: 0.5rem;
   margin-bottom: 1rem;
 
-  .thumbnail {
+  &__thumbnail {
     width: 2rem !important;
     height: 2rem !important;
     border-radius: 100px !important;
   }
 
-  .title {
+  &__title {
     @include typography.m;
     color: white;
 
@@ -33,7 +33,7 @@
   }
 }
 
-.list {
+.songList {
   height: 100%;
   overflow-y: scroll;
   padding-top: 10px;

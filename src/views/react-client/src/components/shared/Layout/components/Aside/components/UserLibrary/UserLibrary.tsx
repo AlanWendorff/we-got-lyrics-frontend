@@ -15,23 +15,25 @@ const UserLibrary = () => {
 
   return (
     <div className={styles.container}>
-      <p className={styles.title}>
+      <h2 className={styles.title}>
         <img src={libraryIcon} alt='library icon' />
-        Your Saves
-      </p>
+        Your library
+      </h2>
 
       {hasUserFav ? (
         <>
           <div className={styles.filters}>
             <button
-              className={`${styles.control} ${controlState.artists && styles.active}`}
+              className={`${styles.filters__control} ${controlState.artists && styles.filters__control_active}`}
               onClick={() => setControlState({ artists: true, songs: false })}
+              aria-label='See your favourite artists'
             >
               Artists
             </button>
             <button
-              className={`${styles.control} ${controlState.songs && styles.active}`}
+              className={`${styles.filters__control} ${controlState.songs && styles.filters__control_active}`}
               onClick={() => setControlState({ artists: false, songs: true })}
+              aria-label='See your favourite songs'
             >
               Songs
             </button>

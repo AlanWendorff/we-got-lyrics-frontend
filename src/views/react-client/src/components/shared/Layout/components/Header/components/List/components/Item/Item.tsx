@@ -1,3 +1,7 @@
+/**
+ * Component Compound Pattern
+ */
+
 import { ComponentProps, FC } from 'react';
 import { Link, generatePath } from 'react-router-dom';
 import styles from './Item.module.scss';
@@ -17,7 +21,7 @@ interface IInfoSongProps {
 
 const Item = ({ _id, name, to, children, ...rest }: IItemProps) => (
   <li {...rest}>
-    <Link to={generatePath(to, { id: `${_id}`, name })} className={styles.link}>
+    <Link to={generatePath(to, { id: String(_id), name })} className={styles.link}>
       {children}
     </Link>
   </li>

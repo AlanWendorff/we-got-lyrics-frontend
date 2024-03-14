@@ -18,29 +18,31 @@ interface IIdentityProps {
 
 const Identity: FC<IIdentityProps> = ({ artistId, title, artistName, albumName, date, views }) => (
   <div className={styles.container}>
-    <p className={styles.title}>{title || <Skeleton />}</p>
+    <h1 className={styles.title}>{title || <Skeleton />}</h1>
 
     {artistName ? (
       <div className={styles.subtitle}>
-        <Link to={generatePath(ARTIST, { id: `${artistId}`, name: artistName })}>{artistName}</Link>&nbsp;
-        <p>{albumName && `•  ${albumName}`}</p>
+        <Link to={generatePath(ARTIST, { id: String(artistId), name: artistName })}>{artistName}</Link>&nbsp;
+        <span>{albumName && `•  ${albumName}`}</span>
       </div>
     ) : (
-      <Skeleton width={200} />
+      <div className={styles.subtitle}>
+        <Skeleton />
+      </div>
     )}
 
     <div className={styles.extra}>
       {date !== null && (
         <p>
           {date && <img src={calendarIcon} alt='calendar icon' height={19} />}
-          {date || <Skeleton width={100} height={19} />}
+          {date || <Skeleton width={100} />}
         </p>
       )}
       {views && <div className={styles.separator}>|</div>}
       {views !== null && (
         <p>
           {views && <img src={eyeIcon} alt='eye icon' height={19} />}
-          {views ? `${shortenNumber(views)} Views` : <Skeleton width={100} height={19} />}
+          {views ? `${shortenNumber(views)} Views` : <Skeleton width={100} />}
         </p>
       )}
     </div>

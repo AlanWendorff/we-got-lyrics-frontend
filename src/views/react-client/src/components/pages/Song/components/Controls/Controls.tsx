@@ -17,8 +17,8 @@ const Controls: FC<IControlsProps> = ({ isSongStored, song, handleSongFav }) => 
   if (!song) {
     return (
       <div className={styles.container}>
-        <Skeleton width={93} height={33} />
-        <Skeleton width={85} height={33} />
+        <Skeleton width={93} height={31} />
+        <Skeleton width={85} height={31} />
       </div>
     );
   }
@@ -37,7 +37,7 @@ const Controls: FC<IControlsProps> = ({ isSongStored, song, handleSongFav }) => 
         }
       />
 
-      <Share message={generateSongMsg(song.song.artist.name, song.song.title)} />
+      <Share message={generateSongMsg(song.song.title, song.song.artist.name)} />
     </div>
   );
 };

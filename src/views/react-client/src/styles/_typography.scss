@@ -7,6 +7,7 @@
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   user-select: none;
+  font-weight: 400;
 }
 
 @mixin s {
@@ -14,6 +15,7 @@
   font-size: 0.875rem;
   letter-spacing: 0.04em;
   user-select: none;
+  font-weight: 400;
 }
 
 @mixin m {
@@ -21,10 +23,12 @@
   font-size: 1rem;
   letter-spacing: 0.04em;
   user-select: none;
+  font-weight: 400;
 }
 
 @mixin l {
   font-family: Programme Normal;
+  font-weight: 400;
 }
 
 @mixin xl {

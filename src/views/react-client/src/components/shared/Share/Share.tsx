@@ -12,14 +12,14 @@ const Share: FC<IShareProps> = ({ message }) => {
 
   return (
     <div className={styles.container}>
-      <button aria-label='Open share options' className={styles.button} onClick={() => setIsSocialOpen(!isSocialOpen)}>
+      <button className={styles.button} onClick={() => setIsSocialOpen(!isSocialOpen)} aria-label='Open share options'>
         <img src={shareIcon} alt='share icon' />
         Share
       </button>
 
       {isSocialOpen && (
         <div className={styles.social}>
-          <FacebookShareButton url={window.location.pathname} hashtag='#music' title={message}>
+          <FacebookShareButton url={window.location.href} hashtag='#music' title={message}>
             <FacebookIcon size={30} round={true} />
           </FacebookShareButton>
 
@@ -27,7 +27,7 @@ const Share: FC<IShareProps> = ({ message }) => {
             <TwitterIcon size={30} round={true} />
           </TwitterShareButton>
 
-          <WhatsappShareButton url={`${message} •  ${window.location.pathname}`}>
+          <WhatsappShareButton url={`${message} •  ${window.location.href}`}>
             <WhatsappIcon size={30} round={true} />
           </WhatsappShareButton>
         </div>

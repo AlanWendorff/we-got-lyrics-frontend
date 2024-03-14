@@ -26,7 +26,7 @@ const MobileNavbar = () => {
         aria-label='Go to home'
       >
         <img src={isWebOnRoot ? homeIconSol : homeIconOl} alt='home icon' width={20} />
-        Home
+        <span>Home</span>
       </NavLink>
 
       <NavLink
@@ -35,7 +35,7 @@ const MobileNavbar = () => {
         aria-label='Go to home'
       >
         <img src={isWebOnArtists ? artistIconSol : artistIconOl} alt='artists icon' height={20} />
-        Fav Artists
+        <span>Liked Artists</span>
       </NavLink>
 
       <NavLink
@@ -44,14 +44,15 @@ const MobileNavbar = () => {
         aria-label='Go to home'
       >
         <img src={isWebOnSongs ? musicIconSol : musicIconOl} alt='songs icon' height={20} />
-        Fav Songs
+
+        <span>Liked Songs</span>
       </NavLink>
 
       {PWA_PROMPT_INCOMPATIBLE_BROWSER ||
         (!isAppInstalled && (
           <button className={styles.control} onClick={handleInstallApp} aria-label='Install app on device'>
             <img src={downloadIcon} alt='download icon' height={20} />
-            <p className={styles.title}>Install PWA</p>
+            <span>Install APP</span>
           </button>
         ))}
     </nav>

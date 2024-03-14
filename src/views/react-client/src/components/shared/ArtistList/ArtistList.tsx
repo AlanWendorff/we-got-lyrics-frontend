@@ -14,7 +14,7 @@ const ArtistList = () => {
         <ul className={styles.container}>
           {artists.map(({ id, name, thumbnail }) => (
             <li key={id}>
-              <Link to={generatePath(ARTIST, { id: `${id}`, name })} className={styles.artist}>
+              <Link to={generatePath(ARTIST, { id: String(id), name })} className={styles.artist}>
                 <img className={styles.artist__thumbnail} src={thumbnail} alt='artist thumbnail' />
                 <p className={styles.artist__name}>{name}</p>
               </Link>

@@ -20,7 +20,7 @@ const AllSongs: FC<IAllSongsProps> = ({ artistId, artistName, artistThumbnail, h
     setArtistSongs(null);
 
     artistInfoController(artistInfoRepository())
-      .getArtistSongs(`${artistId}`, 50, 1)
+      .getArtistSongs(String(artistId), 50, 1)
       .then((response) => {
         setArtistSongs(response);
       });
@@ -33,15 +33,18 @@ const AllSongs: FC<IAllSongsProps> = ({ artistId, artistName, artistThumbnail, h
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <img className={styles.thumbnail} src={artistThumbnail} alt='band thumbnail' />•
-        <p className={styles.title}>
-          All songs by <button onClick={handleSetIsAllSongs}>{artistName}</button>
-        </p>
+        <img className={styles.top__thumbnail} src={artistThumbnail} alt='band thumbnail' />•
+        <h2 className={styles.top__title}>
+          All songs by{' '}
+          <button onClick={handleSetIsAllSongs} aria-label='Back to artist profile'>
+            {artistName}
+          </button>
+        </h2>
       </div>
 
-      <ul className={styles.list}>
+      <ul className={styles.songList}>
         {artistSongs.songs.map(({ id, thumbnail_url, title, artist }, key) => (
-          <SongItem key={key} id={`${id}`} number={key + 1} title={title} thumbnail={thumbnail_url} artist={artist} showControls />
+          <SongItem key={key} id={String(id)} number={key + 1} title={title} thumbnail={thumbnail_url} artist={artist} showControls />
         ))}
       </ul>
     </div>

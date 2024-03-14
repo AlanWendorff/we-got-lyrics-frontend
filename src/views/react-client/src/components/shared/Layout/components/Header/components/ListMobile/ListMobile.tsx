@@ -24,12 +24,14 @@ const ListMobile: FC<IListMobileProps> = ({ songs, artists, handleIsListShown, .
           <button
             className={`${styles.control} ${controlState.songs && styles.active}`}
             onClick={() => setControlState({ artists: false, songs: true })}
+            aria-label='See songs'
           >
             Songs
           </button>
           <button
             className={`${styles.control} ${controlState.artists && styles.active}`}
             onClick={() => setControlState({ artists: true, songs: false })}
+            aria-label='See artists'
           >
             Artists
           </button>

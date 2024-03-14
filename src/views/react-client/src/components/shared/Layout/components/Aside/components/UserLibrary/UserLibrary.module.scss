@@ -32,7 +32,7 @@
   @include mixins.flex_container(row, flex-start, center);
   gap: 0.5rem;
 
-  .control {
+  &__control {
     @include typography.xs;
     padding: 0.4rem 0.9rem;
     border-radius: 100px;
@@ -44,7 +44,7 @@
       background-color: var(--color-nu);
     }
 
-    &.active {
+    &_active {
       color: var(--color-alpha);
       background-color: white;
     }

@@ -14,7 +14,7 @@ const SongList = () => {
         <ul className={styles.container}>
           {songs.map(({ id, name, owner, thumbnail }) => (
             <li key={id}>
-              <Link to={generatePath(SONG, { id: `${id}`, name })} className={styles.song}>
+              <Link to={generatePath(SONG, { id: String(id), name })} className={styles.song}>
                 <img className={styles.song__thumbnail} src={thumbnail} alt='song thumbnail' />
                 <p className={styles.song__name}>{name}</p>
                 <p className={styles.song__owner}>{owner}</p>

@@ -45,19 +45,19 @@
     padding: 0 0.9rem;
     gap: 0.125rem;
 
-    .title {
+    &__title {
       @include typography.font-feature-settings;
       @include typography.l;
     }
 
-    .artist {
+    &__name {
       @include typography.xs-light;
       color: var(--color-delta);
     }
   }
 }
 
-.controls {
+.controls__container {
   position: absolute;
   right: 0;
   top: 50%;

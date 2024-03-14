@@ -27,12 +27,13 @@ const SongItem: FC<ISongItemProps> = ({ id, number, thumbnail, title, artist, sh
         <p className={styles.number}>{number}</p>
         <img className={styles.thumbnail} src={thumbnail} alt='song thumbnail' />
         <div className={styles.info}>
-          <p className={styles.title}>{title}</p>
-          <p className={styles.artist}>{artist}</p>
+          <p className={styles.info__title}>{title}</p>
+          <p className={styles.info__name}>{artist}</p>
         </div>
       </Link>
+
       {showControls && (
-        <div className={styles.controls}>
+        <div className={styles.controls__container}>
           <AddToFav
             slim
             favouriteStatus={isSongStored}
