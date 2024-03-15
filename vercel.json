@@ -4,11 +4,5 @@
       "src": "/src/views/react-client/src/main.tsx",
       "use": "@vercel/node"
     }
-  ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
-  "routes": [
-    { "src": "/", "dest": "/" },
-    { "src": "/library/songs", "dest": "/" },
-    { "src": "/library/artists", "dest": "/" }
   ]
 }
