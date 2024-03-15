@@ -5,5 +5,10 @@
       "use": "@vercel/node"
     }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/library/songs", "dest": "/" },
+    { "src": "/library/artists", "dest": "/" }
+  ]
 }

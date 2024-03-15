@@ -1,5 +1,7 @@
 {
   "name": "we-got-lyrics-vite-view",
+  "description": "We got lyrics project vite",
+  "homepage": "",
   "private": true,
   "version": "0.0.0",
   "type": "module",
