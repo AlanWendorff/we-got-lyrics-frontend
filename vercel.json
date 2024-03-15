@@ -5,6 +5,5 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }],
   "rewrites": [{ "source": "/(.*)", "destination": "/src/views/react-client/src/index.html" }]
 }
