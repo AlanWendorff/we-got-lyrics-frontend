@@ -2,7 +2,7 @@
 
 **Project structure description:** This project follows an approach of 2 yarn workspaces. Into  ```src``` directory you will find  [```core```](https://github.com/AlanWendorff/we-got-lyrics-frontend/tree/develop/src/core) and [```views```](https://github.com/AlanWendorff/we-got-lyrics-frontend/tree/develop/src/views) directories.
 
-[```core```](https://github.com/AlanWendorff/we-got-lyrics-frontend/tree/develop/src/core) : Holds everything concerned to API Fetching.
+[```core```](https://github.com/AlanWendorff/we-got-lyrics-frontend/tree/develop/src/core) : Holds everything concerned to business logic.
 <br/>
 [```views```](https://github.com/AlanWendorff/we-got-lyrics-frontend/tree/develop/src/views): As the name implies, this directory holds everything concerned to Frameworks or Libraries to build user interfaces.
 
