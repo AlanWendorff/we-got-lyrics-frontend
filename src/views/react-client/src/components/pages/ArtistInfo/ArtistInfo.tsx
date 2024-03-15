@@ -63,11 +63,7 @@ const ArtistInfo: FC = () => {
   return (
     <div className={styles.container}>
       <div className={`${styles.top} ${isAllSongs && styles.top_collapse}`}>
-        <Banner
-          /* className={isAllSongs ? styles.banner_collapse : ''} */
-          banner={artistInfo?.artist.header_image_url}
-          bannerColors={artistInfo?.artist.header_image_colors}
-        />
+        <Banner banner={artistInfo?.artist.header_image_url} bannerColors={artistInfo?.artist.header_image_colors} />
 
         <div className={styles.artistResume}>
           <Thumbnail image={artistInfo?.artist.image_url} />
