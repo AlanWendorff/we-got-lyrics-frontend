@@ -70,7 +70,7 @@ const ArtistInfo: FC = () => {
           <Identity name={artistInfo?.artist.name} aka={artistInfo?.artist.alternate_names} />
         </div>
 
-        <Gradient color={String(artistInfo?.artist.header_image_colors.Vibrant)} />
+        {artistInfo && <Gradient color={String(artistInfo.artist.header_image_colors.Vibrant)} />}
       </div>
 
       <div className={`${styles.body} ${isAllSongs && styles.body_onExpand}`} id='artist-body'>

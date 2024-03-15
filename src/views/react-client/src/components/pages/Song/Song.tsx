@@ -78,7 +78,7 @@ const Song = () => {
           />
         </div>
 
-        <Gradient color={String(song?.song.header_image_colors.Vibrant)} />
+        {song && <Gradient color={String(song.song.header_image_colors.Vibrant)} />}
       </div>
 
       <div className={styles.body}>
