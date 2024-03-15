@@ -11,20 +11,27 @@ const useHandleInstallPwa = (): IUseHandleInstallPwa => {
   const [isAppInstalled, setIsAppInstalled] = useState(false);
 
   const handleInstallApp = () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult: { outcome: string }) => {
-        if (choiceResult.outcome === 'accepted') {
-          //console.log('User accepted the install prompt');
-          setIsAppInstalled(true);
-        } else {
-          //console.log('User dismissed the install prompt');
-        }
-      });
+    if (!deferredPrompt) {
+      return;
     }
+
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult: { outcome: string }) => {
+      if (choiceResult.outcome === 'accepted') {
+        //console.log('User accepted the install prompt');
+        setIsAppInstalled(true);
+      } else {
+        //console.log('User dismissed the install prompt');
+      }
+    });
   };
 
   useEffect(() => {
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      setIsAppInstalled(true);
+      return;
+    }
+
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       setDeferredPrompt(e);

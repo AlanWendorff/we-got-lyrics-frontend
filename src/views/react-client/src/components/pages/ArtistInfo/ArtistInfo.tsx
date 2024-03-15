@@ -5,6 +5,8 @@ import artistInfoRepository from '@core/artistInfo/infrastructure/repositories/A
 import artistInfoController from '@core/artistInfo/application/ArtistInfo.controller';
 import TArtistInfo from '@core/artistInfo/domain/models/ArtistInfo.model';
 import TArtistSongs from '@core/artistInfo/domain/models/ArtistSongs.model';
+import useThemeColor from '@/hooks/useThemeColor';
+import useTabName from '@/hooks/useTabName';
 import PopularSongs from './components/PopularSongs';
 import Description from './components/Description';
 import useFavourite from '@/hooks/useFavourite';
@@ -13,7 +15,6 @@ import Identity from './components/Identity';
 import AllSongs from './components/AllSongs';
 import Controls from './components/Controls';
 import Banner from './components/Banner';
-import useTabName from '@/hooks/useTabName';
 import styles from './ArtistInfo.module.scss';
 
 const ArtistInfo: FC = () => {
@@ -25,6 +26,10 @@ const ArtistInfo: FC = () => {
   const [isAllSongs, setIsAllSongs] = useState(false);
 
   useTabName({ tabName: `${artistInfo?.artist.name} | ${APP_NAME}`, dynamicInfo: artistInfo?.artist.name });
+  useThemeColor({
+    color: String(artistInfo?.artist.header_image_colors.Vibrant),
+    dynamicInfo: artistInfo?.artist.header_image_colors.Vibrant
+  });
 
   const artistBodyRef = document.querySelector('#artist-body') as HTMLDivElement;
 

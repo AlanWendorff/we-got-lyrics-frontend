@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import useThemeColor from '@/hooks/useThemeColor';
 import useFavourite from '@/hooks/useFavourite';
 import useTabName from '@/hooks/useTabName';
 import lyricsRepository from '@core/lyrics/infrastructure/repositories/Lyrics.repository';
@@ -25,6 +26,7 @@ const Song = () => {
   const [song, setSong] = useState<TSong | null>(null);
 
   useTabName({ tabName: `${song?.song.title} Lyrics`, dynamicInfo: song?.song.title });
+  useThemeColor({ color: String(song?.song.header_image_colors.Vibrant), dynamicInfo: song?.song.header_image_colors.Vibrant });
 
   useEffect(() => {
     setLyrics(null);
