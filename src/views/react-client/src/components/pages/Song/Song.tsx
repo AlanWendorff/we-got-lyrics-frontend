@@ -65,7 +65,7 @@ const Song = () => {
       <div className={styles.top}>
         <Banner bannerColors={song?.song.header_image_colors} />
 
-        <div className={styles.absolute}>
+        <div className={styles.songResume}>
           <Thumbnail image={song?.song.song_art_image_thumbnail_url} title={song?.song.title} />
 
           <Identity
@@ -84,7 +84,7 @@ const Song = () => {
       <div className={styles.body}>
         <Controls isSongStored={isSongStored} song={song} handleSongFav={handleSongFav} />
 
-        <div className={styles.contributors}>
+        <div className={styles.contributorsContainer}>
           <Contributor type='Featuring' contributors={song?.song.featured_artists} />
           <Contributor type='Produced by' contributors={song?.song.producer} />
         </div>

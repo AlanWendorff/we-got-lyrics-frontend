@@ -13,7 +13,7 @@ const Bar: FC<IBarProps> = ({ ...rest }) => {
   return (
     <form className={styles.container} {...rest}>
       <input name='search' className={`${styles.input} ${mimetize && styles.input__mimetize}`} placeholder='Search' autoComplete='off' />
-      <div className={styles.icon__container}>
+      <div className={styles.iconContainer}>
         <img className={styles.icon} src={magnifierIcon} alt='magnifier icon' />
       </div>
     </form>

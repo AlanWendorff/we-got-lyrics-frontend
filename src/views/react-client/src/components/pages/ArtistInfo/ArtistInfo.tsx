@@ -8,6 +8,7 @@ import TArtistSongs from '@core/artistInfo/domain/models/ArtistSongs.model';
 import useThemeColor from '@/hooks/useThemeColor';
 import useTabName from '@/hooks/useTabName';
 import PopularSongs from './components/PopularSongs';
+import Gradient from '@/components/shared/Gradient';
 import Description from './components/Description';
 import useFavourite from '@/hooks/useFavourite';
 import Thumbnail from './components/Thumbnail';
@@ -61,18 +62,22 @@ const ArtistInfo: FC = () => {
 
   return (
     <div className={styles.container}>
-      <Banner
-        className={isAllSongs ? styles.banner__collapse : ''}
-        banner={artistInfo?.artist.header_image_url}
-        bannerColors={artistInfo?.artist.header_image_colors}
-      />
+      <div className={`${styles.top} ${isAllSongs && styles.top_collapse}`}>
+        <Banner
+          /* className={isAllSongs ? styles.banner_collapse : ''} */
+          banner={artistInfo?.artist.header_image_url}
+          bannerColors={artistInfo?.artist.header_image_colors}
+        />
 
-      <div className={`${styles.top} ${isAllSongs && styles.top__collapse}`}>
-        <Thumbnail image={artistInfo?.artist.image_url} />
-        <Identity name={artistInfo?.artist.name} aka={artistInfo?.artist.alternate_names} />
+        <div className={styles.artistResume}>
+          <Thumbnail image={artistInfo?.artist.image_url} />
+          <Identity name={artistInfo?.artist.name} aka={artistInfo?.artist.alternate_names} />
+        </div>
+
+        <Gradient color={String(artistInfo?.artist.header_image_colors.Vibrant)} />
       </div>
 
-      <div className={`${styles.body} ${isAllSongs && styles.body__expand}`} id='artist-body'>
+      <div className={`${styles.body} ${isAllSongs && styles.body_onExpand}`} id='artist-body'>
         {isAllSongs ? (
           <AllSongs
             artistId={id}
@@ -84,9 +89,9 @@ const ArtistInfo: FC = () => {
           <>
             <Controls isArtistStored={isArtistStored} artistId={parseInt(id!)} artistInfo={artistInfo} handleArtistFav={handleArtistFav} />
             <PopularSongs artistName={artistInfo?.artist.name} songs={artistSongs?.songs} handleSetIsAllSongs={handleSetIsAllSongs} />
+            <Description name={artistInfo?.artist.name} description={artistInfo?.artist.description} />
           </>
         )}
-        {!isAllSongs && <Description name={artistInfo?.artist.name} description={artistInfo?.artist.description} />}
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 {
   "name": "we-got-lyrics",
   "description": "We got lyrics project",
-  "homepage": "",
   "version": "1.0.0",
   "private": true,
   "workspaces": [

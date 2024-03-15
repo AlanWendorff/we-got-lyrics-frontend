@@ -4,28 +4,31 @@
 
 .container {
   @include mixins.flex_container(column, flex-start, flex-start);
+  width: 100%;
   position: relative;
   background-color: var(--color-alpha);
   border-radius: var(--web-border-radius);
   overflow: hidden;
   color: white;
-  width: 100%;
-}
-
-.banner__collapse {
-  margin-top: calc(var(--banner-height) * -1);
 }
 
 .top {
   @include mixins.flex_container(row, flex-start, flex-end);
-  padding: 2rem;
   width: 100%;
-  position: absolute;
-  gap: 1.5rem;
+  position: relative;
   height: var(--banner-height);
   transition: margin-top 300ms ease-in-out;
 
-  &.top__collapse {
+  .artistResume {
+    @include mixins.flex_container(row, flex-start, flex-end);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  &_collapse {
     margin-top: calc(var(--banner-height) * -1);
   }
 }
@@ -33,14 +36,14 @@
 .body {
   @include mixins.flex_container(column, space-between, flex-start);
   width: 100%;
+  height: 100%;
   z-index: 1;
   color: white;
   padding: 2rem;
-
-  height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
 
-  &__expand {
+  &_onExpand {
     padding: 1.15rem var(--web-gap) 1rem 2rem;
     overflow-y: hidden;
   }
@@ -63,16 +66,16 @@
 }
 
 @include responsives.XGA {
-  /*  .container {
-    background-color: black;
-  } */
-
-  .top {
-    gap: 1rem;
-  }
-
   .container {
     border-radius: 0;
+    background-color: black;
+  }
+
+  .top {
+    .artistResume {
+      padding: 1.5rem 1rem;
+      gap: 1rem;
+    }
   }
 
   .body {

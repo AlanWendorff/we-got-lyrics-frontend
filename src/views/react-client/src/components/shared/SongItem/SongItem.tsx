@@ -33,7 +33,7 @@ const SongItem: FC<ISongItemProps> = ({ id, number, thumbnail, title, artist, sh
       </Link>
 
       {showControls && (
-        <div className={styles.controls__container}>
+        <div className={styles.controlsContainer}>
           <AddToFav
             slim
             favouriteStatus={isSongStored}

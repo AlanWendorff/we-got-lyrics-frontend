@@ -38,15 +38,15 @@
   }
 }
 
-.input:not(:placeholder-shown) ~ .icon__container {
+.input:not(:placeholder-shown) ~ .iconContainer {
   width: 100%;
 }
 
-.input:focus ~ .icon__container .icon {
+.input:focus ~ .iconContainer .icon {
   opacity: 0.25;
 }
 
-.icon__container {
+.iconContainer {
   @include mixins.flex_container(row, flex-start, center);
   position: absolute;
   left: 50%;
