@@ -4,5 +4,6 @@
       "src": "/src/views/react-client/src/main.tsx",
       "use": "@vercel/node"
     }
-  ]
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
