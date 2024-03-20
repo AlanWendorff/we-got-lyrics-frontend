@@ -5,8 +5,8 @@ type TArtistInfo = {
 };
 
 type TArtist = {
-  alternate_names: string[] | undefined;
-  description: string;
+  alternate_names: string[] | null;
+  description: string | null;
   header_image_url: string;
   header_image_colors: IPalletteColorsDTO;
   image_url: string;
