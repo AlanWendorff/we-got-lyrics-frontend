@@ -85,7 +85,9 @@ const ArtistInfo: FC = () => {
           <>
             <Controls isArtistStored={isArtistStored} artistId={parseInt(id!)} artistInfo={artistInfo} handleArtistFav={handleArtistFav} />
             <PopularSongs artistName={artistInfo?.artist.name} songs={artistSongs?.songs} handleSetIsAllSongs={handleSetIsAllSongs} />
-            <Description name={artistInfo?.artist.name} description={artistInfo?.artist.description} />
+            {artistInfo?.artist.description !== null && (
+              <Description name={artistInfo?.artist.name} description={artistInfo?.artist.description} />
+            )}
           </>
         )}
       </div>
