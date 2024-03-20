@@ -1,7 +1,7 @@
 import { FC, ComponentProps } from 'react';
 import { useLocation } from 'react-router-dom';
 import { ROOT, STORED_ARTISTS, STORED_SONGS } from '@/constants/routes';
-import magnifierIcon from '@images/shared/magnifier-icon.webp';
+import magnifierIcon from '@images/shared/magnifier-icon.png';
 import styles from './Bar.module.scss';
 
 interface IBarProps extends ComponentProps<'form'> {}

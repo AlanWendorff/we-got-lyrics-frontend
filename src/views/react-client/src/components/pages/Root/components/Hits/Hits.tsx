@@ -1,3 +1,7 @@
+/**
+ * In this component we are experimenting with framer motion, still not working
+ */
+
 import { FC, useEffect, useRef, useState } from 'react';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 import chartsRepository from '@core/charts/infrastructure/repositories/Charts.repository';
@@ -31,7 +35,7 @@ const Hits: FC = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>
-        <img src={fireIcon} alt='fire icon' />
+        <img src={fireIcon} alt='fire icon' className={styles.icon} />
         Top Hits
         {showShadow && <Shadow className={styles.customShadow} />}
       </h2>

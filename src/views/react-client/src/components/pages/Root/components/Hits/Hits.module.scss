@@ -25,6 +25,11 @@
     left: -2rem;
     width: calc(100% + 3rem);
   }
+
+  .icon {
+    width: 19px;
+    aspect-ratio: 19/24;
+  }
 }
 
 @include responsives.XGA {
