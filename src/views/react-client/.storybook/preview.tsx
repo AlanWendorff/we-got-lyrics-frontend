@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/react';
+import '../src/styles/globals.scss';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const preview: Preview = {
   parameters: {

@@ -3,7 +3,10 @@ import GradientComponent from './Gradient';
 
 const meta = {
   title: 'shared/Gradient',
-  component: GradientComponent
+  component: GradientComponent,
+  parameters: {
+    layout: 'fullscreen'
+  }
 } satisfies Meta<typeof GradientComponent>;
 
 export default meta;

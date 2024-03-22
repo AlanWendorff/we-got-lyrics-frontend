@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import SongItem from './SongItem';
 import { SongMock } from '@core/configuration/mocks/Song.mock';
-import { ROUTER_WRAP_ROOT } from '../../../../.storybook/decorators';
+import { RouterOnRoot } from '../../../../.storybook/decorators';
 
 const meta = {
   title: 'shared/Song Item',
   component: SongItem,
-  decorators: [ROUTER_WRAP_ROOT]
+  decorators: [RouterOnRoot]
 } satisfies Meta<typeof SongItem>;
 
 export default meta;

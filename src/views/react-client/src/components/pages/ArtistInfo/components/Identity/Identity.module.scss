@@ -4,15 +4,18 @@
 .name {
   @include typography.xl;
   font-size: 4rem;
+  color: white;
 }
 
 .aka__desktop {
   @include typography.s-light;
   min-height: 17px;
+  color: white;
 }
 
 .aka__mobile {
   display: none;
+  color: white;
 }
 
 @include responsives.VGA {

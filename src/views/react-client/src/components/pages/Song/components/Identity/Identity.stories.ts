@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import IdentityComponent from './Identity';
 import { IdentityMock } from '@core/configuration/mocks/Song.mock';
-import { ROUTER_WRAP_ROOT } from '../../../../../../.storybook/decorators';
+import { RouterOnRoot, Skeleton } from '../../../../../../.storybook/decorators';
 
 const meta = {
   title: 'Pages/Song/Identity',
   component: IdentityComponent,
-  decorators: [ROUTER_WRAP_ROOT]
+  decorators: [RouterOnRoot, Skeleton]
 } satisfies Meta<typeof IdentityComponent>;
 
 export default meta;

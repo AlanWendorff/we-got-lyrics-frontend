@@ -33,6 +33,7 @@
 .extra {
   @include mixins.flex_container(row, flex-start, flex-start);
   gap: 0.8rem;
+  color: white;
 
   p {
     @include mixins.flex_container(row, center, center);

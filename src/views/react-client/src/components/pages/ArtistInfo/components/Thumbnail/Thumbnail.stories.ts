@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ThumbnailComponent from './Thumbnail';
 import { ArtistMock } from '@core/configuration/mocks/Artist.mock';
+import { Skeleton } from '../../../../../../.storybook/decorators';
 
 const meta = {
   title: 'Pages/Artist/Thumbnail',
-  component: ThumbnailComponent
+  component: ThumbnailComponent,
+  decorators: [Skeleton]
 } satisfies Meta<typeof ThumbnailComponent>;
 
 export default meta;

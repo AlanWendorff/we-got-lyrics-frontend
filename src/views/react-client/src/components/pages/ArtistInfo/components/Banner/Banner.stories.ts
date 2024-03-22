@@ -17,10 +17,3 @@ type Story = StoryObj<typeof meta>;
 export const Banner: Story = {
   args: BannerMock
 };
-
-export const BannerSkeleton: Story = {
-  args: {
-    banner: undefined,
-    bannerColors: undefined
-  }
-};
