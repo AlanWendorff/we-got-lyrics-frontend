@@ -1,5 +1,26 @@
 # We got lyrics frontend
 
+Technologies:
+<img src="https://img.shields.io/badge/-React-20232A?logo=React&logoColor=white"/>
+<img src="https://img.shields.io/badge/-Vite.js-6c1991?logo=vite&logoColor=white"/>
+<a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/-TypeScript-3178C6?logo=TypeScript&logoColor=white"/></a>
+<a href="https://sass-lang.com/"><img src="https://img.shields.io/badge/-Sass-CC6699?logo=Sass&logoColor=white"/></a>
+<a href="https://www.framer.com/"><img src="https://img.shields.io/badge/-Framer%20Motion-6c1991?logo=framer"/></a>
+<a href="https://storybook.js.org/"><img src="https://img.shields.io/badge/-Storybook-FF4785?logo=Storybook&logoColor=white"/></a>
+
+---
+
+### Web preview:
+
+![we got lyrics - preview](https://github.com/AlanWendorff/we-got-lyrics-frontend/assets/62715512/6d019813-476e-4a06-beb8-71830b7cea80)
+![we got lyrics - color scheme](https://github.com/AlanWendorff/we-got-lyrics-frontend/assets/62715512/6d03acd2-a3a3-4243-bc10-92ca84c79584)
+![we got lyrics - saving](https://github.com/AlanWendorff/we-got-lyrics-frontend/assets/62715512/ea92d319-6a48-433d-a508-df9d308fd5fd)
+![we got lyrics - pwa](https://github.com/AlanWendorff/we-got-lyrics-frontend/assets/62715512/dd235a25-8cda-4b92-a2d4-2da4dd857fdf)
+
+[Check it out](https://we-got-lyrics.vercel.app/)
+
+---
+
 **Project structure description:** This project follows an approach of 2 yarn workspaces. Into  ```src``` directory you will find  [```core```](https://github.com/AlanWendorff/we-got-lyrics-frontend/tree/develop/src/core) and [```views```](https://github.com/AlanWendorff/we-got-lyrics-frontend/tree/develop/src/views) directories.
 
 [```core```](https://github.com/AlanWendorff/we-got-lyrics-frontend/tree/develop/src/core) : Holds everything concerned to business logic.
