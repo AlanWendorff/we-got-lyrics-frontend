@@ -1,6 +1,6 @@
 # We got lyrics frontend
 
-Technologies:
+Technologies: <br/>
 <img src="https://img.shields.io/badge/-React-20232A?logo=React&logoColor=white"/>
 <img src="https://img.shields.io/badge/-Vite.js-6c1991?logo=vite&logoColor=white"/>
 <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/-TypeScript-3178C6?logo=TypeScript&logoColor=white"/></a>
