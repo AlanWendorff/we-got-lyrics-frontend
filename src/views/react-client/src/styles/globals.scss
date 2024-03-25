@@ -121,9 +121,14 @@ button {
 
 ul {
   list-style: none;
+  list-style-type: none;
   padding: 0;
   margin: 0;
   width: 100%;
+}
+
+li {
+  list-style-type: none;
 }
 
 p,
