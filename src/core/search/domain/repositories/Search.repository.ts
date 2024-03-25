@@ -1,7 +1,7 @@
-import TSearch from '../models/Search.model';
+import TSearchModel from '../models/Search.model';
 
 interface ISearchRepository {
-  getSearch: (name: string) => Promise<TSearch>;
+  getSearch: (name: string) => Promise<TSearchModel>;
 }
 
 export default ISearchRepository;

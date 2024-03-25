@@ -1,8 +1,8 @@
 import ISongDTO from '../../domain/dto/Song.dto';
-import TSongData from '../../domain/models/Song.model';
+import TSongDetailModel from '../../domain/models/Song.model';
 
-const songMapper = (DTO: ISongDTO): TSongData => {
-  const { song } = DTO.response;
+const songAdapter = (dto: ISongDTO): TSongDetailModel => {
+  const { song } = dto.response;
 
   return {
     song: {
@@ -31,4 +31,4 @@ const songMapper = (DTO: ISongDTO): TSongData => {
   };
 };
 
-export default songMapper;
+export default songAdapter;

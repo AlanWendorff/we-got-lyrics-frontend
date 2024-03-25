@@ -5,13 +5,13 @@ import List from './components/List';
 import Bar from './components/Bar';
 import searchRepository from '@core/search/infrastructure/repositories/Search.repository';
 import searchController from '@core/search/application/Search.controller';
-import TSearch from '@core/search/domain/models/Search.model';
+import TSearchModel from '@core/search/domain/models/Search.model';
 import styles from './Header.module.scss';
 import ListMobile from './components/ListMobile';
 
 const Header: FC = () => {
   const location = useLocation();
-  const [searchedData, setSearchedData] = useState<TSearch | null>(null);
+  const [searchedData, setSearchedData] = useState<TSearchModel | null>(null);
   const [isListShown, setIsListShown] = useState(false);
 
   useEffect(() => {

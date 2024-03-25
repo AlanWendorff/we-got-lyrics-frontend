@@ -1,13 +1,13 @@
-import { TArtist, TSong } from '../models/StoreAssets.model';
+import { TLocalStorageArtistModel, TLocalStorageSongModel } from '../models/StoreAssets.model';
 
 interface IStoreAssetsRepository {
   initialize: () => void;
-  getSongsFromLs: () => TSong[];
-  getArtistsFromLs: () => TArtist[];
-  deleteSongFromLs: (songId: string) => TSong[] | [];
-  deleteArtistFromLs: (artistId: string) => TArtist[] | [];
-  addSongOnLs: (song: TSong) => void;
-  addArtistOnLs: (artist: TArtist) => void;
+  getSongsFromLs: () => TLocalStorageSongModel[];
+  getArtistsFromLs: () => TLocalStorageArtistModel[];
+  deleteSongFromLs: (songId: string) => TLocalStorageSongModel[] | [];
+  deleteArtistFromLs: (artistId: string) => TLocalStorageArtistModel[] | [];
+  addSongOnLs: (song: TLocalStorageSongModel) => void;
+  addArtistOnLs: (artist: TLocalStorageArtistModel) => void;
   isArtistSavedOnLs: (artistId: string) => boolean;
   isSongSavedOnLs: (songId: string) => boolean;
 }

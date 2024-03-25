@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import storeAssetsController from '@core/storeAssets/application/StoreAssets.controller';
 import storeAssetsRepository from '@core/storeAssets/infrastructure/repositories/StoreAssets.repository';
-import { TArtist, TSong } from '@core/storeAssets/domain/models/StoreAssets.model';
+import { TLocalStorageArtistModel, TLocalStorageSongModel } from '@core/storeAssets/domain/models/StoreAssets.model';
 import useFavouriteStore from '@/store/useFavourite.store';
 
 interface IUseFavourite {
   isSongStored: boolean;
   isArtistStored: boolean;
-  handleSongFav: (song: TSong) => void;
-  handleArtistFav: (artist: TArtist) => void;
+  handleSongFav: (song: TLocalStorageSongModel) => void;
+  handleArtistFav: (artist: TLocalStorageArtistModel) => void;
   handleIsSongStored: (songId: string) => boolean;
   handleIsArtistStored: (artistId: string) => boolean;
 }
@@ -32,7 +32,7 @@ const useFavourite = (): IUseFavourite => {
     return isFinded;
   };
 
-  const handleSongFav = (song: TSong) => {
+  const handleSongFav = (song: TLocalStorageSongModel) => {
     if (isSongStored) {
       deleteSong(String(song.id));
       setIsSongStored(false);
@@ -43,7 +43,7 @@ const useFavourite = (): IUseFavourite => {
     setHasUserFav();
   };
 
-  const handleArtistFav = (artist: TArtist) => {
+  const handleArtistFav = (artist: TLocalStorageArtistModel) => {
     if (isArtistStored) {
       deleteArtist(String(artist.id));
       setIsArtistStored(false);

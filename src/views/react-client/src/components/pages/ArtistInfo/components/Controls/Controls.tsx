@@ -3,15 +3,15 @@ import { generateArtistMsg } from '@/utils/generateSocialMsg';
 import Skeleton from 'react-loading-skeleton';
 import AddToFav from '@/components/shared/AddToFav';
 import Share from '@/components/shared/Share';
-import TArtistInfo from '@core/artistInfo/domain/models/ArtistInfo.model';
-import { TArtist } from '@core/storeAssets/domain/models/StoreAssets.model';
+import TArtistInfoModel from '@core/artistInfo/domain/models/ArtistInfo.model';
+import { TArtistModel } from '@core/storeAssets/domain/models/StoreAssets.model';
 import styles from './Controls.module.scss';
 
 interface IControlsProps {
   isArtistStored: boolean;
   artistId: number;
-  artistInfo: TArtistInfo | null;
-  handleArtistFav: (artist: TArtist) => void;
+  artistInfo: TArtistInfoModel | null;
+  handleArtistFav: (artist: TArtistModel) => void;
 }
 
 const Controls: FC<IControlsProps> = ({ isArtistStored, artistId, artistInfo, handleArtistFav }) => {

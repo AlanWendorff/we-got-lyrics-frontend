@@ -1,10 +1,10 @@
 import IPalletteColorsDTO from '../../../configuration/dto/PalletteColors.dto';
 
-type TSongData = {
-  song: TSong;
+type TSongDetailModel = {
+  song: TDetailModel;
 };
 
-type TSong = {
+type TDetailModel = {
   id: number;
   title: string;
   embed_content: string;
@@ -12,22 +12,22 @@ type TSong = {
   song_art_image_thumbnail_url: string;
   header_image_colors: IPalletteColorsDTO;
   pageviews: number | null;
-  album: TAlbum | null;
-  artist: TArtist;
+  album: TAlbumModel | null;
+  artist: TArtistModel;
   featured_artists: string[];
   producer: string[];
   url: string;
 };
 
-type TAlbum = {
+type TAlbumModel = {
   id: number;
   name: string;
 };
 
-type TArtist = {
+type TArtistModel = {
   id: number;
   name: string;
   image_url: string;
 };
 
-export default TSongData;
+export default TSongDetailModel;

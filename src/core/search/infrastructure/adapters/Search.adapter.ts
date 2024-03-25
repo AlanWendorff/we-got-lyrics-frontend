@@ -1,10 +1,10 @@
 import ISearchDTO from '../../domain/dto/Search.dto';
-import TSearch from '../../domain/models/Search.model';
+import TSearchModel from '../../domain/models/Search.model';
 
 const arraySizeLimit = window.innerWidth < 1024 ? 7 : 4;
 
-const searchMapper = (DTO: ISearchDTO, input: string): TSearch => {
-  const songs = DTO.response.hits
+const searchAdapter = (dto: ISearchDTO, input: string): TSearchModel => {
+  const songs = dto.response.hits
     .map(({ result }) => ({
       id: result.id,
       api_path: result.api_path,
@@ -14,7 +14,7 @@ const searchMapper = (DTO: ISearchDTO, input: string): TSearch => {
     }))
     .slice(0, arraySizeLimit);
 
-  const unorderedArtists = DTO.response.hits.map(({ result }) => {
+  const unorderedArtists = dto.response.hits.map(({ result }) => {
     const { primary_artist } = result;
 
     return {
@@ -38,4 +38,4 @@ const searchMapper = (DTO: ISearchDTO, input: string): TSearch => {
   };
 };
 
-export default searchMapper;
+export default searchAdapter;

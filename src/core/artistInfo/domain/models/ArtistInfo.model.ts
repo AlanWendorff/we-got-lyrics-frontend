@@ -1,10 +1,10 @@
 import IPalletteColorsDTO from '../../../configuration/dto/PalletteColors.dto';
 
-type TArtistInfo = {
-  artist: TArtist;
+type TArtistInfoModel = {
+  artist: TArtistModel;
 };
 
-type TArtist = {
+type TArtistModel = {
   alternate_names: string[] | null;
   description: string | null;
   header_image_url: string;
@@ -13,4 +13,4 @@ type TArtist = {
   name: string;
 };
 
-export default TArtistInfo;
+export default TArtistInfoModel;
