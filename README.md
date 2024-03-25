@@ -10,11 +10,13 @@ Technologies: <br/>
 
 ---
 
+
 ### Web preview:
 
-![we got lyrics - preview](https://github.com/AlanWendorff/we-got-lyrics-frontend/assets/62715512/6d019813-476e-4a06-beb8-71830b7cea80)
+![we got lyrics - preview](https://github.com/AlanWendorff/we-got-lyrics-frontend/assets/62715512/c54f5a4c-b467-4851-ba1a-d9e7b3f23656)
+![we got lyrics - zustand](https://github.com/AlanWendorff/we-got-lyrics-frontend/assets/62715512/ea92d319-6a48-433d-a508-df9d308fd5fd)
+![We Got Lyrics - Storybook](https://github.com/AlanWendorff/we-got-lyrics-frontend/assets/62715512/45fd4713-5e59-4f3f-8591-f72790f7c833)
 ![we got lyrics - color scheme](https://github.com/AlanWendorff/we-got-lyrics-frontend/assets/62715512/6d03acd2-a3a3-4243-bc10-92ca84c79584)
-![we got lyrics - saving](https://github.com/AlanWendorff/we-got-lyrics-frontend/assets/62715512/ea92d319-6a48-433d-a508-df9d308fd5fd)
 ![we got lyrics - pwa](https://github.com/AlanWendorff/we-got-lyrics-frontend/assets/62715512/dd235a25-8cda-4b92-a2d4-2da4dd857fdf)
 
 [Check it out](https://we-got-lyrics.vercel.app/)
