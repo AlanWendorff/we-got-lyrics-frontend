@@ -1,17 +1,17 @@
 import { create } from 'zustand';
-import { TArtist, TSong } from '@core/storeAssets/domain/models/StoreAssets.model';
+import { TLocalStorageArtistModel, TLocalStorageSongModel } from '@core/storeAssets/domain/models/StoreAssets.model';
 import storeAssetsController from '@core/storeAssets/application/StoreAssets.controller';
 import storeAssetsRepository from '@core/storeAssets/infrastructure/repositories/StoreAssets.repository';
 
 interface IUseFavouriteStore {
-  songs: TSong[];
-  artists: TArtist[];
+  songs: TLocalStorageSongModel[];
+  artists: TLocalStorageArtistModel[];
   hasUserFav: boolean;
   setHasUserFav: () => void;
   setInitialStore: () => void;
-  addSong: (song: TSong) => void;
+  addSong: (song: TLocalStorageSongModel) => void;
   deleteSong: (songId: string) => void;
-  addArtist: (artist: TArtist) => void;
+  addArtist: (artist: TLocalStorageArtistModel) => void;
   deleteArtist: (artistId: string) => void;
 }
 

@@ -1,13 +1,13 @@
 import { ComponentProps, FC, useState } from 'react';
-import { TArtist, TSong } from '@core/search/domain/models/Search.model';
+import { TArtistModel, TSongModel } from '@core/search/domain/models/Search.model';
 import { ARTIST, SONG } from '@/constants/routes';
 import Item from '../List/components/Item';
 import chevronUpIcon from '@images/shared/chevron-up.png';
 import styles from './ListMobile.module.scss';
 
 interface IListMobileProps extends ComponentProps<'ul'> {
-  songs: TSong[];
-  artists: TArtist[];
+  songs: TSongModel[];
+  artists: TArtistModel[];
   handleIsListShown: () => void;
 }
 

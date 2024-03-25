@@ -1,13 +1,13 @@
 import { ComponentProps, FC } from 'react';
 import { ARTIST, SONG } from '@/constants/routes';
-import { TArtist, TSong } from '@core/search/domain/models/Search.model';
+import { TArtistModel, TSongModel } from '@core/search/domain/models/Search.model';
 import Item from './components/Item';
 import chevronUpIcon from '@images/shared/chevron-up.png';
 import styles from './List.module.scss';
 
 interface IListProps extends ComponentProps<'ul'> {
-  songs: TSong[];
-  artists: TArtist[];
+  songs: TSongModel[];
+  artists: TArtistModel[];
   handleIsListShown: () => void;
 }
 

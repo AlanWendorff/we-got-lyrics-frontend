@@ -7,8 +7,8 @@ import lyricsRepository from '@core/lyrics/infrastructure/repositories/Lyrics.re
 import lyricsController from '@core/lyrics/application/Lyrics.controller';
 import getSongByName from '@/services/getSongByName';
 import getSongById from '@/services/getSongById';
-import TLyricsData from '@core/lyrics/domain/models/Lyrics.model';
-import TSong from '@core/song/domain/models/Song.model';
+import TLyricsModel from '@core/lyrics/domain/models/Lyrics.model';
+import TSongModel from '@core/song/domain/models/Song.model';
 import Contributor from './components/Contributor';
 import Gradient from '@/components/shared/Gradient';
 import Thumbnail from './components/Thumbnail';
@@ -22,8 +22,8 @@ const Song = () => {
   const { isSongStored, handleIsSongStored, handleSongFav } = useFavourite();
   const { id, name } = useParams();
 
-  const [lyrics, setLyrics] = useState<TLyricsData | null>(null);
-  const [song, setSong] = useState<TSong | null>(null);
+  const [lyrics, setLyrics] = useState<TLyricsModel | null>(null);
+  const [song, setSong] = useState<TSongModel | null>(null);
 
   useTabName({ tabName: `${song?.song.title} Lyrics`, dynamicInfo: song?.song.title });
   useThemeColor({ color: String(song?.song.header_image_colors.Vibrant), dynamicInfo: song?.song.header_image_colors.Vibrant });

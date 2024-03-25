@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { APP_NAME } from '@/constants/config';
 import artistInfoRepository from '@core/artistInfo/infrastructure/repositories/ArtistInfo.repository';
 import artistInfoController from '@core/artistInfo/application/ArtistInfo.controller';
-import TArtistInfo from '@core/artistInfo/domain/models/ArtistInfo.model';
+import TArtistInfoModel from '@core/artistInfo/domain/models/ArtistInfo.model';
 import TArtistSongs from '@core/artistInfo/domain/models/ArtistSongs.model';
 import useThemeColor from '@/hooks/useThemeColor';
 import useTabName from '@/hooks/useTabName';
@@ -23,7 +23,7 @@ const ArtistInfo: FC = () => {
   const { id } = useParams();
 
   const [artistSongs, setArtistSongs] = useState<TArtistSongs | null>(null);
-  const [artistInfo, setArtistInfo] = useState<TArtistInfo | null>(null);
+  const [artistInfo, setArtistInfo] = useState<TArtistInfoModel | null>(null);
   const [isAllSongs, setIsAllSongs] = useState(false);
 
   useTabName({ tabName: `${artistInfo?.artist.name} | ${APP_NAME}`, dynamicInfo: artistInfo?.artist.name });

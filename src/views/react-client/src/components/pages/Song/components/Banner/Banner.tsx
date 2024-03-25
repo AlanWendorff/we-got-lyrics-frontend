@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import styles from './Banner.module.scss';
-import TPalletteColors from '@/types/models/palletteColors.model';
+import TPalletteColorsModel from '@/types/models/palletteColors.model';
 
 interface IBannerProps {
-  bannerColors: TPalletteColors | undefined;
+  bannerColors: TPalletteColorsModel | undefined;
 }
 
 const Banner: FC<IBannerProps> = ({ bannerColors }) => (

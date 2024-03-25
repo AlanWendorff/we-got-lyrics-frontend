@@ -1,7 +1,7 @@
-import TCharts from '../models/Charts.model';
+import TChartsModel from '../models/Charts.model';
 
 interface IChartsRepository {
-  getCharts: () => Promise<TCharts>;
+  getCharts: () => Promise<TChartsModel>;
 }
 
 export default IChartsRepository;

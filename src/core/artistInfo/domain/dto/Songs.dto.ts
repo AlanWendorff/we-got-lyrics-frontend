@@ -1,22 +1,16 @@
-import IMetaDTO from './Meta.dto';
+import IMetaDTO from '../../../configuration/dto/Meta.dto';
 
-interface ISearchDTO {
+interface ISongsDTO {
   meta: IMetaDTO;
   response: IResponse;
 }
 
 interface IResponse {
-  hits: IHit[];
+  songs: ISong[];
+  next_page: number;
 }
 
-interface IHit {
-  highlights: any[];
-  index: string;
-  type: string;
-  result: IResult;
-}
-
-interface IResult {
+interface ISong {
   annotation_count: number;
   api_path: string;
   artist_names: string;
@@ -50,9 +44,9 @@ interface IReleaseDateComponents {
 
 interface IStats {
   unreviewed_annotations: number;
-  concurrents?: number;
   hot: boolean;
   pageviews: number;
+  concurrents?: number;
 }
 
 interface IFeaturedArtist {
@@ -79,4 +73,4 @@ interface IPrimaryArtist {
   iq?: number;
 }
 
-export default ISearchDTO;
+export default ISongsDTO;

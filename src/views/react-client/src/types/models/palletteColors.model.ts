@@ -1,4 +1,4 @@
-type TPalletteColors = {
+type TPalletteColorsModel = {
   Vibrant: string;
   DarkVibrant: string;
   LightVibrant: string;
@@ -7,4 +7,4 @@ type TPalletteColors = {
   LightMuted: string;
 };
 
-export default TPalletteColors;
+export default TPalletteColorsModel;

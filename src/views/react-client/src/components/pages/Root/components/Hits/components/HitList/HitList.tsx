@@ -1,12 +1,12 @@
 import { ComponentProps, FC, RefObject } from 'react';
-import { THit } from '@core/charts/domain/models/Charts.model';
+import { THitModel } from '@core/charts/domain/models/Charts.model';
 import SongItem from '@/components/shared/SongItem/SongItem';
 import HitListSkeleton from './HitList.skeleton';
 import styles from './HitList.module.scss';
 import { motion } from 'framer-motion';
 
 interface IHitListProps extends ComponentProps<typeof motion.ul> {
-  hits: THit[] | undefined;
+  hits: THitModel[] | undefined;
   innerRef: RefObject<HTMLUListElement>;
 }
 

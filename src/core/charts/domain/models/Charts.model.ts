@@ -1,8 +1,8 @@
-type TCharts = {
-  charts: THit[];
+type TChartsModel = {
+  charts: THitModel[];
 };
 
-export type THit = {
+export type THitModel = {
   id: number;
   url: string;
   img: string;
@@ -11,4 +11,4 @@ export type THit = {
   pageviews: string;
 };
 
-export default TCharts;
+export default TChartsModel;

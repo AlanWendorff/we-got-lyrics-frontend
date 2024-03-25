@@ -1,13 +1,13 @@
-type TSearch = {
-  searched_data: TSearchedData;
+type TSearchModel = {
+  searched_data: TSearchedDataModel;
 };
 
-type TSearchedData = {
-  songs: TSong[];
-  artists: TArtist[];
+type TSearchedDataModel = {
+  songs: TSongModel[];
+  artists: TArtistModel[];
 };
 
-export type TSong = {
+export type TSongModel = {
   id: number;
   api_path: string;
   name: string;
@@ -15,11 +15,11 @@ export type TSong = {
   image_thumbnail: string;
 };
 
-export type TArtist = {
+export type TArtistModel = {
   id: number;
   api_path: string;
   name: string;
   image_thumbnail: string;
 };
 
-export default TSearch;
+export default TSearchModel;

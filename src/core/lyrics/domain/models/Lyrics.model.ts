@@ -1,5 +1,5 @@
-type TLyricsData = {
+type TLyricsModel = {
   lyrics: string;
 };
 
-export default TLyricsData;
+export default TLyricsModel;
