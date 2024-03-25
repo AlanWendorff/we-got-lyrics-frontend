@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { generateSongMsg } from '@/utils/generateSocialMsg';
-import { TSongModel } from '@core/storeAssets/domain/models/StoreAssets.model';
+import { TLocalStorageSongModel } from '@core/storeAssets/domain/models/StoreAssets.model';
 import TSongInfo from '@core/song/domain/models/Song.model';
 import Skeleton from 'react-loading-skeleton';
 import AddToFav from '@/components/shared/AddToFav';
@@ -10,7 +10,7 @@ import styles from './Controls.module.scss';
 interface IControlsProps {
   isSongStored: boolean;
   song: TSongInfo | null;
-  handleSongFav: (song: TSongModel) => void;
+  handleSongFav: (song: TLocalStorageSongModel) => void;
 }
 
 const Controls: FC<IControlsProps> = ({ isSongStored, song, handleSongFav }) => {
