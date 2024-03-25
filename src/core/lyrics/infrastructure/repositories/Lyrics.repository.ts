@@ -1,6 +1,6 @@
 import http from '../../../configuration/http/Http';
 import ILyricsRepository from '../../domain/repositories/Lyrics.repository';
-import ILyricsDTO from '../../../configuration/http/dto/Lyrics.dto';
+import ILyricsDTO from '../../domain/dto/Lyrics.dto';
 import { BASE_URL } from '../../../configuration/constants/env';
 
 const lyricsRepository = (): ILyricsRepository => ({

@@ -1,4 +1,4 @@
-import ISearchDTO from '../../../../core/configuration/http/dto/Search.dto';
+import ISearchDTO from '../../domain/dto/Search.dto';
 import TSearch from '../../domain/models/Search.model';
 
 const arraySizeLimit = window.innerWidth < 1024 ? 7 : 4;

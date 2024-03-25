@@ -1,4 +1,4 @@
-import ISongDTO from '../../../../core/configuration/http/dto/Song.dto';
+import ISongDTO from '../../domain/dto/Song.dto';
 import TSongData from '../../domain/models/Song.model';
 
 const songMapper = (DTO: ISongDTO): TSongData => {

@@ -1,4 +1,4 @@
-import IArtistInfoDTO from '../../../../core/configuration/http/dto/ArtistInfo.dto';
+import IArtistInfoDTO from '../../domain/dto/ArtistInfo.dto';
 import TArtistInfo from '../../domain/models/ArtistInfo.model';
 
 const artistInfoMapper = (DTO: IArtistInfoDTO): TArtistInfo => ({

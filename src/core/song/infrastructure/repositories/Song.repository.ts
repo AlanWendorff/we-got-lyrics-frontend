@@ -1,6 +1,6 @@
 import http from '../../../configuration/http/Http';
 import ISongRepository from '../../domain/repositories/Song.repository';
-import ISongDTO from '../../../configuration/http/dto/Song.dto';
+import ISongDTO from '../../domain/dto/Song.dto';
 import songMapper from '../mappers/Song.mapper';
 import { BASE_URL } from '../../../configuration/constants/env';
 

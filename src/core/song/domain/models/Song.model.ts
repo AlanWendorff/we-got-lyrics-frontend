@@ -1,4 +1,4 @@
-import IPalletteColorsDTO from '../../../configuration/http/dto/PalletteColors.dto';
+import IPalletteColorsDTO from '../../../configuration/dto/PalletteColors.dto';
 
 type TSongData = {
   song: TSong;
