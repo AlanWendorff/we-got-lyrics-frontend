@@ -10,7 +10,7 @@ const chartsRepository = (): IChartsRepository => ({
       const response = await http.get<IChartsDTO>(`${BASE_URL}/charts`);
       return chartsAdapter(response);
     } catch (error) {
-      throw new Error(`Error getting user: ${error}`);
+      throw new Error(`Error getting: ${error}`);
     }
   }
 });

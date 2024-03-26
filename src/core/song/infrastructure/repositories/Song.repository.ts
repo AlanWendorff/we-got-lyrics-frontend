@@ -10,7 +10,7 @@ const songRepository = (): ISongRepository => ({
       const response = await http.get<ISongDTO>(`${BASE_URL}/songs/${id}?song_data=`);
       return songAdapter(response);
     } catch (error) {
-      throw new Error(`Error getting user: ${error}`);
+      throw new Error(`Error getting: ${error}`);
     }
   },
   getSongByName: async (name: string) => {
@@ -18,7 +18,7 @@ const songRepository = (): ISongRepository => ({
       const response = await http.get<ISongDTO>(`${BASE_URL}/songs/000?song_data=${name}`);
       return songAdapter(response);
     } catch (error) {
-      throw new Error(`Error getting user: ${error}`);
+      throw new Error(`Error getting: ${error}`);
     }
   }
 });

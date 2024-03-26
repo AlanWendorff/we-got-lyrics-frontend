@@ -10,7 +10,7 @@ const searchRepository = (): ISearchRepository => ({
       const response = await http.get<ISearchDTO>(`${BASE_URL}/search?q=${name}`);
       return searchAdapter(response, name);
     } catch (error) {
-      throw new Error(`Error getting user: ${error}`);
+      throw new Error(`Error getting: ${error}`);
     }
   }
 });

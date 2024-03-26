@@ -12,7 +12,7 @@ const artistInfoRepository = (): IArtistInfoRepository => ({
       const response = await http.get<IArtistInfoDTO>(`${BASE_URL}/artists/${id}`);
       return artistInfoAdapter(response);
     } catch (error) {
-      throw new Error(`Error getting user: ${error}`);
+      throw new Error(`Error getting: ${error}`);
     }
   },
   getArtistSongs: async (artist_id, per_page, page) => {
@@ -22,7 +22,7 @@ const artistInfoRepository = (): IArtistInfoRepository => ({
       );
       return artistSongsAdapter(response);
     } catch (error) {
-      throw new Error(`Error getting user: ${error}`);
+      throw new Error(`Error getting: ${error}`);
     }
   }
 });

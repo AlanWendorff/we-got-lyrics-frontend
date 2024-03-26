@@ -10,7 +10,7 @@ const lyricsRepository = (): ILyricsRepository => ({
       const response = await http.get<ILyricsDTO>(`${BASE_URL}/lyrics/?song_url=${url}`);
       return lyricsAdapter(response);
     } catch (error) {
-      throw new Error(`Error getting user: ${error}`);
+      throw new Error(`Error getting: ${error}`);
     }
   }
 });
